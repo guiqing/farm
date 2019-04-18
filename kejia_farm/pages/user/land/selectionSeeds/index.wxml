@@ -1,0 +1,60 @@
+<view>
+    <view class='selected'>要种植的蔬菜</view>
+    <view class='selectedSeed'>
+        <block wx:if='{{selectedSeed.length == 0}}'>
+            <view class='flex ptl30'>
+                <view class='Block'></view>
+                <view class='f28 flex ml20 '>
+                    <text>请点击</text>
+                    <image class='iconlager ml10' src='{{icon.hearts}}'></image>
+                    <text class='ml10'>添加为您需要种植的蔬菜</text>
+                </view>
+            </view>
+        </block>
+        <block wx:else>
+            <view>
+                <view class='clearfix ptb20'>
+                    <block wx:for='{{selectedSeed}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <view class='seeds f30 cf2e2e2e'>
+                            <view>
+                                <view class='seedImg'>
+                                    <text bindtap='deleteSelect' class='iconfont icon-jianhao errorImg' data-id='{{item.id}}' style='color:{{farmSetData.background_color}}'></text>
+                                    <view class='addNum' style='border:2rpx solid {{farmSetData.background_color}};color:{{farmSetData.background_color}}'>
+                                        {{item.num}}
+                                    </view>
+                                    <image class='seedImgs' src='{{item.cover}}'></image>
+                                    <view class='mt10'>￥{{item.totalPrice}}</view>
+                                </view>
+                                <view class='mt10'>{{item.send_name}}</view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view>
+        <view class='selected'>种子列表</view>
+        <view class='clearfix ptb20'>
+            <block wx:for='{{seeds}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='seeds f30 cf2e2e2e'>
+                    <view bindtap='View' data-sid='{{item.id}}'>
+                        <view class='seedImg'>
+                            <image catchtap='checked' class='checkImg' data-id='{{item.id}}' src='{{(item.selected?icon.lightHeart:icon.hearts)}}'></image>
+                            <image class='seedImgs' src='{{item.cover}}'></image>
+                            <view class='mt10'>￥{{item.price}}/㎡</view>
+                        </view>
+                        <view class='mt10'>{{item.send_name}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class='block100'></view>
+    <view bindtap='submits' class='submit' hidden='{{selectedSeed.length == 0}}' style='background:{{farmSetData.background_color}}'>
+        提交选择
+    </view>
+</view>
+<modal bindconfirm='cancel' hidden='{{hidden}}' noCancel='false' title='温馨提示'>
+    您选择的种子种植面积超过当前土地面积
+</modal>

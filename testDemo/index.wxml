@@ -1,0 +1,73 @@
+<!--testDemo/index.wxml-->
+<view class="content">
+    <view class="card-list">
+        <view class="card-list-img">
+            <image style="width:100%;height:100%;border-radius:40rpx" src="{{cover}}" />
+        </view>
+    </view>
+    <view class="card-list">
+        <view class="card-list-content gride">
+            <block wx:for="{{menu}}" wx:key="id">
+                <view class="gride-item">               
+                    <image class="gride-icon" class="gride-item-img" src="{{item.img}}"/>                     
+                    <view class="gride-item-text">{{item.name}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="card-list-header">土地信息</view>
+    <view class="card-list">
+        <view class="card-list-in">
+            <view class="card-list-icon">
+                <image src="{{img[0]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >土地名称</view>
+                <view class="text2" >{{mineLand.land_name}}</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[1]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >土地编号</view>
+                <view class="text2" >{{mineLand.land_num}}</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[2]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >总面积</view>
+                <view class="text2" >{{mineLand.count}}</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[3]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >已种植面积</view>
+                <view class="text2" >{{mineLand.use_area}}</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[4]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >待播种面积</view>
+                <view class="text2" >{{mineLand.wait_area}}</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[5]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >剩余面积</view>
+                <view class="text2" style="display:flex;align-items:center;">
+                    <view>{{mineLand.residue_area}}</view>
+                    <text style="padding-left:28rpx;font-size:28rpx;color:#0fc8a8">去播种</text>
+                    <image src="./img/right.png" style="width:20rpx;height:30rpx;margin-left:10rpx" />      
+                </view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[6]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" style="border-bottom:0">到期时间</view>
+                <view class="text2" style="border-bottom:0">{{mineLand.exprie_time}}</view>
+            </view>          
+        </view>
+    </view>
+    <view class="card-list-header">种植详情</view>
+    <view class="card-list">
+        <view class="card-list-in">
+            <block wx:for="{{sendMine}}" wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class="card-list-icon">
+                    <view class="text1" >土地名称</view>
+                    <view class="text2" >{{mineLand.land_name}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

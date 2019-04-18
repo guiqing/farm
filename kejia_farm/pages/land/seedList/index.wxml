@@ -1,0 +1,107 @@
+<view class='list'>
+    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+        <view class='list-ul flex'>
+            <view bindtap='lookSeedDetail' class='li-left' data-seedid='{{item.id}}'>
+                <image src='{{item.cover}}'></image>
+            </view>
+            <view class='li-right'>
+                <view class='name' style="font-size:32rpx;">{{item.send_name}}</view>
+                <view class='name'>产量：{{item.output}}/㎡</view>
+                <view class='name'>生长周期：{{item.cycle}}天</view>
+                <view class="foot-flex">
+                     <view class='foot-flex-l'>{{item.price}}/㎡</view>
+                     <view class="foot-flex-r">
+                        <image class="flex-icon" bindtap='addSeedCount' data-seedid='{{item.id}}' src="/kejia_farm/images/add.png" />
+                        <block wx:if='{{item.selectCount >= 1}}'>
+                            <text class='count' style="padding:0 20rpx">{{item.selectCount}}</text>
+                        </block>
+                        <block wx:if='{{item.selectCount >= 1}}'>
+                            <image class="flex-icon" bindtap='reduceSeedCount' data-seedid='{{item.id}}' src="/kejia_farm/images/remove.png" />
+                        </block>
+                        
+                     </view>
+                </view>
+               
+                <!-- <view class='caluate'>
+                    <block wx:if='{{item.selectCount >= 1}}'>
+                        <text bindtap='reduceSeedCount' class='iconfont icon-jianhao' data-seedid='{{item.id}}'></text>
+                    </block>
+                    <block wx:if='{{item.selectCount >= 1}}'>
+                        <text class='count'>{{item.selectCount}}</text>
+                    </block>
+                    <text bindtap='addSeedCount' class='iconfont icon-jia' data-seedid='{{item.id}}' style='color:{{farmSetData.background_color}}'></text>
+                </view> -->
+                
+            </view>
+        </view>
+    </block>
+</view>
+<view class='footer-b' style="z-index:999">
+    <!-- <view class='circels flexCenter'>
+        <view bindtap='closeCart' class='shopCar flexCenter {{(seeds.length > 0?"bgfc8535":"bgdadada")}}' style='background:{{farmSetData.background_color}}'>
+            <text class='iconfont icon-shopcar f44' style='color:white'></text>
+        </view>
+        <view class='buyNum' hidden='{{count == 0}}' style='background:{{farmSetData.background_color}}'>
+            {{count}}
+        </view>
+    </view> -->
+    <view style="position:relative">
+        <image bindtap='closeCart' src="/kejia_farm/images/buyCat.png"  style="width:120rpx;height:120rpx;margin:0 20rpx 40rpx 30rpx"/>
+        <view class='buyNum' hidden='{{count == 0}}'>
+            {{count}}
+        </view>
+    </view>
+    <block wx:if='{{sumPrice}}'>
+        <view class='sumPrice'>￥{{totalPrice}}</view>
+    </block>
+    <block wx:if='{{count == 0}}'>
+        <view class='Settlement bgfc8535' style='background:gray;'>未选购</view>
+    </block>
+    <block wx:else>
+        <view bindtap='submitOrder' class='Settlement bgdadada' style='background:{{farmSetData.background_color}}'>
+            去结算
+        </view>
+    </block>
+</view>
+<block wx:if='{{is_show_cart}}'>
+    <view bindtap='closeCart' class='cart-mask'></view>
+</block>
+<block wx:if='{{is_show_cart}}'>
+    <view class='cart-list'>
+        <view class='cart-title'>
+            购物车
+            <text bindtap='closeCart' class='iconfont icon-delete1 f44'></text>
+        </view>
+        <view class='cart-content'>
+            <block wx:for='{{selectSeedList}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='cart-ul flex'>
+                    <view class='cart-name'>{{item.send_name}}</view>
+                     <view class='cart-count'>￥{{item.price}} </view>
+                    <!-- <view class='cart-count'>￥{{item.price}} ×{{item.selectCount}} ㎡</view> -->
+                    <view class="foot-flex-r">
+                        <image class="flex-icon" bindtap='addSeedCount' data-seedid='{{item.id}}' src="/kejia_farm/images/add.png" />
+                        <block wx:if='{{item.selectCount >= 1}}'>
+                            <text class='count' style="padding:0 20rpx">{{item.selectCount}}</text>
+                        </block>
+                        <block wx:if='{{item.selectCount >= 1}}'>
+                            <image class="flex-icon" bindtap='reduceSeedCount' data-seedid='{{item.id}}' src="/kejia_farm/images/remove.png" />
+                        </block>
+                        
+                    </view>
+                   
+                </view>
+            </block>
+        </view>
+        <!-- <view class='footer flex'>
+            <view class='cart-left'>总价：{{totalPrice}}元</view>
+            <view class='cart-btn'>
+                <form bindsubmit='submitOrder' reportSubmit='true'>
+                    <button formType='submit' style='background:{{farmSetData.background_color}}'>
+                        立即支付
+                    </button>
+                </form>
+            </view>
+        </view> -->
+    </view>
+</block>
+<view class='margin-btn'></view>

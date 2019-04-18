@@ -1,0 +1,35 @@
+<view class='con'>
+    <view bindtap='intoFarmAddress' class='title'>
+        <text class='iconfont icon-position f44' style='color:#fcbc4e'></text>
+        {{farm_name}}
+    </view>
+    <view class='top'>
+        <text class='today'>今天</text>
+        <text class='qiwen'>{{weather.temperature}}°</text>
+        <text class='address'>{{weather.city}} {{weather.weather}}</text>
+        <image class='top-img' src='{{weather.img}}'></image>
+        <view class='btm'>
+            <text class='txt'>{{weather.date}}</text>
+            <text class='txt'>pm25值：{{weather.pm25}}</text>
+            <text class='txt'>湿度：{{weather.humidity}}</text>
+        </view>
+        <scroll-view scrollX='true' style=' white-space: nowrap; display: flex'>
+            <block wx:for='{{weather.hourly_data}}' wx:for-item='hour' wx:for-index='index' wx:key='{{index}}'>
+                <view class='re-ul'>
+                    <text class='time'>{{hour.datetime[1]}}</text>
+                    <image src='{{hour.img}}'></image>
+                    <text class='du'>{{hour.temp}}°</text>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <view class='we-ul'>
+        <block wx:for='{{weather.daily_data}}' wx:for-item='val' wx:for-index='index' wx:key='{{index}}'>
+            <view class='li'>
+                <text class='time'>{{val.date}}</text>
+                <text class='add-we'>{{val.status_txt}} {{val.min}}°~{{val.max}}°</text>
+                <image src='{{val.img}}'></image>
+            </view>
+        </block>
+    </view>
+</view>

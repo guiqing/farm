@@ -1,0 +1,90 @@
+<view class='iconWrapper'>
+    <block wx:if='{{column == 2}}'>
+        <swiper bindchange='currentChange' indicatorDots='{{list.length > 4}}' style='width:100%; height: {{(list.length > 2?460:230)}}rpx'>
+            <block wx:for='{{list.length / column * 2}}' wx:for-item='item' wx:for-index='Findex' wx:key='{{Findex}}'>
+                <swiper-item class='swiper_item'>
+                    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <block wx:if='{{ (Findex * 4 <= index && index < Findex + 1 * 4) }}'>
+                            <view class='icon1' data-url='{{item.direction}}'>
+                                <view bindtap='intoDetail' class='icon_content' data-url='{{item.url}}'>
+                                    <image src='{{item.icon}}' style='border-radius:{{radius}}%'></image>
+                                    <view class='text' style='font-size:{{fontSize * 2}}rpx; color:{{fontColor}}; margin-top:10rpx;'>
+                                        {{item.type_name}}
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </swiper-item>
+            </block>
+        </swiper>
+    </block>
+    <block wx:if='{{column == 3}}'>
+        <swiper bindchange='currentChange' indicatorDots='{{list.length > 6}}' style='width:100%; height: {{(list.length > 3?460:230)}}rpx'>
+            <block wx:for='{{list.length / column * 2}}' wx:for-item='item' wx:for-index='Findex' wx:key='{{Findex}}'>
+                <swiper-item class='swiper_item'>
+                    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <block wx:if='{{ (Findex * 6 <= index && index < Findex + 1 * 6) }}'>
+                            <view class='icon2' data-url='{{item.direction}}'>
+                                <view bindtap='intoDetail' class='icon_content' data-url='{{item.url}}'>
+                                    <image src='{{item.icon}}' style='border-radius:{{radius}}%;'></image>
+                                    <view class='text' style='font-size:{{fontSize * 2}}rpx; color:{{fontColor}}; margin-top:10rpx;'>
+                                        {{item.type_name}}
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </swiper-item>
+            </block>
+        </swiper>
+    </block>
+    <block wx:if='{{column == 4}}'>
+        <swiper bindchange='currentChange' indicatorDots='{{list.length > 8}}' style='width:100%; height: {{(list.length > 4?500:200)}}rpx'>
+            <block wx:for='{{list.length / column * 2}}' wx:for-item='item' wx:for-index='Findex' wx:key='id'>
+                <swiper-item class='swiper_item'>
+                    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <block wx:if='{{ (Findex * 8 <= index && index < Findex + 1 * 8) }}'>
+                            <view class='icon3' data-url='{{item.direction}}'>
+                                <view bindtap='intoDetail' class='icon_content' data-url='{{item.url}}'>
+                                    <image src='{{item.icon}}' style='border-radius:{{radius}}%'></image>
+                                    <view class='text' style='font-size:{{fontSize * 2}}rpx; color:{{fontColor}}; margin-top:10rpx;'>
+                                        {{item.type_name}}
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </swiper-item>
+            </block>
+        </swiper>
+    </block>
+    <block wx:if='{{column == 5}}'>
+        <swiper bindchange='currentChange' indicatorDots='{{list.length > 10}}' style='width:100%; height: {{(list.length > 5?410:200)}}rpx'>
+            <block wx:for='{{list.length / (column * 2)}}' wx:for-item='item' wx:for-index='Findex' wx:key='id'>
+                <swiper-item class='swiper_item'>
+                    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <block wx:if='{{ (Findex * 10 <= index && index < Findex + 1 * 10) }}'>
+                            <view class='icon4' data-url='{{item.direction}}'>
+                                <view bindtap='intoDetail' class='icon_content' data-url='{{item.url}}'>
+                                    <image src='{{item.icon}}' style='border-radius:{{radius}}%'></image>
+                                    <view class='text' style='font-size:{{fontSize * 2}}rpx; color:{{fontColor}}; margin-top:10rpx;'>
+                                        {{item.type_name}}
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                </swiper-item>
+            </block>
+        </swiper>
+    </block>
+    <block wx:if='{{list.length > column * 2}}'>
+        <view class='dots'>
+            <block wx:for='{{list.length / (column * 2)}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view>{{list.length / column * 2}}</view>
+                <view class='dot {{(currentIndex === index?"active":"")}}'></view>
+            </block>
+        </view>
+    </block>
+</view>

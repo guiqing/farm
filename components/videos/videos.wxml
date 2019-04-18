@@ -1,0 +1,11 @@
+<view class='video'>
+    <block wx:if='{{pause}}'>
+        <view class='covers'>
+            <image src='{{poster}}'></image>
+            <image class='player' src='/static/images/players1.png'></image>
+        </view>
+    </block>
+    <block wx:else>
+        <video poster='{{poster}}' src='{{src}}'></video>
+    </block>
+</view>

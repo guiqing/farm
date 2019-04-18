@@ -1,0 +1,134 @@
+<block wx:if='{{!(is_load)}}'>
+    <loading>玩命加载中...</loading>
+</block>
+<block wx:if='{{land_method == 2}}'>
+    <view>
+        <view class='cf474747 bb'>
+            <view class='bgff plt40 flex bb'>
+                <image class='iconlager' src='{{icon.selectIcon}}'></image>
+                <view class='ml30 f30'>
+                    <view>您已选择{{landDetail.land_name}}</view>
+                    <view class='cf767676 mt15'>
+                        <block wx:for='{{selectLand}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                            {{item.area}}㎡
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class='bgff plt40 flexSb'>
+                <image class='iconlager' src='{{icon.lifeIcon}}'></image>
+                <picker bindchange='bindLimitChange' class='w500 f30 pick-w' range='{{alias_day}}' value='{{currentIndex}}'>
+                    <view>认种时间：{{alias_day[currentIndex]}}</view>
+                </picker>
+                <text bindchange='bindLimitChange' class='iconfont icon-right right-icon'></text>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <view>
+        <block wx:for='{{lands}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <view class='cf474747 bb'>
+                <view class='bgff plt40 flex bb'>
+                    <image class='iconlager' src='{{icon.selectIcon}}'></image>
+                    <view class='ml30 f30'>
+                        <view>您已选择{{item.land_name}}</view>
+                        <view class='cf767676 mt15'>{{item.selectArea}}㎡</view>
+                    </view>
+                </view>
+                <view class='bgff plt40 flexSb'>
+                    <image class='iconlager' src='{{icon.lifeIcon}}'></image>
+                    <picker bindchange='bindPickerChange' class='w500 f30 pick-w' data-id='{{item.id}}' range='{{item.day}}' value='{{index}}'>
+                        <view>认种时间：{{item.day[item.select_index]}}天</view>
+                    </picker>
+                    <text bindchange='bindPickerChange' class='iconfont icon-right right-icon'></text>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>
+<!-- <view class='plt30 flexSb bgff '>
+    <view>
+        <text class='iconfont icon-youhuiquan1 f44' style='color:#0fc8ab;margin-left:10rpx'></text>
+        <text class='f30 new-tag'>优惠券：</text>
+    </view>
+    <block wx:if='{{couponCount > 0}}'>
+        <view bindtap='selectCoupon' class='f32 flex'>
+            <block wx:if='{{userCoupon != ""}}'>
+                <view class='cfred'>-￥{{userCoupon.coupon.coupon_price}}</view>
+            </block>
+            <block wx:else>
+                <view class='cfred'>{{couponCount}}张优惠券可用</view>
+            </block>
+            <text class='iconfont icon-right right-icon'></text>
+        </view>
+    </block>
+    <block wx:else>
+        <view class='f32 flex'>
+            <view class='cf93'>暂无优惠券</view>
+        </view>
+    </block>
+</view> -->
+<view class='user_container cf474747 f30'>
+    <view class='flex p20 borderbottom'>
+        <view class='title'>
+            <text class='iconfont icon-yonghu f34' style='color:{{farmSetData.background_color}};margin-left:4rpx;'></text>
+            用户姓名
+        </view>
+        <view class='ml20'>
+            <input bindinput='inputUserName' placeholder='请输入用户姓名' type='text' value='{{userName}}'></input>
+        </view>
+    </view>
+    <view class='flex p20 borderbottom'>
+        <view class='title'>
+            <text class='iconfont icon-phone f40' style='color:{{farmSetData.background_color}}'></text>
+            用户电话
+        </view>
+        <view class='ml20'>
+            <input bindinput='inputUserTel' placeholder='请输入用户电话' type='number' value='{{userTel}}'></input>
+        </view>
+    </view>
+    <view class='flex p20 borderbottom'>
+        <label>
+            <checkbox catchtap='changeRules' checked='{{rules}}' class='radioBtn' color='#000'></checkbox>
+            我已阅读并同意
+        </label>
+        <text bindtap='showModal' class='rule-book'>《农场协议》</text>
+    </view>
+</view>
+<view class='footer f40 flexSb'>
+    <view class='flex cffc8535 ml50'>
+        <view class='f24 mt10' style='color:{{farmSetData.background_color}}'>￥</view>
+        <view style='color:{{farmSetData.background_color}}'>{{totalPrice}}</view>
+    </view>
+    <block wx:if='{{land_method == 2}}'>
+        <view bindtap='newLandPay' class='payFor' style='background:{{farmSetData.background_color}}'>
+            去支付
+        </view>
+    </block>
+    <block wx:else>
+        <view bindtap='nowPay' class='payFor' style='background:{{farmSetData.background_color}}'>
+            去支付
+        </view>
+    </block>
+</view>
+<block wx:if='{{state}}'>
+    <view catchtouchmove='preventTouchMove' class='modal-mask'>
+        <view class='modal-dialog'>
+            <scroll-view class='dialog_container' scrollY='true'>
+                <view class='modal-title'>用户须知</view>
+                <view>
+                    <view class='content'>
+                        <view class='wxParse'>
+                            <template is='wxParse' data='{{wxParseData:article.nodes}}'></template>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view bindtap='hideModal' class='closeModel'>
+                <text class='iconfont icon-close f44' style='color:white;'></text>
+            </view>
+        </view>
+    </view>
+</block>
+<import src='../../../../../wxParse/wxParse.wxml'></import>

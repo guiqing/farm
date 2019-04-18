@@ -1,0 +1,3 @@
+<view class="fixeds" style="opacity:{{opacity}};bottom:{{bottom*2}}rpx;left:{{left}}%;background:{{bgColor}}">
+    <image src="{{img}}"></image>
+</view>

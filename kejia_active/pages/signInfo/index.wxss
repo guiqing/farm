@@ -1,0 +1,5 @@
+page{ background: #f3f3f3; }
+.sing_wrapper{ width: 98%; margin: 0 auto; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+.sing_item{ width: 20%; text-align: center; margin-top: 15rpx; }
+.sing_item wx-image{ width: 90%; border-radius: 10rpx; display: block; margin: 0 auto; }
+.sing_item wx-view{ width: 100%; font-size: 28rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 5rpx; }

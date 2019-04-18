@@ -1,0 +1,43 @@
+@import '/import/css0_1.wxss';.swiper{ width: 100%; height: 750rpx; text-align: center; }
+.slide-image{ width:100%; height: 100%; }
+.block20{ height: 20rpx; background-color: #f4f4f4 }
+.block120{ height: 140rpx; }
+.proTitle{ width: 100%; height: 120rpx; color: #fc8535; line-height: 120rpx; text-align: center; font-size: 32rpx; }
+.proImgs{ text-align: center; }
+.footer { width: 100%; height: 100rpx; position: fixed; bottom: 0; left: 0; border-top: 1rpx solid #eee; background: #f3f3f3; z-index: 100; font-size: 28rpx; color: #16BA63; }
+.footer_container{ display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: space-around; justify-content: space-around; width: 100%; height: 100rpx; background: #fff; text-align:center; }
+.index{ width: 120rpx; height: 100%; text-align: center; font-size: 30rpx; color: #3f3f3f; }
+.joinCar{ width: 270rpx; height: 100%; text-align: center; line-height: 100rpx; background: linear-gradient(to right, rgba(255,199,2,1), rgba(253,152,0,1)); color: #fff; font-size: 32rpx; }
+.buyNow{ width:500rpx; height: 100%; text-align: center; line-height: 100rpx; background: linear-gradient(to right, rgba(255,115,2,1), rgba(255,80,4,1)); color: #fff; font-size: 32rpx; }
+.modal-mask { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.3); overflow: hidden; z-index: 9000; color: #fff; }
+.modal-dialog { width: 100%; height: 780rpx; position: fixed; z-index: 9999; background: #f9f9f9; border-radius: 15rpx 15rpx 0 0; transition: all .3s; }
+.show{ bottom: 0; left: 0; }
+.hide{ bottom: -1000rpx; left: 0; }
+.adoptImg{ width: 240rpx; height: 240rpx; text-align: center; padding: 20rpx; box-sizing: border-box; }
+.adoptImg wx-image{ width: 100%; height: 100%; border-radius: 5rpx; }
+.adoptPrice{ font-size: 46rpx; margin-left: 20rpx; text-align: left; }
+.chooseTime{ margin-top: 25rpx; font-size: 30rpx; color: #383838; }
+.chooseNum{ width: 100%; overflow-y: auto; height: 440rpx; border-top: 1rpx solid #e6e6e6; position: absolute; bottom: 100rpx; left: 0rpx; }
+.adoptTime{ height: 65rpx; text-align: center; line-height: 65rpx; float: left; margin-left: 20rpx; border: 1rpx solid #d6d6d6; border-radius: 5rpx; font-size: 30rpx; color: #383838; margin-bottom: 20rpx; padding:0 20rpx 0 20rpx; }
+.clickNumLift{ border: 1rpx solid #d6d6d6; border-radius: 5rpx 0 0 5rpx; width: 90rpx; height: 60rpx; font-size: 30rpx; line-height: 60rpx; text-align: center; color: #9e9e9e; }
+.clickNumRight{ border: 1rpx solid #d6d6d6; border-radius: 0 5rpx 5rpx 0; width: 90rpx; height: 60rpx; font-size: 30rpx; line-height: 60rpx; text-align: center; color: #9e9e9e; }
+.chooseN{ width: 200rpx; height: 60rpx; border: 1rpx solid #d6d6d6; border-radius: 0rpx; font-size: 30rpx; color: #9e9e9e; text-align: center; line-height: 60rpx; }
+.confrim{ width: 100%; height: 100rpx; color: #fff; background-color: #fc8535; text-align: center; line-height: 100rpx; font-size: 34rpx; position: absolute; bottom: 0; }
+.bgOrg{ background-color: #fc8535; color: #fff; }
+.bgGray{ background: #cfcfcf;color: white; }
+.footer wx-button{font-size: 24rpx;width: 50rpx;text-align: center;height:100rpx;line-height: 58rpx;background: white;padding: 0;position: relative;}
+wx-button::after{border: none;}
+.iconSize-phone{width: 45rpx;height: 50rpx;}
+.spec-algin{text-align: left;width: 50%;height: auto}
+.service{ width: 43rpx; height: 40rpx; }
+.tels{ height: 40rpx; width: 36rpx; }
+.closeModel{ position: absolute; right: 15rpx; top: 15rpx; width: 40rpx; height: 40rpx; }
+.share{ width: 100rpx; height: 100rpx; text-align: center; font-size: 28rpx; color:#3e3e3e; }
+.share wx-button{width: 110rpx;font-size: 26rpx; background: white; padding: 0; -webkit-tap-highlight-color:rgba(0,0,0,0); }
+wx-button ::after{border: none;}
+.closeModel{ position: absolute; right: 15rpx; top: 15rpx; }
+.share-btn{ width: 100rpx;height: 100rpx;position: relative;line-height: 140rpx; }
+.share .share-icon{position: relative;top: -20rpx;z-index: 999;}
+.share .txt{position: relative;}
+.share .share-txt{display: block;height: 40rpx;font-size: 24rpx;z-index:999;position:relative;top:-130rpx;}
+.index .con-kefu{position: relative;top: -22rpx;}

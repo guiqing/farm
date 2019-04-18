@@ -1,0 +1,12 @@
+.animal_wrapper{ position: fixed; right: 240rpx; top: 400rpx; }
+.cicken1{ width: 60rpx; height: 60rpx; -webkit-animation: run 20s linear infinite; animation: run 20s linear infinite; }
+.top{ top:510rpx; }
+@-webkit-keyframes run{ 49%{ -webkit-transform: translateX(60px); transform: translateX(60px); }
+50%{ -webkit-transform: translateX(60px) rotateY(-180deg); transform: translateX(60px) rotateY(-180deg); }
+99%{ -webkit-transform: translateX(0px) rotateY(-180deg); transform: translateX(0px) rotateY(-180deg); }
+100%{ -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
+}@keyframes run{ 49%{ -webkit-transform: translateX(60px); transform: translateX(60px); }
+50%{ -webkit-transform: translateX(60px) rotateY(-180deg); transform: translateX(60px) rotateY(-180deg); }
+99%{ -webkit-transform: translateX(0px) rotateY(-180deg); transform: translateX(0px) rotateY(-180deg); }
+100%{ -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
+}

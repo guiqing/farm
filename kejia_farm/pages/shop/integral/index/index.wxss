@@ -1,0 +1,9 @@
+@import '/import/css0_0.wxss';@import '/import/css0_1.wxss';.userInfo{ width: 100%; height: 500rpx; background-size: cover; position: relative; }
+.userSign{ width: 250rpx; height: 250rpx; border-radius: 50%; background: linear-gradient(to top, rgba(255,255,255,1), rgba(253,237,205,1)); box-shadow: 0rpx 0rpx 30rpx rgba(249, 169, 61, 0.9); text-align: center; color: #fc8535; }
+.rule{ width: 40rpx; height: 52rpx; }
+.integral{ width: 90%; height: 300rpx; position: absolute; left: 5%; margin-top: 50rpx; background-color: #fff; border-radius: 20rpx; box-shadow: 0rpx 0rpx 30rpx rgba(249, 169, 61, 0.9); }
+.headImg{ width: 130rpx; height: 130rpx; border-radius: 50%; }
+.RecordOfExchange{ display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: space-around; justify-content: space-around; font-size: 30rpx; height: 100rpx; border-top: 1rpx solid #9a9a9a; color: #9a9a9a; }
+.Record{ width: 50rpx; height: 45rpx; }
+.calendar{ margin-top: 110rpx; }
+.border-radius { position: relative; left: 0; top: 0; color: #fff; background-size:cover; }

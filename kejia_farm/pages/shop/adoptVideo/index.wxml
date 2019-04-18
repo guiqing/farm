@@ -1,0 +1,28 @@
+<video class='video' id='myVideo' poster='myVideo' src='{{cover}}'></video>
+<view>
+    <view class='control_container'>
+        <image bindtap='enlarge' class='icons' src='{{(enlarge?"../../../images/icon/enlargeSelect.png":"../../../images/icon/enlarge.png")}}'></image>
+        <image bindtap='narrow' class='icons ml50' src='{{(narrow?"../../../images/icon/narrowSelect.png":"../../../images/icon/narrow.png")}}'></image>
+    </view>
+    <view class='direction_container'>
+        <view class='direction'>
+            <view class='center'></view>
+            <view class='direction_views state1'>
+                <image bindtap='direction' class='directionImg transform1' data-index='1' src='{{(currentIndex == 1?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+                <image bindtap='direction' class='directionImg transform2' data-index='2' src='{{(currentIndex == 2?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+            </view>
+            <view class='direction_views state2'>
+                <image bindtap='direction' class='directionImg transform1' data-index='3' src='{{(currentIndex == 3?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+                <image bindtap='direction' class='directionImg transform2' data-index='4' src='{{(currentIndex == 4?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+            </view>
+            <view class='direction_views state3'>
+                <image bindtap='direction' class='directionImg transform1' data-index='5' src='{{(currentIndex == 5?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+                <image bindtap='direction' class='directionImg transform2' data-index='6' src='{{(currentIndex == 6?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+            </view>
+            <view class='direction_views state4'>
+                <image bindtap='direction' class='directionImg transform1' data-index='7' src='{{(currentIndex == 7?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+                <image bindtap='direction' class='directionImg transform2' data-index='8' src='{{(currentIndex == 8?"../../../images/icon/selectDirection.png":"../../../images/icon/direction.png")}}'></image>
+            </view>
+        </view>
+    </view>
+</view>

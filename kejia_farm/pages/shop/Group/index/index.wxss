@@ -1,0 +1,7 @@
+page{ background-color: #f4f4f4; }
+.groupItem{ width: 95%; background-color: #fff; border-radius: 10rpx; margin: 15rpx auto 0rpx; overflow: hidden; }
+.proImg{ width: 100%; border-radius: 10rpx 10rpx 0rpx 0rpx; }
+.ling50{ line-height: 50rpx; }
+.headImg{ width: 55rpx; height: 55rpx; margin-left: -5rpx; }
+.joinBtn{ border:none; background-color: #fc8535; color: #fff; width: 180rpx; line-height: 2; padding: 0rpx; font-size: 30rpx; border-radius: 40rpx; margin: 0; }
+.joinBtn::after{ border: none }

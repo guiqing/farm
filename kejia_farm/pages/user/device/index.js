@@ -1,0 +1,1 @@
+var a=new getApp;a.siteInfo.uniacid;Page({data:{deviceData:[],farmSetData:wx.getStorageSync("kejia_farm_setData")},onLoad:function(e){var t=this;a.util.request({url:"entry/wxapp/webThing",data:{op:"getYunDevice"},success:function(a){console.log(a),t.setData({deviceData:a.data.deviceData})}})}}); 

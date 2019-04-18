@@ -1,0 +1,2 @@
+.lineWrapper{ width: 100%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center }
+.line{ width: 100%; }

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "众筹",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "tarbar": "/kejia_farm/components/tarbar/tarbar"
+    }
+}

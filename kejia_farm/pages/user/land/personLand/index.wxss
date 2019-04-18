@@ -1,0 +1,362 @@
+@import '/import/css0_1.wxss';
+
+page {
+    background-color: #f4f4f4;
+}
+
+.orderTitle {
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.block {
+    height: 120rpx;
+}
+
+.item {
+    width: 33.3%;
+    text-align: center;
+    padding: 35rpx 0rpx;
+    color: #3d3d3d;
+    position: relative;
+}
+
+.item::before {
+    content: '';
+    display: block;
+    width: 30%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #0fc8a8;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.actives {
+    color: #0fc8a8;
+}
+
+.actives::before {
+    width: 100%;
+    left: 0%;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.item:not(:last-child) wx-view {
+    border-right: 1rpx solid #dfdfdf;
+}
+
+.swiper {
+    width: 100%;
+    height: 350rpx;
+}
+
+.slide-image {
+    width: 100%;
+    height: 430rpx;
+}
+
+.time {
+    color: gray;
+    font-size: 26rpx;
+}
+
+.none {
+    width: 100%;
+    height: 300rpx;
+    text-align: center;
+}
+
+.none wx-image {
+    width: 400rpx;
+    height: 230rpx;
+    margin-top: 60rpx;
+}
+
+.none .tags {
+    color: gray;
+    font-size: 24rpx;
+    display: block;
+}
+
+.none .go-buy {
+    width: 34%;
+    height: 65rpx;
+    line-height: 65rpx;
+    border-radius: 75rpx;
+    color: #0fc8a8;
+    font-size: 26rpx;
+    margin-left: 33%;
+    margin-top: 20rpx;
+}
+
+.land-ul {
+    width: 96%;
+    margin-left: 2%;
+    border-radius: 10rpx;
+}
+
+.land-ul .land-title {
+    margin-left: 2%;
+    font-size: 30rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+    margin-bottom: 30rpx;
+}
+
+.land-ul .land_status {
+    float: right;
+    margin-right: 20rpx;
+}
+
+.land-ul .seed-ul {
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    margin-top: 20rpx;
+}
+
+.land-ul .seed-ul .seed-title {
+    font-size: 28rpx;
+    float: left;
+    width: 30%;
+    color: gray;
+}
+
+.land-ul .seed-ul .seed-li {
+    width: 70%;
+    float: left;
+}
+
+.land-ul .seed-ul .seed-name {
+    display: block;
+    float: left;
+    padding: 5rpx 20rpx;
+    background: #0fc8a8;
+    color: white;
+    font-size: 28rpx;
+    border-radius: 10rpx;
+    margin-left: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.land-ul .seed-ul .seed-dai .seed-name {
+    background: #afaeae;
+}
+
+.land-ul .seed-ul .seed-ke .seed-name {
+    background: #26ac5ea9;
+}
+
+.clear {
+    clear: both;
+}
+
+.state_container {
+    padding: 30rpx;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 28rpx;
+    text-align: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    border-top: 1rpx solid #f4f4f4;
+}
+
+.item_container {
+    width: 33.3%;
+    letter-spacing: 3rpx;
+}
+
+.title {
+    color: #898989;
+}
+
+.expire {
+    background-color: #fc8535;
+    font-size: 28rpx;
+    width: 150rpx;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: -35rpx;
+    top: 20rpx;
+}
+
+.exprice-land {
+    width: 100%;
+    height: 120rpx;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 120rpx;
+}
+
+page {
+    background-color: #efefef;
+}
+
+.orderTitle {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.orderTitle wx-view {
+    padding: 20rpx 0;
+    box-sizing: border-box;
+    width: 25%;
+    text-align: center;
+}
+
+.notcurrentIndex {
+    border-bottom: 3rpx solid #fff;
+}
+
+.currentIndex {
+    border-bottom: 3rpx solid #0fc8a8;
+    color: #0fc8a8;
+}
+
+.block100 {
+    height: 100rpx;
+}
+
+.land_item {
+    /* width: 94%; */
+    margin: 0rpx 34rpx 30rpx;
+    border-radius: 40rpx;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.land_title {
+    position: relative;
+    font-size: 30rpx;
+    color: #090909;
+    padding: 30rpx 0 30rpx 30rpx;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #e0e0e0;
+    overflow: hidden;
+}
+
+.status {
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 26rpx;
+    background: #0fc8a8;
+    width: 200rpx;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: -60rpx;
+    top: 20rpx;
+}
+
+.planted {
+    font-size: 30rpx;
+    margin-bottom: 30rpx;
+    color:#888;
+    display: flex;
+    align-items: center;
+}
+
+.list_content {
+    padding: 30rpx 26rpx 10rpx 40rpx;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.plantCate {
+    width: 100rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 26rpx;
+    margin-bottom: 20rpx;
+    height: 50rpx;
+}
+
+.plantCate wx-view {
+    width: 82rpx;
+    margin: 0 auto;
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 10rpx;
+}
+
+.list_wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.footer {
+    width: 100%;
+    padding: 20rpx 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    font-size: 26rpx;
+    text-align: center;
+    color: #000;
+}
+
+.footer wx-view wx-view:first-child {
+    color: #828282;
+    margin-bottom: 15rpx;
+}
+
+.land_num {
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 10rpx;
+}
+
+.fixedIcon {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background: #fff;
+    position: fixed;
+    box-shadow: 0 -2rpx 15rpx rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 24rpx;
+    color: #0fc8a8;
+}
+
+.position3 {
+    bottom: 60rpx;
+    right: 10rpx;
+}
+
+.mt_5 {
+    margin-top: -5rpx;
+}
+
+.com-flex{
+    display:flex;
+    align-items: center;
+}

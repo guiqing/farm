@@ -1,0 +1,10 @@
+<view class="flex">
+    <view class="buttons" style="border-radius:{{parma.radius}}rpx; border:none;background:{{parma.bgColor}}; color:{{parma.fontColor}};" wx:if="{{!parma.border}}">
+        <image class="image" src="{{parma.url}}" wx:if="{{parma.icon}}"></image>
+    {{parma.text}}
+  </view>
+    <view class="buttons" style="border-radius:{{parma.radius}}rpx; border:1rpx solid {{parma.borderColor}};background:{{parma.bgColor}}; color:{{parma.fontColor}};" wx:if="{{parma.border}}">
+        <image class="image" src="{{parma.url}}" wx:if="{{parma.icon}}"></image>
+    {{parma.text}}
+  </view>
+</view>

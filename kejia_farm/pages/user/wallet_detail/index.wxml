@@ -1,0 +1,19 @@
+<view class='con'>
+    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key='{{index}}'>
+        <view class='ul'>
+            <view class='ul-top'>
+                <text class='title'>{{item.body}}</text>
+                <text class='time'>{{item.create_time}}</text>
+            </view>
+            <view class='ul-btm'>
+                <text class='yue'>余额:{{item.balance_money}}</text>
+                <block wx:if='{{item.do_type == 1}}'>
+                    <text class='do-type'>+{{item.money}}</text>
+                </block>
+                <block wx:if='{{item.do_type == 2}}'>
+                    <text class='do-type'>-{{item.money}}</text>
+                </block>
+            </view>
+        </view>
+    </block>
+</view>

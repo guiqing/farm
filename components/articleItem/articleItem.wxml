@@ -1,0 +1,28 @@
+<block wx:if='{{info.mode == 0}}'>
+    <view bindtap='gotoVideoDetail' class='article-content1' data-id='{{info.id}}'>
+        <view class='article-info'>
+            <view class='article-title'>{{info.title}}</view>
+            <view class='info-date'>
+                <view>{{info.create_time}}</view>
+                <view>
+                    <text class='iconfont icon-visited'></text>
+                    <text>{{info.view_count}}</text>
+                </view>
+            </view>
+        </view>
+        <image src='{{info.cover}}'></image>
+    </view>
+</block>
+<block wx:if='{{info.mode == 1}}'>
+    <view bindtap='gotoVideoDetail' class='article-content2' data-id='{{info.id}}'>
+        <view class='article-title'>{{info.title}}</view>
+        <image src='{{info.cover}}'></image>
+        <view class='article-time'>
+            <view>{{info.create_time}}</view>
+            <view>
+                <text class='iconfont icon-visited'></text>
+                <text>{{info.view_count}}</text>
+            </view>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,15 @@
+.header-wrapper{ width: 100%; height: 100rpx; position: fixed; top: 0; left: 0; background: #39BE58; overflow: hidden; z-index: 5; color: #fff; font-size: 32rpx; }
+.scrollView{ width: 100%; height: 150rpx; display: -webkit-flex; display: flex; white-space: nowrap; }
+.item{ display: inline-block; padding: 0 30rpx; line-height: 100rpx; letter-spacing: 3rpx; }
+.nav{ position: relative; }
+.nav::before{ content: ''; position: absolute; left: -10%; bottom: 15rpx; width: 120%; height: 4rpx; border-radius: 2rpx; background: currentColor; transition: all 0.3s; opacity: 0; }
+.active{ font-weight: 500; }
+.active::before{ content: ''; position: absolute; left: 0%; bottom: 15rpx; width: 100%; height: 4rpx; border-radius: 2rpx; background: #fff; transition: all 0.3s; opacity: 1; }
+.block100{ height: 100rpx; }
+.Headlines-swiper-content{ width: 100%; height: 180rpx; position: relative; background: #39BE58; }
+.swiper{ width: 92%; height: 300rpx; border-radius: 15rpx; overflow: hidden; position: absolute; top: 15rpx; left: 4%; }
+.swiperImg{ width: 100%; height: 100%; border-radius: 15rpx; }
+.dots{ width: 100%; height: 20rpx; position: absolute; bottom: -125rpx; left: 0; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
+.dot{ width: 16rpx; height: 12rpx; border-radius: 6rpx; background: rgba(255, 255, 255, 0.7); margin: 0 10rpx; }
+.actives{ width: 50rpx; }
+.block{ height: 140rpx; }

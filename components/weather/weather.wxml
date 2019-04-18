@@ -1,0 +1,17 @@
+<view bindtap='intoWeather' class='weather'>
+    <view class='we-top'>
+        <text class='du'>{{weather.temperature}}°</text>
+        <text class='tianqi' style="font-size:24rpx">{{weather.status_txt}}</text>
+        <text class='day' style="font-size:24rpx">{{weather.date}}</text>
+        <text class='week' style="font-size:24rpx">{{weather.week}}</text>
+        <image style="right:20rpx" src='{{weather.img}}'></image>
+    </view>
+    <view  style="font-size:24rpx;display:flex;color:#999;">
+        <view style="margin-right:8rpx">
+            温度变化：{{weather.daily_data[0].min}}°~{{weather.daily_data[0].max}}°
+        </view>
+        <view style="margin-right:8rpx">pm25值：{{weather.pm25}}</view>
+        <view style="margin-right:8rpx">风力：{{weather.wind.speed}}</view>
+        <view >湿度：{{weather.humidity}}</view>
+    </view>
+</view>

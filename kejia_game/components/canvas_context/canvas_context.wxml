@@ -1,0 +1,1 @@
+<block wx:if='{{close}}'><view class='canvas_wrapper'></view></block><view class='coin_wrapper {{(close?"scale1":"scale0")}}'><image class='coins' src='../../images/farm/coins.png'></image><image bindtap='close' class='receive' src='../../images/farm/receive.png'></image></view>

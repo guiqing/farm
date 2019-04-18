@@ -1,0 +1,86 @@
+<block>
+    <view>
+        <tarbar list='{{tarbar}}'></tarbar>
+    </view>
+</block>
+<view>
+    <view class='flexSb ptb10' style="padding-bottom:30rpx;background:#fff;">
+        <input style="border-radius:40rpx" disabled='{{true}}' bindtap='selectGoods' class='searchInput' placeholder='搜出您想要的' type='text'></input>
+        <text class='iconfont icon-search f44 search' style='color:gray;'></text>
+    </view>
+    <swiper style="margin:30rpx" autoplay='true' circular='true' class='swiperS' duration='1000' indicatorActiveColor='#ffffff' indicatorColor='#afafaf' indicatorDots='{{true}}' interval='5000'>
+        <block wx:for='{{Adopt}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+            <swiper-item>
+                <image style="border-radius:40rpx" bindtap='intoDetailSlide' class='slide-image' data-index='{{index}}' data-linkparam='{{item.link_param}}' data-linktype='{{item.link_type}}' data-src='{{item}}' lazyLoad='true' src='{{item.slide_src}}'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <block wx:if='{{typeData.length < 6}}'>
+        <view class='flexSb p20' style="padding:20rpx 60rpx;">
+            <block wx:for='{{typeData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='items'>
+                    <image bindtap='intoGoodsList' class='typesImg' data-typeid='{{item.id}}' data-urltype='{{item.url_type}}' src='{{item.icon}}'></image>
+                    <view>{{item.type_name}}</view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view class='MoreTypeData'>
+            <block wx:for='{{typeData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='type_item'>
+                    <image bindtap='intoGoodsList' class='typesImg' data-typeid='{{item.id}}' data-urltype='{{item.url_type}}' src='{{item.icon}}'></image>
+                    <view>{{item.type_name}}</view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <!-- <view class='block20'></view> -->
+    <view>
+        <block wx:if="{{recommendData.length || newGoodsData.length}}">
+            <view class='classify_wrapper'>
+            <view bindtap='changeType' class='nav {{(classify == 1?"active":"")}}' data-index='1' style='color:{{(classify == 1?farmSetData.background_color:"")}}'>
+                精品推荐
+            </view>
+            <view bindtap='changeType' class='nav {{(classify == 2?"active":"")}}' data-index='2' style='color:{{(classify == 2?farmSetData.background_color:"")}}'>
+                新品上架
+            </view>
+        </view>
+        </block>
+        <block wx:if='{{classify == 1}}'>
+            <view class='exchangeContent clearfix' style="padding-left:12rpx">
+                <block wx:for='{{recommendData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view bindtap='intoGoodsDetail' class='Content' data-goodsid='{{item.id}}'>
+                        <image class='Contentimage' mode="aspectFill" src='{{(item.cover?item.cover:"../../../images/icon/loading.gif")}}'></image>
+                        <view class='item_wrapper'>
+                            <view class='f28 cf2b goods-name'>{{item.goods_name}}</view>
+                            <view class='f28 mt10 flexSb' >
+                                <view><text class='me-price'>￥{{item.price}}</text></view>
+                                <view ><text class='me-count'>{{item.sale_count}}人付款</text></view>
+                                <!-- <text class='iconfont icon-shopcar f44' style='color:{{farmSetData.background_color}}'></text> -->
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+        <block wx:if='{{classify == 2}}'>
+            <view class='exchangeContent clearfix' style="padding-left:12rpx">
+                <block wx:for='{{newGoodsData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view bindtap='intoGoodsDetail' class='Content' data-goodsid='{{item.id}}'>
+                        <image class='Contentimage' mode="aspectFill" src='{{(item.cover?item.cover:"../../../images/icon/loading.gif")}}'></image>
+                        <view class='item_wrapper'>
+                            <view class='f28 cf2b goods-name'>{{item.goods_name}}</view>
+                            <view class='f28 mt10 flexSb' >
+                                <view><text class='me-price'>￥{{item.price}}</text></view>
+                                <view ><text class='me-count'>{{item.sale_count}}人付款</text></view>
+                                <!-- <text class='iconfont icon-shopcar f44' style='color:{{farmSetData.background_color}}'></text> -->
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+</view>
+<view style="height:50px"></view>

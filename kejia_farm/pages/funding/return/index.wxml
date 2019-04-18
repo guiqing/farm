@@ -1,0 +1,1 @@
+<view class='body'><view class='info_item'><view>方式一：众筹实物</view><view>{{info.funding_thing_desc}}</view></view><block wx:if='{{info.is_open_funding_share_bonus == 1}}'><view class='info_item'><view>方式一：投资分红</view><view>{{info.funding_bonus_desc}}</view></view></block></view>

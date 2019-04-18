@@ -1,0 +1,549 @@
+page {
+    /* font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif; */
+}
+
+.flex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.flexSb {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between
+}
+
+.flexSa {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+.flexCenter {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flexleft {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.flexRight {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.f20 {
+    font-size: 20rpx;
+}
+
+.f24 {
+    font-size: 24rpx;
+}
+
+.f26 {
+    font-size: 26rpx;
+}
+
+.f27 {
+    font-size: 27rpx;
+}
+
+.f28 {
+    font-size: 28rpx;
+}
+
+.f29 {
+    font-size: 29rpx;
+}
+
+.f30 {
+    font-size: 30rpx;
+}
+
+.f31 {
+    font-size: 31rpx;
+}
+
+.f32 {
+    font-size: 32rpx;
+}
+
+.f34 {
+    font-size: 34rpx;
+}
+
+.f40 {
+    font-size: 40rpx;
+}
+
+.f44 {
+    font-size: 44rpx;
+}
+
+.f48 {
+    font-size: 48rpx;
+}
+
+.f52 {
+    font-size: 56rpx;
+}
+
+.f60 {
+    font-size: 60rpx;
+}
+
+.cfred {
+    color: red;
+}
+
+.cfgray {
+    color: gray;
+}
+
+.cf93 {
+    color: #939393;
+}
+
+.cf4e4e4e {
+    color: #4e4e4e;
+}
+
+.cf7e7e7e {
+    color: #7e7e7e;
+}
+
+.cf7d7d7d {
+    color: #7d7d7d;
+}
+
+.cf6e6e6e {
+    color: #6e6e6e;
+}
+
+.cf767676 {
+    color: #767676;
+}
+
+.cfgreen {
+    color: #70a926;
+}
+
+.cfblue {
+    color: #4faedc;
+}
+
+.cf01 {
+    color: #01bbf6;
+}
+
+.cfOrg {
+    color: #d65714;
+}
+
+.cffc8535 {
+    color: #fc8535;
+}
+
+.cf3e {
+    color: #3e3e3e;
+}
+
+.cfblack {
+    color: #000000;
+}
+
+.cf2b {
+    color: #2b2b2b;
+}
+
+.cd515151 {
+    color: #515151;
+}
+
+.cf545454 {
+    color: #545454;
+}
+
+.cf727070 {
+    color: #727070;
+}
+
+.cf323232 {
+    color: #323232
+}
+
+.cf2e2e2e {
+    color: #2e2e2e
+}
+
+.cf474747 {
+    color: #474747;
+}
+
+.cfff {
+    color: #fff;
+}
+
+.cf19 {
+    color: #191919;
+}
+
+.cf7a {
+    color: #7a7a7a;
+}
+
+.bgff {
+    background-color: #fff;
+}
+
+.bgblue {
+    background-color: #2389de;
+}
+
+.bgred {
+    background-color: #ff494b;
+}
+
+.fb {
+    font-weight: bold;
+}
+
+.bgfc8535 {
+    background-color: #fc8535;
+}
+
+.w500 {
+    width: 500rpx;
+}
+
+.mt5 {
+    margin-top: 5rpx;
+}
+
+.mt10 {
+    margin-top: 10rpx;
+}
+
+.mt15 {
+    margin-top: 15rpx;
+}
+
+.mt20 {
+    margin-top: 20rpx;
+}
+
+.mt30 {
+    margin-top: 30rpx;
+}
+
+.mt40 {
+    margin-top: 40rpx;
+}
+
+.mt50 {
+    margin-top: 50rpx;
+}
+
+.mt60 {
+    margin-top: 60rpx;
+}
+
+.mt80 {
+    margin-top: 80rpx;
+}
+
+.mt150 {
+    margin-top: 150rpx;
+}
+
+.ml5 {
+    margin-left: 5rpx;
+}
+
+.ml10 {
+    margin-left: 10rpx;
+}
+
+.ml20 {
+    margin-left: 20rpx;
+}
+
+.ml25 {
+    margin-left: 25rpx;
+}
+
+.ml30 {
+    margin-left: 30rpx;
+}
+
+.ml50 {
+    margin-left: 50rpx;
+}
+
+.mb10 {
+    margin-bottom: 10rpx;
+}
+
+.mb20 {
+    margin-bottom: 20rpx;
+}
+
+.mb30 {
+    margin-bottom: 30rpx;
+}
+
+.mr10 {
+    margin-right: 10rpx;
+}
+
+.mr20 {
+    margin-right: 20rpx;
+}
+
+.mr25 {
+    margin-right: 25rpx;
+}
+
+.p20 {
+    padding: 20rpx;
+}
+
+.p30 {
+    padding: 30rpx;
+}
+
+.plr10 {
+    padding: 0 10rpx;
+}
+
+.plr20 {
+    padding: 0 20rpx;
+}
+
+.plr40 {
+    padding: 0 40rpx;
+}
+
+.ptb10 {
+    padding: 10rpx 0rpx;
+}
+
+.ptb20 {
+    padding: 20rpx 0rpx;
+}
+
+.ptb30 {
+    padding: 30rpx 0rpx;
+}
+
+.plr30 {
+    padding: 0 30rpx;
+}
+
+.plt30 {
+    padding: 20rpx 30rpx;
+}
+
+.plt40 {
+    padding: 20rpx 40rpx;
+}
+
+.ptl30 {
+    padding: 30rpx 20rpx;
+}
+
+.carImg {
+    width: 120rpx;
+    height: 90rpx;
+}
+
+.carImgs {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.fThrough {
+    text-decoration: line-through;
+}
+
+.iconSize {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.iconSmall {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.iconlager {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.br {
+    border-right: 1rpx solid #dfdfdf;
+}
+
+.bl {
+    border-left: 1rpx solid #dfdfdf;
+}
+
+.bb {
+    border-bottom: 1rpx solid #dfdfdf;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix::after {
+    content: "";
+    height: 0rpx;
+    clear: both;
+    visibility: hidden;
+    display: block;
+}
+
+.txCenter {
+    text-align: center;
+}
+
+.letter5 {
+    letter-spacing: 5rpx;
+}
+
+.letter10 {
+    letter-spacing: 10rpx;
+}
+
+.mt-5 {
+    position: relative;
+    top: -10rpx;
+}
+
+.radioStyle {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.smallIcon {
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.we7-bottom-placeholder {
+    width: 100%;
+    height: 134rpx;
+    position: relative;
+    bottom: 0;
+    z-index: -1;
+}
+
+.we7-bottom {
+    display: -webkit-flex;
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid #000;
+    background-color: #fff;
+    z-index: 99999;
+}
+
+.we7-bottom.active {
+    background-color: #fff;
+}
+
+.we7-bottom.active wx-navigatorurl {
+    background-color: #fff;
+}
+
+.we7-bottom .we7-bottom-item {
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 10rpx;
+    text-align: center;
+}
+
+.we7-bottom .item-img {
+    width: 50rpx;
+    height: 50rpx;
+    display: inline-block;
+}
+
+.we7-bottom .item-text {
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.goHome {
+    position: fixed;
+    bottom: 150rpx;
+    right: 30rpx;
+    width: 50rpx;
+    height: 50rpx;
+    background-color: #1ba9ba;
+    padding: 30rpx;
+    border-radius: 50%;
+}
+
+.goHome>wx-image {
+    width: 100%;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.right-icon {
+    font-size: 24rpx;
+    color: gray;
+}
+
+.wxParse-p wx-image {
+    display: block;
+}
+
+.none-data {
+    width: 100%;
+    height: 500rpx;
+    text-align: center;
+    padding-top: 120rpx;
+}
+
+.none-data wx-image {
+    width: 340rpx;
+    height: 340rpx;
+}
+
+.none-data wx-text {
+    display: block;
+    color: gray;
+    font-size: 28rpx;
+}

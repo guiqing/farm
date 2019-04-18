@@ -1,0 +1,2 @@
+.log-list { display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; padding: 40rpx; }
+.log-item { margin: 10rpx; }

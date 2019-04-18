@@ -1,0 +1,26 @@
+<view>
+    <view class='Nav-content' style='background: {{bgColor}}'>
+        <view class='statueBar' style='height:{{(isIphoneX?44:20)}}px'></view>
+        <view class='nav-bar' hidden='{{hidden}}' style='color: {{fontColor}}'>
+            <block wx:if='{{showIcon}}'>
+                <view class='item nav-icons' style='margin-top:{{(isIphoneX?0:20)}}rpx'>
+                    <view bindtap='back' class='iconfont icon-left' style='color:{{fontColor}}'></view>
+                    <view bindtap='index' class='iconfont icon-home' style='color:{{fontColor}}'></view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class='item'></view>
+            </block>
+            <view class='title'>{{title}}</view>
+            <view class='item' style='margin-right:10px'></view>
+        </view>
+    </view>
+    <view>
+        <block wx:if='{{ (clearfix || hidden) }}'>
+            <view class='block' style='height:{{(isIphoneX?44:20)}}px;'></view>
+        </block>
+        <block wx:if='{{clearfix}}'>
+            <view class='block1'></view>
+        </block>
+    </view>
+</view>

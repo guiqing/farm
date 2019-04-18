@@ -1,0 +1,352 @@
+@import '/import/css0_1.wxss';
+
+.swiperS {
+    width: 100%;
+    height: 450rpx;
+}
+
+page .wx-swiper-dots {
+    bottom: 30rpx;
+}
+
+page .wx-swiper-dot {
+    background: #fff;
+    width: 20rpx;
+    height: 13rpx;
+    border-radius: 8rpx;
+}
+
+page .wx-swiper-dot.wx-swiper-dot-active {
+    width: 60rpx;
+    height: 13rpx;
+    border-radius: 8rpx;
+}
+
+.diy-card {
+    background: #fff;
+    border-radius: 40rpx;
+    padding: 10rpx;
+    margin-bottom: 30rpx;
+}
+
+.diy-card-mk {
+    background: #fff;
+    border-radius: 40rpx;
+    padding: 40rpx 0 18rpx;
+    margin-bottom: 30rpx;
+}
+
+.header-list {
+    display: flex;
+    align-items: center;
+    padding: 0 24rpx 20rpx 30rpx;
+}
+
+.header-list .title {
+    flex: 1;
+    color: #000;
+    font-size: 34rpx;
+}
+
+.header-list .more {
+    color: #000;
+    font-size: 28rpx;
+    padding-right: 6rpx;
+}
+
+.project {
+    font-size: 30rpx;
+    text-align: center;
+    color: #646464;
+}
+
+.project wx-image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.LiveTitle {
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    color: #fc8535;
+    font-size: 40rpx;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40rpx;
+    margin-bottom: 40rpx;
+}
+
+.block20 {
+    height: 20rpx;
+    background-color: #f7f7f7;
+}
+
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 9000;
+    color: #fff;
+}
+
+.modal-dialog {
+    width: 70%;
+    position: fixed;
+    top: 45%;
+    left: 15%;
+    z-index: 9999;
+    background: #f9f9f9;
+    border-radius: 20rpx;
+}
+
+.notice {
+    color: #fc8535;
+    font-size: 32rpx;
+    text-align: center;
+    padding: 20rpx 0rpx;
+}
+
+.contenct {
+    padding: 40rpx 0rpx;
+    text-align: center;
+    font-size: 35rpx;
+}
+
+.Slaughter {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+
+.Slaughter wx-view {
+    width: 50%;
+}
+
+.height100 {
+    height: 100rpx;
+}
+
+.doctor {
+    width: 80rpx;
+    height: 80rpx;
+    position: relative;
+}
+
+.chooseColor {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 500rpx;
+    line-height: 100rpx;
+}
+
+.iconSmall {
+    position: relative;
+}
+
+.more {
+    float: right;
+    position: relative;
+    color: gray;
+    top: -1rpx;
+    font-size: 26rpx;
+}
+
+.issue {
+    position: absolute;
+    right: 20rpx;
+    top: 20rpx;
+    z-index: 999;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.swiper_container {
+    position: relative;
+    margin-top: 20rpx;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.project_container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 25%;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+    text-align: center;
+    color: #141414;
+}
+
+.project wx-image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.dots_container {
+    width: 60%;
+    height: 20rpx;
+    position: absolute;
+    left: 20%;
+    bottom: 0rpx;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-bottom: 20rpx;
+}
+
+.dots_container wx-view {
+    width: 14rpx;
+    height: 14rpx;
+    margin: 0 10rpx;
+}
+
+.dots_container .active {
+    background-color: #f8a62a;
+}
+
+.gray {
+    background-color: #f0f0f0;
+}
+
+.vet-info {
+    border-top: 1rpx solid #f7f7f7;
+    border-bottom: 1rpx solid #f7f7f7;
+    height: 100rpx;
+}
+
+.coupon_container {
+    padding: 20rpx;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #ececec;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    font-size: 28rpx;
+    color: #545454;
+}
+
+.defaultColor {
+    background: #cecece;
+}
+
+.coupon_containers {
+    width: 90%;
+    margin: 0 auto;
+    height: 70rpx;
+}
+
+.coupons_containers {
+    width: 90%;
+    margin: 0 auto;
+    height: 170rpx;
+}
+
+.LiveTitless {
+    width: 90%;
+    height: 70rpx;
+    margin: 20rpx auto;
+}
+
+.mock_img {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: #cecece;
+    display: inline-block;
+}
+
+.mock_desc {
+    width: 120rpx;
+    height: 35rpx;
+    background-color: #cecece;
+    display: inline-block;
+    margin-top: 5rpx;
+}
+
+.icon-article {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.article-info {
+    width: 90%;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+
+.article-info wx-swiper {
+    width: 92%;
+    height: 100%;
+}
+
+.custom-video {
+    width: 100%;
+    height: 450rpx;
+}
+
+.hint {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 470rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    font-size: 26rpx;
+    color: #fff;
+    background: #181818;
+    opacity: 0.7;
+    z-index: 999999;
+    border-radius: 10rpx;
+    text-align: center;
+}
+
+.hint_text::before {
+    content: "";
+    width: 30rpx;
+    height: 25rpx;
+    background: #181818;
+    position: absolute;
+    top: -10rpx;
+    right: 115rpx;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

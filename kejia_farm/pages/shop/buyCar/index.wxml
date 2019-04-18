@@ -1,0 +1,68 @@
+<block wx:if='{{is_tarbar}}'>
+    <tarbar SystemInfo='{{SystemInfo}}' list='{{tarbar}}' path='kejia_farm/pages/shop/buyCar/index'></tarbar>
+</block>
+<block wx:if='{{buyList != ""}}'>
+    <view>
+        <block wx:for='{{buyList}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+            <view class='flex buyItem'>
+                <block wx:if='{{item.goodsStock > 0}}'>
+                    <radio bindtap='checked' checked='{{item.check}}' class='radioStyle' color='{{farmSetData.background_color}}' data-id='{{item.id}}'></radio>
+                </block>
+                <block wx:else>
+                    <radio class='radioStyle' color='{{farmSetData.background_color}}' disabled='true'></radio>
+                </block>
+                <view class='flex ml10'>
+                    <image class='headImg' src='{{item.cover}}'></image>
+                    <view class='ml20'>
+                        <view class='itemName'>{{item.goods_name}}</view>
+                        <block wx:if='{{item.goodsStock <= 0}}'>
+                            <view style='color:orange;font-size:26rpx;'>库存不足</view>
+                        </block>
+                        <view class='f26 mt10 cf93 itemspec'>
+                            <block wx:for='{{item.specItem}}' wx:for-item='val' wx:for-index='index' wx:key='{{index}}'>
+                                <text>{{val.name}}</text>
+                                <text class='ml10'>{{val.spec_val}};</text>
+                            </block>
+                        </view>
+                        <view class='flex mt10'>
+                            <view bindtap='reduceNum' class='reduceNum' data-id='{{item.id}}'>
+                                -
+                            </view>
+                            <view class='buyNum'>{{item.count}}</view>
+                            <view bindtap='addNum' class='addNum' data-id='{{item.id}}'>+</view>
+                        </view>
+                    </view>
+                </view>
+                <view>
+                    <view class='deleteItem'>
+                        <view class='f32 fb price'>￥{{item.price}}</view>
+                        <text bindtap='deleteItem' class='iconfont icon-delete f44 deleteIcon' data-id='{{item.id}}'></text>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class='block120'></view>
+        <view class='footer' style='bottom:{{height}}rpx'>
+            <radio bindtap='checkAll' checked='{{checkAll}}' class='radioStyle' color='{{farmSetData.background_color}}'></radio>
+            <view class='f32 ml10 cd515151'>全选</view>
+            <view class='f32 cfred ml20' style='color:{{farmSetData.background_color}}'>
+                总计:
+                <text class='ml10'>￥ {{sumPrice}}</text>
+            </view>
+            <view class='Settlement'>
+                <view bindtap='intoJieSuan' class='bgfc8535' style='background:{{farmSetData.background_color}}'>
+                    结算
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <view class='none'>
+        <image class='none-img' src='../../../images/icon/none.png'></image>
+        <text>购物车中还没有商品哦</text>
+        <button bindtap='goBuyGoods' style='background:{{farmSetData.background_color}}'>
+            去购物
+        </button>
+    </view>
+</block>

@@ -1,0 +1,10 @@
+@import '/import/css0_1.wxss';.selected { background-color: #f3f3f3; padding: 20rpx; font-size: 32rpx; color: #3d3d3d; letter-spacing: 2rpx; }
+.Block { width: 200rpx; height: 200rpx; border: 1rpx dashed #c9c9c9; border-radius: 10rpx; }
+.seeds { width: 24%; margin: 30rpx 4.6% 0rpx; float: left; text-align: center; }
+.seedImg { width: 100%; height: 200rpx; text-align: center; border: 1rpx solid #c9c9c9; position: relative; }
+.seedImgs { width: 90rpx; height: 75rpx; margin-top: 50rpx; }
+.errorImg { width: 50rpx; height: 50rpx; position: relative; top: -107rpx; left: -44rpx; font-size: 63rpx; }
+.checkImg { width: 50rpx; height: 50rpx; position: absolute; top: -25rpx; right: -25rpx; }
+.addNum { width: 50rpx; height: 50rpx; position: absolute; top: -25rpx; right: -25rpx; border-radius: 50%; border: 1rpx solid #fc8535; color: #fc8535; line-height: 50rpx; text-align: center; background-color: #fff; }
+.block100 { height: 100rpx; }
+.submit { width: 100%; height: 100rpx; font-size: 30rpx; position: fixed; bottom: 0; left: 0; color: #fff; background-color: #fc8535; text-align: center; line-height: 100rpx; margin-top: 20rpx; }

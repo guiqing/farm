@@ -1,0 +1,19 @@
+@import '/import/css0_1.wxss';.textArea{ width: 90%; margin: 0 auto; height: 250rpx; overflow-y: auto; }
+.textAreaStyle{ width: 100%; height: 100%; font-size: 32rpx; padding: 15rpx; letter-spacing: 5rpx; box-sizing: border-box; }
+.img_container{ width: 90%; margin: 20rpx auto; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+.uploadImg{ width: 200rpx; height: 200rpx; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; margin: 10rpx; position: relative; }
+.imgArr{ width: 100%; height: 100%; }
+.delete{ width: 40rpx; height: 40rpx; position: absolute; top:-24rpx; right:-17rpx; }
+.seed_container{ width: 100%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: space-between; justify-content: space-between; font-size: 30rpx; color: #929193; padding: 30rpx 40rpx; letter-spacing: 4rpx; box-sizing: border-box; }
+.seed_container:not(:last-child){ border-bottom: 1rpx solid #ececec; }
+.seedImg{ width: 35rpx; height: 40rpx; }
+.downArrow{ width: 35rpx; height: 35rpx; }
+.checkbox{ margin-right: 30rpx; margin-left: -10rpx; -webkit-transform: scale(0.8); transform: scale(0.8); }
+.bffff2df{ background-color: #fff2df }
+.container{ transition: all 0.3s; overflow: hidden; }
+.opacity0{ opacity: 0; height: 0rpx; }
+.opacity1{ opacity: 1; height: auto; }
+.transfrom1{ -webkit-transform: rotate(-180deg); transform: rotate(-180deg); transition: all 0.3s; }
+.transfrom0{ -webkit-transform: rotate(0deg); transform: rotate(0deg); transition: all 0.3s; }
+.fabu{width: 100%;height: 140rpx;}
+.fabu wx-button{width: 80%;margin-left: 10%;background: #fc8535;color: white;margin-top: 100rpx; border-radius: 94rpx;}

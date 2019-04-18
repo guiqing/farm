@@ -1,0 +1,165 @@
+{
+  "subPackages": [
+    {
+      "root": "kejia_game",
+      "pages": [
+        "pages/farm/index",
+        "pages/pasture/index",
+        "pages/pasture_fri/index",
+        "pages/friend/index",
+        "pages/reflect/index",
+        "pages/recode/index"
+      ]
+    },
+    {
+      "root": "kejia_active",
+      "pages": [
+        "pages/index/index",
+        "pages/details/index",
+        "pages/signform/index",
+        "pages/payforResult/index",
+        "pages/ticket/index",
+        "pages/orderList/index",
+        "pages/signInfo/index",
+        "pages/check/index"
+      ]
+    },
+    {
+      "root": "kejia_funding",
+      "pages": [
+        "pages/index/index",
+        "pages/prodetail/index",
+        "pages/orderdetail/index",
+        "pages/orderList/index",
+        "pages/confrimOrder/index",
+        "pages/progress/index",
+        "pages/return/index",
+        "pages/contract/index"
+      ]
+    },
+    {
+      "root": "kejia_pt",
+      "pages": [
+        "pages/index/index",
+        "pages/details/index",
+        "pages/orderDetail/index",
+        "pages/orderLists/index",
+        "pages/confirmOrder/index"
+      ]
+    },
+    {
+      "root": "kejia_friend",
+      "pages": [
+        "pages/index/index"
+      ]
+    }
+  ],
+  "entryPagePath": "kejia_farm/pages/HomePage/index/index",
+  "pages": [
+    "kejia_farm/pages/HomePage/index/index",
+    "testDemo/index",
+    "kejia_farm/pages/shop/verify/index",
+    "kejia_farm/pages/land/landList/index",
+    "kejia_farm/pages/land/landDetails/index",
+    "kejia_farm/pages/land/mineLandDetail/index",
+    "kejia_farm/pages/land/seedList/index",
+    "kejia_farm/pages/land/confirm_seed/index",
+    "kejia_farm/pages/land/seedBag/index",
+    "kejia_farm/pages/land/scanLand/index",
+    "kejia_farm/pages/land/pay_freight/index",
+    "kejia_farm/pages/user/land/situation/index",
+    "kejia_farm/pages/distribution/index/index",
+    "kejia_farm/pages/distribution/team/index",
+    "kejia_farm/pages/distribution/addinfo/index",
+    "kejia_farm/pages/distribution/orderList/index",
+    "kejia_farm/pages/distribution/recode/index",
+    "kejia_farm/pages/distribution/cash/cash",
+    "kejia_farm/pages/distribution/commission/index",
+    "kejia_farm/pages/distribution/share/index",
+    "kejia_farm/pages/distribution/examine/index",
+    "kejia_farm/pages/user/land/myLandlist/index",
+    "kejia_farm/pages/user/land/release/index",
+    "kejia_farm/pages/user/land/myLand/index",
+    "kejia_farm/pages/HomePage/issue/index",
+    "kejia_farm/pages/HomePage/about/index",
+    "kejia_farm/pages/HomePage/weather/index",
+    "kejia_farm/pages/HomePage/live/index",
+    "kejia_farm/pages/shop/VeterinaryIntroduce/index",
+    "kejia_farm/pages/user/land/index/index",
+    "kejia_farm/pages/user/land/selectionLands/index",
+    "kejia_farm/pages/user/land/selectionSeeds/index",
+    "kejia_farm/pages/user/land/personLand/index",
+    "kejia_farm/pages/user/land/seedDetails/index",
+    "kejia_farm/pages/user/land/confirm_order/index",
+    "kejia_farm/pages/user/land/payFor/index",
+    "kejia_farm/pages/user/userCenter/index",
+    "kejia_farm/pages/user/confirmOrder/index",
+    "kejia_farm/pages/user/Animal/index",
+    "kejia_farm/pages/user/wallet/index",
+    "kejia_farm/pages/user/cash/cash",
+    "kejia_farm/pages/user/recode/index",
+    "kejia_farm/pages/user/wallet_detail/index",
+    "kejia_farm/pages/user/device/index",
+    "kejia_farm/pages/user/relays/index",
+    "kejia_farm/pages/user/Slaughter/index",
+    "kejia_farm/pages/shop/index/index",
+    "kejia_farm/pages/shop/Adopt/index",
+    "kejia_farm/pages/shop/search/index",
+    "kejia_farm/pages/shop/adoptiveState/index",
+    "kejia_farm/pages/shop/confirmAdopt/index",
+    "kejia_farm/pages/shop/comment/index",
+    "kejia_farm/pages/shop/commentList/index",
+    "kejia_farm/pages/shop/prodeteilVideo/index",
+    "kejia_farm/pages/shop/adoptVideo/index",
+    "kejia_farm/pages/shop/crowdfunding/index",
+    "kejia_farm/pages/shop/orderList/index",
+    "kejia_farm/pages/shop/confrimOrder/index",
+    "kejia_farm/pages/shop/proList/index",
+    "kejia_farm/pages/shop/prodeteils/index",
+    "kejia_farm/pages/shop/AdoptRules/index",
+    "kejia_farm/pages/shop/Group/orderList/index",
+    "kejia_farm/pages/shop/Group/confrimOrder/index",
+    "kejia_farm/pages/shop/Group/orderDetails/index",
+    "kejia_farm/pages/shop/Group/index/index",
+    "kejia_farm/pages/shop/Group/proDetails/index",
+    "kejia_farm/pages/shop/integral/exchangedetails/index",
+    "kejia_farm/pages/shop/integral/exchange/index",
+    "kejia_farm/pages/shop/integral/orderConfrim/index",
+    "kejia_farm/pages/shop/integral/orderList/index",
+    "kejia_farm/pages/shop/integral/exchange_list/index",
+    "kejia_farm/pages/shop/integral/index/index",
+    "kejia_farm/pages/shop/integral/record/index",
+    "kejia_farm/pages/shop/integral/sign_rule/index",
+    "kejia_farm/pages/shop/buyCar/index",
+    "kejia_farm/pages/shop/sale/orderList/index",
+    "kejia_farm/pages/shop/sale/orderState/index",
+    "kejia_farm/pages/user/center/index",
+    "kejia_farm/pages/user/land/confirm_seed/index",
+    "kejia_farm/pages/user/coupon/useCoupon/index",
+    "kejia_farm/pages/user/coupon/index/index",
+    "kejia_farm/pages/user/coupon/myCoupon/index",
+    "kejia_farm/pages/user/addCard/index",
+    "kejia_farm/pages/login/index",
+    "kejia_farm/pages/information/video/index",
+    "kejia_farm/pages/information/article/index",
+    "kejia_farm/pages/information/index/index",
+    "kejia_farm/pages/logs/logs",
+    "kejia_farm/pages/user/farmApply/index"
+  ],
+  "preloadRule": {
+    "kejia_game/pages/farm/index": {
+      "network": "all",
+      "packages": [
+        "kejia_game"
+      ]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,184 @@
+<block>
+    <view>
+        <tarbar list='{{tarbar}}'></tarbar>
+    </view>
+</block>
+<view class='hint {{(showView?"show":"hide")}}'>
+    <view class='hint_text'>添加小程序，快速进入{{setData.bar_title}}小程序</view>
+</view>
+<block wx:if='{{!(loading)}}'>
+    <view style="background:#F8F8F8;padding:24rpx">
+        <block wx:for='{{page}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <!-- 轮播图 -->
+            <block wx:if='{{item.type == "banner"}}'>
+                <view style="margin-bottom:30rpx">
+                    <slide bind:cancelEvent='_cancelEvent' bind:confirmEvent='_confirmEvent' focus='{{item.focus}}' focusColor='{{item.focusColor}}' id='slide' imgUrl='{{item.imgUrl}}' swiperHeight='{{item.swiperHeight}}'></slide>
+                </view>
+            </block>
+            <!-- 导航栏板块 -->
+            <block wx:if='{{item.type == "navigation"}}'>
+                <view class="diy-card-mk">
+                    <block wx:if='{{mk.navigation}}'>
+                        <icon column='{{mk.navigation.column}}' fontColor='{{mk.navigation.fontColor}}' fontSize='{{mk.navigation.fontSize}}' id='icon' list='{{mk.navigation.list}}' radius='{{mk.navigation.radius}}' style="display:inline"></icon>
+                    </block>
+                    <block wx:if='{{mk.information}}'>
+                        <view style="padding:0 30rpx">
+                            <article id='article' list='{{mk.information.articleData}}' text='995995'></article>
+                        </view>
+                    </block>
+                    <block wx:if='{{mk.weather}}'>
+                        <view style="padding:20rpx 30rpx 0">
+                            <weather id='weather' weather='{{weather}}' weatherSet='{{weatherSet}}'></weather>
+                        </view>
+                    </block>
+                </view>
+            </block>
+            <!-- 优惠券 -->
+            <!-- <block wx:if='{{item.type == "coupon"}}'>
+                <headline text='专属优惠券' linktype='/kejia_farm/pages/user/coupon/index/index' linkparam='1' align='1' bgColor='1' fontColor='1' fontSize='1' icon='1' padLr='1' padTb='{{1}}'></headline>
+                <view class="diy-card">
+                    <coupon couponData='{{item.couponData}}' icon='{{icon.voucher}}' id='coupon' noIcon='{{icon.is_get_quan}}'></coupon>
+                </view>
+            </block> -->
+            <!-- 广告图 -->
+            <block wx:if='{{item.type == "advert"}}'>
+                <headline wx:if='{{item.adLists.length}}' text='热门推荐' linktype='' right='none' align='1' bgColor='1' fontColor='1' fontSize='1' icon='1' linkparam='1' padLr='1' padTb='{{1}}'></headline>
+                <advert wx:if='{{item.adLists.length}}' adLists='{{item.adLists}}' height='{{item.height}}' id='advert' types='{{item.adLists.length <=4 ? item.adLists.length : 4}}'></advert>
+            </block>
+            <!-- 商品模块 -->
+            <block wx:if='{{item.type == "prolist"}}'>
+                <headline wx:if='{{item.lists.length}}' text='推荐商品' linktype='/kejia_farm/pages/shop/index/index' linkparam='2' align='1' bgColor='1' fontColor='1' fontSize='1' icon='1' padLr='1' padTb='{{1}}'></headline>
+                <view style="margin-bottom:30rpx">
+                    <shopList btnColor='{{item.btnColor}}' fontColor='{{item.fontColor}}' id='shopList' limitNum='{{item.selectNum}}' listType='{{item.listType}}' lists='{{item.lists}}' newList='{{item.newList}}' priceColor='{{item.priceColor}}' selectGroup='{{item.selectGroup}}' selectType='{{item.selectType}}'></shopList>
+                </view>
+            </block>
+            <!-- 首页底部 -->
+            <block wx:if='{{item.type == "btnclounm"}}'>
+                <headline text='关于农场' right='none' linktype='/kejia_active/pages/index/index' linkparam='1' align='1' bgColor='1' fontColor='1' fontSize='1' icon='1' padLr='1' padTb='{{1}}'></headline>
+                <view>
+                    <homeBtm homeBtm='{{item.homeBtm}}' id='homeBtm'></homeBtm>
+                </view>
+            </block>
+
+
+            <!-- 暂时没用到 -->
+            <!-- <block wx:if='{{item.type == "video"}}'>
+                <view class="diy-card">
+                    <videos class='custom-video' poster='{{item.poster}}' scrollTop='{{scrollTop}}' src='{{item.src}}'></videos>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "pictureList"}}'>
+                <view class="diy-card">
+                    <pictureList column='{{item.column}}' id='pictureList' lists='{{item.lists}}' radius='{{item.radius}}' styles='{{item.styles}}'></pictureList>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "glossary"}}'>
+                <view class="diy-card">
+                    <glossary bgColor='{{item.bgColor}}' id='glossary' lists='{{item.lists}}' styles='{{item.styles}}' titleColor='{{item.titleColor}}' titleSize='{{item.titleSize}}'></glossary>
+                </view>
+            </block>          
+            <block wx:if='{{item.type == "search"}}'>
+                <view class="diy-card">
+                    <block wx:if='{{item.type === "search"}}'>
+                        <searchBox bgColor='{{item.bgColor}}' fontColor='{{item.fontColor}}' hotSearch='{{item.hotSearch}}' id='searchBox' mlr='{{item.mlr}}' mtb='{{item.mtb}}' radius='{{item.radius}}' searchColor='{{item.searchColor}}'></searchBox>
+                    </block>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "line"}}'>
+                <view class="diy-card">
+                    <line bgColor='{{item.bgColor}}' height='{{item.height}}' id='line' lineColor='{{item.lineColor}}' lineHeight='{{item.lineHeight}}' styles='{{item.styles}}'></line>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "fixed"}}'>
+                <view class="diy-card">
+                    <fixed bgColor='{{item.bgColor}}' bottom='{{item.bottom}}' id='fixed' img='{{item.img}}' opacity='{{item.opacity}}'></fixed>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "audio"}}'>
+                <view class="diy-card" style='text-algin:center'>
+                    <audio controls='{{true}}' loop='{{true}}' author='{{item.author}}' id='myAudio' name='{{item.name}}' poster='{{item.poster}}' src='{{item.src}}' style='width:80%;margin-left:10%;'></audio>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "information"}}'>
+                <view class="diy-card">
+                    <article id='article' list='{{item.articleData}}' text='995995'></article>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "team"}}'>
+                <view class="diy-card">
+                    <view bindtap='intoVetInfo' class='f30 plr30 flexSb  vet-info' data-title='{{(setData.vet_title?setData.vet_title:"团队")}}'>
+                        <block wx:if='{{setData.vet_icon}}'>
+                            <image class='doctor' src='{{setData.vet_icon}}'></image>
+                        </block>
+                        <block wx:else>
+                            <image class='doctor' src='../../../images/icon/doctor.png'></image>
+                        </block>
+                        <block wx:if='{{setData.vet_title}}'>
+                            <view class='chooseColor'>{{setData.vet_title}}</view>
+                        </block>
+                        <block wx:else>
+                            <view class='chooseColor'>团队</view>
+                        </block>
+                        <view class='more'>详情</view>
+                        <text class='iconfont icon-right right-icon'></text>
+                    </view>
+                </view>
+            </block>
+                      
+            <block wx:if='{{item.type == "active"}}'>
+                <view class="diy-card">
+                    <active id='active' lists='{{item.lists}}'></active>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "crowd"}}'>
+                <view class="diy-card">
+                    <crowd id='crowd' lists='{{item.lists}}' types='{{item.selectType}}'></crowd>
+                </view>
+            </block>
+            <block wx:if='{{item.type == "official"}}'>
+                <view class="diy-card">
+                    <official-account bindload='ceshi'></official-account>
+                </view>
+            </block> -->
+        </block>
+    </view>
+</block>
+<block wx:if='{{loading}}'>
+    <view>
+        <view class='swiperS defaultColor'></view>
+        <view class='swiper_container' style='height:180rpx'>
+            <swiper class='swiper'>
+                <swiper-item>
+                    <view class='project_container plr20'>
+                        <block wx:for='{{mockView}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                            <view class='project'>
+                                <view class='mock_img'></view>
+                                <view class='mock_desc'></view>
+                            </view>
+                        </block>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class='weather'>
+            <view class='we-top defaultColor'></view>
+            <view class='we-btm defaultColor'></view>
+        </view>
+        <view>
+            <view class='coupon_containers defaultColor'></view>
+            <view class='coupons_containers defaultColor'></view>
+        </view>
+        <view class='LiveTitless defaultColor'></view>
+        <view class='liveContent'>
+            <view class='lives defaultColor'></view>
+            <view class='liveS'>
+                <view class='liveSmall defaultColor'></view>
+                <view class='liveSmall mt10 defaultColor'></view>
+            </view>
+        </view>
+        <block wx:if='{{loading}}'>
+            <loading>玩命加载中...</loading>
+        </block>
+    </view>
+</block>
+<view style="height:50px"></view>

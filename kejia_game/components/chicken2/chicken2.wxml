@@ -1,0 +1,1 @@
+<view class='animal_wrapper {{(isFullScreen?"top":"")}}'><image class='cicken3' src='../../images/farm/{{(isrun?"cicken3":"cicken4")}}.png'></image></view>

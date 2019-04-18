@@ -1,0 +1,60 @@
+<!-- <view class='coupon_container'>
+    <view class='flex'>
+        <text class='iconfont icon-coupon f48' style='color:{{setData.background_color}}'></text>
+        <view class='coupon_title' style='color:{{setData.background_color}}'>专享优惠券</view>
+    </view>
+    <view bindtap='examineMoreCoupon' class='flex'>
+        <view style='color:gray;'>更多</view>
+        <text class='iconfont icon-right right-icon'></text>
+    </view>
+</view> -->
+<!-- <view class='coupons'>
+    <scroll-view class='coupons_container' scrollX='true'>
+        <block wx:for='{{couponData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+            <view bindtap='getCoupon' class='coupon_item' data-cid='{{item.id}}' data-type='{{item.type}}'>
+      
+                    <image class='voucher' src='./coupon.png' style="width:200rpx"></image>
+  
+                <view class='voucher_container'>
+                    <view style="padding-top:20rpx;display:flex;align-items:flex-end;color:#fff;padding-left:20rpx">
+                        <view style="font-size:26rpx;padding-bottom:10rpx">￥</view>
+                        <view style="font-size:50rpx;padding:0 10rpx">{{item.coupon_price}}</view>
+                        <view style="font-size:24rpx">
+                            <view>元</view>
+                            <view>优惠券</view>
+                        </view>
+                    </view>
+                    <view style="padding:5rpx 20rpx">
+                        <view style="text-align:center;padding:4rpx 10rpx;background:#FFF200;border-radius:20rpx;font-size:16rpx;color:#FF7F50">订单满{{item.low_cash_price}}元可用</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</view> -->
+<view style="display:flex">
+   
+        <block wx:for='{{couponData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+         <view style="flex:1;padding:10rpx">
+            <view bindtap='getCoupon' class='coupon_item' data-cid='{{item.id}}' data-type='{{item.type}}'>
+      
+                    <image class='voucher' src='./coupon.png' style="width:200rpx"></image>
+  
+                <view class='voucher_container'>
+                    <view style="padding-top:20rpx;display:flex;align-items:flex-end;color:#fff;padding-left:20rpx">
+                        <view style="font-size:26rpx;padding-bottom:6rpx">￥</view>
+                        <view style="font-size:40rpx;text-align:center;min-width:74rpx">{{item.coupon_price}}</view>
+                        <view style="font-size:24rpx">
+                            <view>元</view>
+                            <view>优惠券</view>
+                        </view>
+                    </view>
+                    <view style="padding:5rpx 20rpx">
+                        <view style="text-align:center;padding:4rpx 10rpx;background:#FFF200;border-radius:20rpx;font-size:16rpx;color:#FF7F50">订单满{{item.low_cash_price}}元可用</view>
+                    </view>
+                </view>
+            </view>
+            </view>
+        </block>
+    
+</view>

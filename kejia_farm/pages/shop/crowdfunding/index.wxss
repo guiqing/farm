@@ -1,0 +1,42 @@
+.video_container { width: 100%; height: 430rpx; position: relative; }
+.coverImg { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+.video { width: 100%; height: 100%; position: absolute; left: 0; top: 0; }
+.monitor { width: 120rpx; height: 120rpx; position: absolute; top: 10rpx; right: 20rpx; }
+.control { width: 120rpx; height: 120rpx; position: absolute; top: 120rpx; right: 20rpx; }
+.info_container { width: 90%; margin: 20rpx auto; border-radius: 20rpx; box-shadow: 0rpx 5rpx 13rpx rgba(0, 0, 0, 0.15); }
+.info_main_container { padding: 30rpx; box-sizing: border-box; border-bottom: 1rpx solid #efefef; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; }
+.info_view { width: 33.3%; text-align: center; }
+.info_view:not(:last-child) { border-right: 1rpx solid #efefef; }
+.info_view_title { font-size: 30rpx; color: #626262; }
+.info_view-data { font-size: 30rpx; color: #f62c2c; margin-top: 20rpx; }
+.info_footer { padding: 25rpx 0rpx; box-sizing: border-box; text-align: center; font-size: 34rpx; color: #acacac; letter-spacing: 3rpx; }
+.title { height: 45rpx; margin-top: 30rpx; width: 100%; border-left: 10rpx solid #fc5835; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: flex-end; justify-content: flex-end; box-sizing: border-box; }
+.title wx-view { width: 96%; font-size: 34rpx; color: #4b4b4b; letter-spacing: 3rpx; }
+.common_container { width: 90%; margin: 30rpx auto 0rpx; }
+.common_view { width: 100%; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; padding: 30rpx 0rpx; box-sizing: border-box; border-bottom: 1rpx solid #efefef; }
+.common_view:first-child { border-top: 1rpx solid #efefef; }
+.itemImg { width: 150rpx; height: 150rpx; }
+.itemImgs { width: 120rpx; height: 120rpx; }
+.common_title { width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 34rpx; color: #4b4b4b; }
+.common_price { margin-top: 25rpx; font-size: 34rpx; color: #fc5835; }
+.inner_container { width: 500rpx; }
+.inner_containers { width: 400rpx; }
+.selectItem { -webkit-transform: scale(0.9); transform: scale(0.9); }
+.adopt_info{ margin-top: 30rpx; }
+.adopt_info_view { width: 90%; margin: 0 auto; border-top: 1rpx solid #efefef; padding: 30rpx 0rpx; box-sizing: border-box; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: space-between; justify-content: space-between; }
+.adopt_info_laber { font-size: 30rpx; color: #b7b7b7; }
+.adopt_info_desc { width: 450rpx; font-size: 30rpx; color: #606060; text-align: right; }
+.details_container{ width: 90%; margin: 0 auto; padding-top: 20rpx; box-sizing: border-box; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; font-size: 30rpx; color: #606060; }
+.block120{ height: 140rpx; }
+.footer{ width: 100%; height: 100rpx; position: fixed; bottom: 0; left: 0; background-color: #fff; border-top: 1rpx solid #d2d2d2; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; }
+.index{ width: 120rpx; height: 100%; text-align: center; font-size: 30rpx; color: #3f3f3f; }
+.joinCar{ width: 270rpx; height: 100%; text-align: center; line-height: 100rpx; background: linear-gradient(to right, rgba(255,199,2,1), rgba(253,152,0,1)); color: #fff; font-size: 32rpx; }
+.buyNow{ width:500rpx; height: 100%; text-align: center; line-height: 100rpx; background: linear-gradient(to right, rgba(255,115,2,1), rgba(255,80,4,1)); color: #fff; font-size: 32rpx; }
+.service{ width: 43rpx; height: 40rpx; }
+.tels{ height: 40rpx; width: 36rpx; }
+.swiper_container{ width: 100%; height: 750rpx; position: relative; }
+.swiper{ width: 100%; height: 100%; }
+.modelss{ position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0, 0, 0, 0.5); }
+.list_container{ width: 90%; background-color: #fff; border-radius: 20rpx; position: fixed; top: 300rpx; left: 5%; transition: all .3s; overflow-y: auto; padding-bottom: 40rpx; box-sizing: border-box; }
+.scale0{ -webkit-transform: scale(0,0); transform: scale(0,0) }
+.scale1{ -webkit-transform: scale(1,1); transform: scale(1,1) }

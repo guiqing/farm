@@ -1,0 +1,10 @@
+<view class='footer'>
+    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+        <view bindtap='navTo' class='f-li' data-path='{{item.path}}' style='width:{{100 / list.length}}%;'>
+            <image src='{{(current == item.path?item.select_icon:item.icon)}}'></image>
+            <text class='title' style='color:{{(current == item.path?item.select_color:item.color||"#666")}}'>
+                {{item.name}}
+            </text>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,55 @@
+<!-- <view bindtap='intoArticle' class='notice-wrapper'>
+    <view class='title'>
+        <view class='title-text'>农场</view>
+        <view class='notice-content'>
+            <view class='notice-text'>资讯</view>
+            <image class='notice-bg' src='../../kejia_farm/images/icon/notice.png'></image>
+        </view>
+    </view>
+    <view class='content'>
+        <view class='common-wrapper'>
+            <view class='titles'>通知</view>
+            <view class='swiper'>
+                <swiper autoplay='true' circular='true' class='swiper-content' vertical='true'>
+                    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='idx' wx:key='id'>
+                        <block wx:if='{{idx % 2 == 0}}'>
+                            <swiper-item>
+                                <view class='swiper-item'>{{item.title}}</view>
+                            </swiper-item>
+                        </block>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+        <view class='common-wrapper'>
+            <view class='titles'>资讯</view>
+            <view class='swiper'>
+                <swiper autoplay='true' circular='true' class='swiper-content' vertical='true'>
+                    <block wx:for='{{list}}' wx:for-item='item' wx:for-index='idx' wx:key='index'>
+                        <block wx:if='{{idx % 2 != 0}}'>
+                            <swiper-item>
+                                <view class='swiper-item'>{{item.title}}</view>
+                            </swiper-item>
+                        </block>
+                    </block>
+                </swiper>
+            </view>
+        </view>
+    </view>
+</view> -->
+<view catch:tap="intoArticle" class="me-list">
+    <view class="me-list-item-text1">公告</view>
+    <image mode="aspectFit" src="image/hot.png" style="width:40rpx;height:40rpx;padding-left:10rpx"/> 
+    <view class="me-list-item-tag">图文</view>  
+    <view class="me-list-item-work" style="padding-left:10rpx">
+        <swiper style="height:60rpx;line-height:60rpx" autoplay="true" circular="true" vertical="true">
+            <block wx:for="{{list}}" wx:key="id">
+                <swiper-item>
+                    <view>{{item.title}}</view>
+                </swiper-item> 
+            </block>
+        </swiper>       
+    </view>
+    <view class="me-list-item-text2">更多</view>
+    <image mode="aspectFit" src="image/more.png" style="width:30rpx;height:30rpx"/>   
+</view>

@@ -1,0 +1,55 @@
+<block wx:if='{{typeData.length > 0}}'>
+    <view>
+        <view class='type_container'>
+            <block wx:for='{{parentData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                <view bindtap='changeType' class='item' data-type='{{item.id}}' style='color:{{(currentType == item.id?"#0fc8ab":"")}}'>
+                    {{item.type_name}}
+                </view>
+            </block>
+        </view>
+        <block wx:for='{{typeData}}' wx:for-item='type' wx:for-index='index' wx:key='typeId'>
+            <view>
+                <view class='list_title'>
+                    <view class='fillet' style='background:{{farmSetData.background_color}}'></view>
+                    {{type.type_name}}
+                </view>
+                <view>
+                    <block wx:for='{{type.items}}' wx:for-item='val' wx:for-index='index' wx:key='valid'>
+                        <view class='issue_list'>
+                            <view bindtap='showDesc' class='issue_title {{(val.isShow?"isShow":"noShow")}}' data-id='{{val.id}}' style='background:{{(val.isShow?farmSetData.background_color:"")}}'>
+                                {{val.index}}、{{val.problem_title}}
+                            </view>
+                            <view class='issue_desc {{(val.isShow?"showMore":"noMore")}}'>
+                                {{val.problem_value}}
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>
+<block wx:else>
+    <view>
+        <view class='none-data'>
+            <image src='../../../images/icon/none.png' style='width:400rpx;height:230rpx;'></image>
+            <text>暂时没有相关信息</text>
+        </view>
+    </view>
+</block>
+<block wx:if='{{setData.is_open_service == 1}}'>
+    <view class='kefu'>
+        <button openType='contact'>
+            <block wx:if='{{setData.service_icon}}'>
+                <view>
+                    <image src='{{setData.service_icon}}'></image>
+                </view>
+            </block>
+            <block wx:else>
+                <view>
+                    <text class='iconfont icon-liaoyiliao f44' style='color:{{farmSetData.background_color}}'></text>
+                </view>
+            </block>
+        </button>
+    </view>
+</block>

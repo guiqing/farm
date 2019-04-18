@@ -1,0 +1,12 @@
+.animal_wrapper{ position: fixed; left: 295rpx; top: 310rpx; }
+.top{ top:420rpx; }
+.duck1{ width: 50rpx; height: 56rpx; -webkit-animation: run 15s linear infinite; animation: run 15s linear infinite; }
+@-webkit-keyframes run{ 49%{ -webkit-transform: translateX(70px); transform: translateX(70px) }
+50%{ -webkit-transform: translateX(70px) rotateY(-180deg); transform: translateX(70px) rotateY(-180deg) }
+99%{ -webkit-transform: translateX(0px) rotateY(-180deg); transform: translateX(0px) rotateY(-180deg) }
+100%{ -webkit-transform: rotateY(0deg); transform: rotateY(0deg) }
+}@keyframes run{ 49%{ -webkit-transform: translateX(70px); transform: translateX(70px) }
+50%{ -webkit-transform: translateX(70px) rotateY(-180deg); transform: translateX(70px) rotateY(-180deg) }
+99%{ -webkit-transform: translateX(0px) rotateY(-180deg); transform: translateX(0px) rotateY(-180deg) }
+100%{ -webkit-transform: rotateY(0deg); transform: rotateY(0deg) }
+}

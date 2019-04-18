@@ -1,0 +1,171 @@
+<view>
+    <view class='flexSa f30 orderTitle'>
+        <view bindtap='changeState' class='cd515151 {{(currentState == 1?"currentIndex":"notcurrentIndex")}}' data-state='1'>
+            全部
+        </view>
+        <view bindtap='changeState' class='cd515151 {{(currentState == 2?"currentIndex":"notcurrentIndex")}}' data-state='2'>
+            未种植
+        </view>
+        <view bindtap='changeState' class='cd515151 {{(currentState == 3?"currentIndex":"notcurrentIndex")}}' data-state='3'>
+            种植中
+        </view>
+        <view bindtap='changeState' class='cd515151 {{(currentState == 4?"currentIndex":"notcurrentIndex")}}' data-state='4'>
+            已过期
+        </view>
+    </view>
+    <view class='block100' style="height:110rpx"></view>
+    <block wx:for='{{landData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+        <block wx:if='{{is_load}}'>
+            <view bindtap='intoMineLandDetail' class='land_item' data-landstatus='{{item.status}}' data-lid='{{item.id}}'>
+                <block wx:if='{{item.status == 0}}'>
+                    <view class='land_title'>
+                        <view style="font-size:30rpx">
+                            {{item.land_name}}
+                            <view class='land_num'>编号：{{item.land_num}}</view>
+                        </view>
+                        <view class='status' style="background:#0fc8a8">未 种 植</view>
+                    </view>
+                    <view class='list_content'>
+                        <view class='planted'>
+                            <image src="/kejia_farm/images/plant.png" style="width:32rpx;height:29rpx"/>
+                            <view style="margin-left:6rpx">可种植作物:</view>
+                        </view>
+                        <view class='list_wrapper'>
+                            <block wx:for='{{item.ke_seed}}' wx:for-item='seed' wx:for-index='index' wx:key='index'>
+                                <view class='plantCate'>
+                                    <view style='background:#57d8c2'>{{seed.seed_name}}</view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class='footer'>
+                        <view>
+                            <view>面积</view>
+                            <view style='color:#16BA63'>{{item.count}}㎡</view>
+                        </view>
+                        <view>
+                            <view>开始日期</view>
+                            <view>{{item.create_time}}</view>
+                        </view>
+                        <view>
+                            <view class="com-flex">结束日期  <view class="com-flex" style="margin-bottom:0"><view style="padding:0 6rpx;color:#ec4344;margin-bottom:0">续费</view><image src="/kejia_farm/images/right_red.png" style="width:11rpx;height:19rpx" /></view></view>
+                            <view>{{item.exprie_time}}</view>
+                        </view>
+                    </view>
+                </block>
+                <block wx:if='{{item.status == 1}}'>
+                    <view class='land_title'>
+                        <view style="font-size:30rpx">
+                            {{item.land_name}}
+                            <view class='land_num'>编号：{{item.land_num}}</view>
+                        </view>
+                        <view class='status' style='background:#0fc8a8'>种 植 中</view>
+                    </view>
+                    <block wx:if='{{item.is_seed.length > 0}}'>
+                        <view class='list_content'>
+                        <view class='planted'>
+                            <image src="/kejia_farm/images/plant.png" style="width:32rpx;height:29rpx"/>
+                            <view style="margin-left:6rpx">已种植作物:</view>
+                        </view>
+                            <!-- <view class='planted' style='color:#16BA63'>已种植作物:</view> -->
+                            <view class='list_wrapper'>
+                                <block wx:for='{{item.is_seed}}' wx:for-item='seed' wx:for-index='index' wx:key='index'>
+                                    <view class='plantCate'>
+                                        <view style='background:#0fc8a8'>{{seed.seed_name}}</view>
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:if='{{item.none_seed.length > 0}}'>
+                        <view class='list_content'>
+                        <view class='planted'>
+                            <image src="/kejia_farm/images/plant.png" style="width:32rpx;height:29rpx"/>
+                            <view style="margin-left:6rpx">待播种作物:</view>
+                        </view>
+                            <!-- <view class='planted' style='color:#b6d7a8'>待播种作物:</view> -->
+                            <view class='list_wrapper'>
+                                <block wx:for='{{item.none_seed}}' wx:for-item='seed' wx:for-index='index' wx:key='index'>
+                                    <view class='plantCate'>
+                                        <view style='background:#b6d7a8'>{{seed.seed_name}}</view>
+                                    </view>
+                                </block>
+                            </view>
+                        </view>
+                    </block>
+                    <view class='footer'>
+                        <view>
+                            <view>面积</view>
+                            <view style='color:#16BA63'>{{item.count}}㎡</view>
+                        </view>
+                        <view>
+                            <view>开始日期</view>
+                            <view>{{item.create_time}}</view>
+                        </view>
+                        <view>
+                            <view>结束日期</view>
+                            <view>{{item.exprie_time}}</view>
+                        </view>
+                    </view>
+                </block>
+                <block wx:if='{{item.status == 2}}'>
+                    <view class='land_title'>
+                        <view style="font-size:30rpx">
+                            {{item.land_name}}
+                            <view class='land_num'>编号：{{item.land_num}}</view>
+                        </view>
+                        <view class='status' style='background:#8A8A8A'>已 过 期</view>
+                    </view>
+                    <view class='list_content'>
+                        <view class='planted'>
+                            <image src="/kejia_farm/images/plant.png" style="width:32rpx;height:29rpx"/>
+                            <view style="margin-left:6rpx">可种植作物:</view>
+                        </view>
+                        <!-- <view class='planted' style='color:#B0B0B0'>可种植作物:</view> -->
+                        <view class='list_wrapper'>
+                            <block wx:for='{{item.ke_seed}}' wx:for-item='seed' wx:for-index='index' wx:key='index'>
+                                <view class='plantCate'>
+                                    <view style='background:#8A8A8A'>{{seed.seed_name}}</view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                    <view class='footer'>
+                        <view>
+                            <view>面积</view>
+                            <view>{{item.count}}㎡</view>
+                        </view>
+                        <view>
+                            <view>开始日期</view>
+                            <view>{{item.create_time}}</view>
+                        </view>
+                        <view>
+                            <view>结束日期</view>
+                            <view>{{item.exprie_time}}</view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </block>
+    <block wx:if='{{!(is_load)}}'>
+        <view>
+            <view class='none'>
+                <image src='../../../../images/icon/none.png'></image>
+                <text class='tags'>暂时还没相关的土地</text>
+                <view bindtap='gotoBuy' class='go-buy' style='border:1rpx solid {{farmSetData.background_color}};color:{{farmSetData.background_color}}'>
+                    前 去 租 地
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class='block20'></view>
+    <form bindsubmit='intoBag' reportSubmit='true'>
+        <button formType='submit' style='line-height:1.5;'>
+            <view class='fixedIcon position3}}'>
+                <text class='iconfont icon-shubao f44'></text>
+                <view class='mt_5'>背包</view>
+            </view>
+        </button>
+    </form>
+</view>

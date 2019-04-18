@@ -1,0 +1,63 @@
+<view class='flexSa plr20 f30 orderTitle'>
+    <view bindtap='changeIndex' class='cd515151 plr20 {{(currentIndex == 1?"currentIndex":"")}}' data-index='1'>
+        全部
+    </view>
+    <view bindtap='changeIndex' class='cd515151 plr20 {{(currentIndex == 2?"currentIndex":"")}}' data-index='2'>
+        进行中
+    </view>
+    <view bindtap='changeIndex' class='cd515151 plr20 {{(currentIndex == 3?"currentIndex":"")}}' data-index='3'>
+        已结束
+    </view>
+</view>
+<block wx:if='{{isContent}}'>
+    <view style='padding-bottom:{{(isIphoneX?178:110)}}rpx'>
+        <block wx:for='{{activeList}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <view bindtap='intoActiveDetail' class='active_wrapper' data-activeid='{{item.id}}'>
+                <view class='img_wrapper'>
+                    <image class='item_pic' src='{{item.cover}}'></image>
+                    <view class='area_wrappers'>
+                        <view class='area_wrapper'>活动时间:{{item.begin_time}}~{{item.end_time}}</view>
+                    </view>
+                    <block wx:if='{{item.finish}}'>
+                        <view class='finish_wrapper'>
+                            <text class='iconfont icon-baomingjiezhi finishImg'></text>
+                        </view>
+                    </block>
+                </view>
+                <view class='inner_wrapper'>
+                    <view class='item_title'>{{item.title}}</view>
+                    <view class='join_wrapper'>
+                        <view class='flex'>
+                            <view class='iconfont icon-yonghu' style='color: {{farmSetData.background_color}}'></view>
+                            <view class='join_wrapper_num'>参加人数: {{item.person_count}}人</view>
+                        </view>
+                        <block wx:if='{{item.low_price == 0}}'>
+                            <view style='color: {{farmSetData.background_color}};font-size: 30rpx'>
+                                免费
+                            </view>
+                        </block>
+                        <block wx:else>
+                            <view style='color: {{farmSetData.background_color}};font-size: 30rpx'>
+                                ￥{{item.low_price}}起
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class='block'></view>
+    </view>
+</block>
+<block wx:else>
+    <view>
+        <view class='noOrder'>
+            <image src='../../../kejia_farm/images/icon/none.png'></image>
+            <view>暂时还没有相关的活动</view>
+        </view>
+    </view>
+</block>
+<block wx:if='{{is_tarbar}}'>
+    <view>
+        <tarbar SystemInfo='{{SystemInfo}}' list='{{tarbar}}' path='kejia_farm/pages/active/index/index'></tarbar>
+    </view>
+</block>

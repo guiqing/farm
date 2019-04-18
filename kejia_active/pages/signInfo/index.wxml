@@ -1,0 +1,1 @@
+<view class='sing_wrapper'><block wx:for='{{sign}}' wx:for-item='item' wx:for-index='index' wx:key='id'><view class='sing_item'><image mode='widthFix' src='{{item.avatarurl}}'></image><view>{{item.nickname}}</view></view></block></view>

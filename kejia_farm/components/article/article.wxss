@@ -1,0 +1,7 @@
+@import '/import/css0_0.wxss';.icon-article{width: 40rpx;height: 40rpx;}
+.article-info{width: 90%;height: 60rpx;line-height: 60rpx;border-bottom: 1rpx solid #f4f4f4;}
+.article-info wx-swiper{width: 92%;height: 100%;}
+.f44{font-size: 44rpx;}
+.f30{ font-size: 30rpx; }
+.plr30{ padding: 0 30rpx; }
+.flexSb{ display: flex; align-items: center; justify-content: space-between }

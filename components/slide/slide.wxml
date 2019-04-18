@@ -1,0 +1,16 @@
+<view class='slide'>
+    <swiper autoplay='true' bindchange='changeCurrent' circular='true' style='height:343rpx;'>
+        <block wx:for='{{imgUrl}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+            <swiper-item>
+                <image bindtap='intoDetailSlide' data-linkparam='{{item.link_param}}' data-linktype='{{item.link_type}}' src='{{item.slide_src}}' style='height:345rpx; width:100%;border-radius:40rpx'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <block wx:if='{{focus}}'>
+        <view class='dots'>
+            <block wx:for='{{imgUrl}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='dot {{(index === currentIndex?"active":"")}}' style='background: {{(index === currentIndex?focusColor:"#fff")}}'></view>
+            </block>
+        </view>
+    </block>
+</view>

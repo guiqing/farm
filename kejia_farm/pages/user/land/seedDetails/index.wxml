@@ -1,0 +1,32 @@
+<view>
+    <swiper class='swiper' indicatorActiveColor='#fff' indicatorColor='#fff' indicatorDots='#e9ebea'>
+        <block wx:for='{{plant.seed_slide}}' wx:for-item='item' wx:for-index='index' wx:key='{{index}}'>
+            <swiper-item>
+                <image class='slide-image' src='{{item}}'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='plantName'>{{plant.send_name}}</view>
+    <view class='f30 cf767676 txCenter'>生长周期：{{plant.cycle}}</view>
+    <view class='flexCenter mt30'>
+        <view class='circle' style='background:#0fc8ab'>作</view>
+        <view class='circle' style='background:#0fc8ab'>用</view>
+    </view>
+    <view class='plt40 f30 cf474747'>{{plant.effect}}</view>
+    <view class='flexCenter mt30'>
+        <view class='circle' style='background:#0fc8ab'>植</view>
+        <view class='circle' style='background:#0fc8ab'>物</view>
+        <view class='circle' style='background:#0fc8ab'>简</view>
+        <view class='circle' style='background:#0fc8ab'>介</view>
+    </view>
+    <view class='introduction'>
+        <view class='ptb20 f30 cf474747 flexSb bb'>
+            <view>产量</view>
+            <view>{{plant.output}}/㎡</view>
+        </view>
+        <view class='ptb20 f30 cf474747 flexSb bb'>
+            <view>播种时间</view>
+            <view>{{plant.send_time}}</view>
+        </view>
+    </view>
+</view>

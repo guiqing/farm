@@ -1,0 +1,14 @@
+.fixeds {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 10rpx;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixeds image {
+    width: 40rpx;
+    height: 40rpx;
+}

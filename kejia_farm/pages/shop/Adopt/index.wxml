@@ -1,0 +1,107 @@
+<block>
+    <view>
+        <tarbar list='{{tarbar}}'></tarbar>
+    </view>
+</block>
+<view>
+    <block wx:if='{{currentStyle == 1}}'>
+        <view class='index_container'>
+            <view class='cover_container'>
+                <image class='bgImg' mode='aspectFill' src='{{currentImg}}'></image>
+                <view class='gradual'></view>
+            </view>
+            <block wx:if='{{Adopt.length == 1}}'>
+                <view bindtouchend='touchend' bindtouchmove='touchmove' bindtouchstart='touchstart' class='box'>
+                    <view animation='{{animation1}}' bindtap='scrollLeft' class='adoptItem mr25'>
+                        <image class='img' mode='aspectFill' src='{{Adopt[1].animal_src}}'></image>
+                        <block wx:if='{{showName}}'>
+                            <view class='AdoptName'>{{Adopt[1].animal_name}}</view>
+                        </block>
+                    </view>
+                    <view animation='{{animation2}}' bindtap='scrollLeft' class='adoptItem'>
+                        <image catchtap='Adopt' class='img2' data-id='{{Adopt[0].id}}' src='{{Adopt[0].animal_src}}'></image>
+                        <block wx:if='{{showName}}'>
+                            <view catchtap='Adopt' class='AdoptName' data-id='{{Adopt[0].id}}'>
+                                {{Adopt[0].animal_name}}
+                            </view>
+                        </block>
+                    </view>
+                    <view animation='{{animation3}}' class='adoptItem ml25'>
+                        <image class='img' mode='aspectFill' src='{{Adopt[2].animal_src}}'></image>
+                        <block wx:if='{{showName}}'>
+                            <view class='AdoptName'>{{Adopt[0].animal_name}}</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view bindtouchend='touchend' bindtouchmove='touchmove' bindtouchstart='touchstart' class='box'>
+                    <view animation='{{animation1}}' bindtap='scrollLeft' class='adoptItem mr25'>
+                        <image class='img' mode='aspectFill' src='{{Adopt[0].animal_src}}'></image>
+                        <block wx:if='{{showName}}'>
+                            <view class='AdoptName'>{{Adopt[0].animal_name}}</view>
+                        </block>
+                    </view>
+                    <view animation='{{animation2}}' bindtap='scrollLeft' class='adoptItem'>
+                        <image catchtap='Adopt' class='img2' data-id='{{Adopt[1].id}}' src='{{Adopt[1].animal_src}}'></image>
+                        <block wx:if='{{showName}}'>
+                            <view catchtap='Adopt' class='AdoptName' data-id='{{Adopt[1].id}}'>
+                                {{Adopt[1].animal_name}}
+                            </view>
+                        </block>
+                    </view>
+                    <view animation='{{animation3}}' class='adoptItem ml25'>
+                        <image class='img' mode='aspectFill' src='{{Adopt[2].animal_src}}'></image>
+                        <block wx:if='{{showName}}'>
+                            <view class='AdoptName'>{{Adopt[0].animal_name}}</view>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:if='{{currentStyle == 2}}'>
+        <view class='index_container'>
+            <scroll-view class='scrollView' scrollY='true'>
+                <block wx:for='{{Adopt}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view class='scroll-img-container'>
+                        <image catchtap='Adopt' class='animalSrc' data-id='{{item.id}}' src='{{item.animal_src}}'></image>
+                        <block wx:if='{{showName}}'>
+                            <view class='animal_name'>{{item.animal_name}}</view>
+                        </block>
+                    </view>
+                </block>
+                <view class='block'></view>
+            </scroll-view>
+        </view>
+    </block>
+    <block wx:if='{{currentStyle == 3}}'>
+        <view>
+            <block wx:for='{{Adopt}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view catchtap='Adopt' class='adopt_wrapper' data-id='{{item.id}}'>
+                    <image src='{{item.animal_src}}'></image>
+                    <view class='desc_wrapper'>
+                        <view>{{item.animal_name}}</view>
+                        <view>介绍:{{item.animal_desc}}</view>
+                    </view>
+                    <view class='footer'>
+                        <view class='item'>
+                            <view>认养价格</view>
+                            <view>￥{{item.price}}</view>
+                        </view>
+                        <view class='item'>
+                            <view>生长周期</view>
+                            <view>{{item.mature_period}}天</view>
+                        </view>
+                        <view class='item'>
+                            <view>剩余数量</view>
+                            <view>{{item.count}}</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class='block'></view>
+        </view>
+    </block>
+</view>
+<view style="height:50px"></view>

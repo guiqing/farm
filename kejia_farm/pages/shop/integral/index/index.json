@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "农场签到",
+    "usingComponents": {
+        "tarbar": "/components/tarbar/tarbar"
+    }
+}

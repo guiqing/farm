@@ -1,0 +1,21 @@
+.image {
+    width: 35rpx;
+    height: 35rpx;
+    margin-bottom: -4rpx;
+}
+
+.buttons {
+    flex: 1;
+    padding: 10rpx 25rpx;
+    margin: 10rpx auto;
+    font-size: 30rpx;
+    display: inline-block;
+}
+
+.buttons::after {
+    border: none;
+}
+
+.flex {
+    text-align: center;
+}

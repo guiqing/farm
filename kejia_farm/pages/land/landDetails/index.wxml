@@ -1,0 +1,205 @@
+<import src='../../../../wxParse/wxParse.wxml'></import>
+<view>
+    <view class='banner'>
+        <swiper autoplay='true' circular='true' class='swiper' indicatorColor='7f7f7f' style='display:{{(isShow?"block":"none")}}'>
+            <swiper-item>
+                <image src='{{landDetail.cover.length<2 ? "https://yimudingzhi.kejianet.cn/public//uploads/images/20190306/fd024ad52381e03beb5ce0faec210eb6.jpg" : landDetail.cover }}'></image>
+            </swiper-item>
+        </swiper>
+        <image bindtap='hideVideo' class='monitor' src='../../../images/icon/monitor.png'></image>
+        <video autoplay='{{true}}' bindplay='play' class='video' src='{{landDetail.live_src}}' style='display:{{(isShow?"none":"block")}}'>
+            <cover-image bindtap='hideVideo' class='monitor' src='../../../images/icon/monitor.png'></cover-image>
+            <block wx:if='{{is_loading}}'>
+                <cover-view class='is_loading'>
+                    <cover-view class='loadCover'>
+                        <cover-image class='loadingimg' src='../../../images/icon/player_loading.png'></cover-image>
+                    </cover-view>
+                </cover-view>
+            </block>
+        </video>
+    </view>
+    <view class='land_info'>
+        <view class='land_name'>{{landDetail.land_name}}</view>
+        <view class='land_ares'>
+          {{landDetail.land_intro}}
+        </view>
+    </view>
+    <view class='select_lands'>
+        <view class='land_status'>
+            <view class='flex'>
+                <view class='land_status_view'>
+                    <image src='{{icon.selectLand1}}'></image>
+                    <view></view>
+                </view>
+                可选
+            </view>
+            <view class='flex'>
+                <view class='land_status_view'>
+                    <image src='{{icon.selectLand1}}'></image>
+                </view>
+                选中
+            </view>
+            <view class='flex'>
+                <view class='land_status_view'></view>
+                已售
+            </view>
+        </view>
+        <scroll-view class='land_list' scrollX='true'>
+            <block wx:for='{{landSpec}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                <view class='list_item'>
+                    <block wx:if='{{item.status == 1}}'>
+                        <view class='title_wrapper'>
+                            <block wx:if='{{item.status == 1}}'>
+                                <image src='{{icon.hsdSelelct}}'></image>
+                            </block>
+                            <block wx:else>
+                                <image src='{{icon.selectLand1}}'></image>
+                            </block>
+                            <block wx:if='{{ (!(item.select) && !(item.hadselect)) }}'>
+                                <view class='land_model'></view>
+                            </block>
+                            <view class='title_model'>
+                                <view>{{item.area}}</view>
+                                <view>m²</view>
+                                <view>土</view>
+                                <view>地</view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view bindtap='select' class='title_wrapper' data-id='{{item.id}}'>
+                            <block wx:if='{{item.status == 1}}'>
+                                <image src='{{icon.hsdSelelct}}'></image>
+                            </block>
+                            <block wx:else>
+                                <image src='{{icon.selectLand1}}'></image>
+                            </block>
+                            <block wx:if='{{ (!(item.select) && !(item.hadselect)) }}'>
+                                <view class='land_model'></view>
+                            </block>
+                            <view class='title_model'>
+                                <view>{{item.area}}</view>
+                                <view>m²</view>
+                                <view>土</view>
+                                <view>地</view>
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:if='{{item.status == 1}}'>
+                        <radio color='#77d682' style='visibility:hidden'></radio>
+                    </block>
+                    <block wx:else>
+                        <block wx:if='{{item.status || item.status==0}}'>
+                            <radio catchtap='select' checked='{{item.select}}' color='#77d682' data-id='{{item.id}}'></radio>
+                        </block>
+                        <block wx:else>
+                            <radio checked='{{item.select}}' color='#77d682' style='visibility:hidden'></radio>
+                        </block>
+                    </block>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <view class='block'></view>
+    <block wx:if='{{landDetail.landDeviceInfo}}'>
+        <view class='fun_info'>
+            <view class='fun_title'>实时数据</view>
+            <block wx:if='{{farmSetData.is_open_webthing == 1}}'>
+                <view class='situation'>
+                    <view>
+                        <image class='humidity' src='{{icon.humidity}}'></image>
+                        <view class='mt5'>{{landDetail.landDeviceInfo.watering}}%</view>
+                        <view class='cf888789 mt5'>水份</view>
+                    </view>
+                    <view>
+                        <image class='temperature' src='{{icon.temperature}}'></image>
+                        <view class='mt5'>{{landDetail.landDeviceInfo.temp}}℃</view>
+                        <view class='cf888789 mt5'>温度</view>
+                    </view>
+                    <view>
+                        <image class='co2' src='{{icon.co2}}'></image>
+                        <view class='mt5'>{{landDetail.landDeviceInfo.co2}}ppm</view>
+                        <view class='cf888789 mt5'>二氧化碳</view>
+                    </view>
+                    <view>
+                        <image class='Illumination' src='{{icon.Illumination}}'></image>
+                        <view class='mt5'>{{landDetail.landDeviceInfo.illumination}}lux</view>
+                        <view class='cf888789 mt5'>光照</view>
+                    </view>
+                </view>
+            </block>
+            <block wx:if='{{farmSetData.is_open_webthing == 2}}'>
+                <view class='situation'>
+                    <block wx:if='{{landDetail.landDeviceInfo.temp}}'>
+                        <view>
+                            <image class='humidity' src='{{icon.humidity}}'></image>
+                            <view class='mt5'>{{landDetail.landDeviceInfo.temp.DevHumiValue}}</view>
+                            <view class='cf888789 mt5'>
+                                {{landDetail.landDeviceInfo.temp.DevHumiName}}
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:if='{{landDetail.landDeviceInfo.temp}}'>
+                        <view>
+                            <image class='temperature' src='{{icon.temperature}}'></image>
+                            <view class='mt5'>{{landDetail.landDeviceInfo.temp.DevTempValue}}</view>
+                            <view class='cf888789 mt5'>
+                                {{landDetail.landDeviceInfo.temp.DevTempName}}
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:if='{{landDetail.landDeviceInfo.co2}}'>
+                        <view>
+                            <image class='co2' src='{{icon.co2}}'></image>
+                            <view class='mt5'>{{landDetail.landDeviceInfo.co2.DevHumiValue}}</view>
+                            <view class='cf888789 mt5'>
+                                {{landDetail.landDeviceInfo.co2.DevHumiName}}
+                            </view>
+                        </view>
+                    </block>
+                    <block wx:if='{{landDetail.landDeviceInfo.light}}'>
+                        <view>
+                            <image class='Illumination' src='{{icon.Illumination}}'></image>
+                            <view class='mt5'>
+                                {{landDetail.landDeviceInfo.light.DevHumiValue}}
+                            </view>
+                            <view class='cf888789 mt5'>
+                                {{landDetail.landDeviceInfo.light.DevHumiName}}
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </block>
+        </view>
+    </block>
+    <view class='fun_info'>
+        <view class='fun_title'>可种植作物</view>
+        <view class='pro_wrapper'>
+            <block wx:for='{{seedData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                <view bindtap='intoSeedDetail' class='pro_item' data-sid='{{item.id}}'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='proName'>{{item.seed_name}}</view>
+                    <view class='yuji'>预估产量</view>
+                    <view>{{item.output}}/㎡</view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class='block'></view>
+    <view class='content' style='width:96%;margin-left:2%;'>
+        <view class='wxParse'>
+            <template is='wxParse' data='{{wxParseData:article.nodes}}'></template>
+        </view>
+    </view>
+    <view style='height:100rpx'></view>
+    <view class='footer_wrapper'>
+        <view class='footer'>
+            <view class='shopCar'>
+                <view class='price'>合计：{{total_price}}元起</view>
+            </view>
+            <view bindtap='toPay' class='confrim' style='background:{{farmSetData.background_color}})'>
+                去结算
+            </view>
+        </view>
+    </view>
+</view>

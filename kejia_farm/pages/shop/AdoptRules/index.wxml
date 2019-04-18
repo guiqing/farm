@@ -1,0 +1,127 @@
+<import src='../../../../wxParse/wxParse.wxml'></import>
+<view>
+    <view class='banner'>
+        <swiper autoplay='{{autoplay}}' class='swiper' duration='{{duration}}' indicatorActiveColor='#000' indicatorColor='#7f7f7f' indicatorDots='true' interval='{{interval}}'>
+            <block wx:for='{{animalData.animal_slide}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <swiper-item>
+                    <image bindtap='ceshi' class='slide-image' src='{{item}}'></image>
+                </swiper-item>
+            </block>
+        </swiper>
+        <image bindtap='showVideo' class='monitor' src='../../../images/icon/monitor.png'></image>
+        <video autoplay='{{true}}' bindplay='play' class='video' src='{{animalData.src}}' style='display:{{(isShow?"block":"none")}}'>
+            <cover-image bindtap='hideVideo' class='monitor' src='../../../images/icon/monitor.png'></cover-image>
+            <block wx:if='{{is_loading}}'>
+                <cover-view class='is_loading'>
+                    <cover-view class='loadCover'>
+                        <cover-image class='loadingimg' src='../../../images/icon/player_loading.png'></cover-image>
+                    </cover-view>
+                </cover-view>
+            </block>
+        </video>
+    </view>
+    <view class='details'>
+        <view class='detailsName'>{{animalData.animal_name}}</view>
+        <view class='describe'>{{animalData.animal_desc}}</view>
+        <view class='price'>
+            <text class='line20'>￥</text>
+            <text class='fb'>{{animalData.price}}</text>
+            <block wx:if='{{animalData.price_desc}}'>
+                <text class='f28 ml10'>({{animalData.price_desc}})</text>
+            </block>
+        </view>
+    </view>
+    <view class='block20'></view>
+    <view class='proDetail'>
+        <view class='adoptContent'>
+            <view class='AdopTitle' style='border-left:10rpx solid {{farmSetData.background_color}}'>
+                认养规则
+            </view>
+            <view class='ruleContent'>
+                <block wx:for='{{animalData.animal_rule}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view>{{item}}</view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <block wx:if='{{animalData.adopt_desc != ""}}'>
+        <view class='adoptContent'>
+            <view class='AdopTitle' style='border-left:10rpx solid {{farmSetData.background_color}}'>
+                认养详情
+            </view>
+            <block wx:for='{{animalData.adopt_desc}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='flex f28 mt10'>
+                    <view>{{item}}</view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <view class='proImgs'>
+        <view class='wxParse'>
+            <template is='wxParse' data='{{wxParseData:article.nodes}}'></template>
+        </view>
+    </view>
+    <view style='height:100rpx'></view>
+    <view class='footer'>
+        <view bindtap='goHome' class='index'>
+            <text class='iconfont icon-index f44'></text>
+            <view class='f24'>首页</view>
+        </view>
+        <view class='index'>
+            <text class='iconfont icon-server f44'></text>
+            <view class=' f24'>
+                <button openType='contact'>客服</button>
+            </view>
+        </view>
+        <view bindtap='doCall' class='index' data-phone='{{aboutData.phone}}'>
+            <text class='iconfont icon-tel f44'></text>
+            <view class=' f24'>电话</view>
+        </view>
+        <view bindtap='showMode' class='buyNow' style='background:{{farmSetData.background_color}}'>
+            立即认养
+        </view>
+    </view>
+    <block wx:if='{{state}}'>
+        <view bindtap='hideModal' catchtouchmove='preventTouchMove' class='modal-mask'></view>
+    </block>
+    <block wx:if='{{state}}'>
+        <view class='modal-dialog'>
+            <view class='flex proImgs'>
+                <view class='adoptImg'>
+                    <block wx:if='{{specVal.spec_src}}'>
+                        <image mode='aspectFill' src='{{specVal.spec_src}}'></image>
+                    </block>
+                    <block wx:else>
+                        <image mode='aspectFill' src='{{animalData.animal_src}}'></image>
+                    </block>
+                </view>
+                <view class='adoptPrice'>
+                    <view class='cffc8535' style='color:{{farmSetData.background_color}}'>
+                        <text class='danwei'>￥</text>
+                        <block wx:if='{{specVal.price}}'>
+                            <text class='ml20'>{{specVal.price}}</text>
+                        </block>
+                        <block wx:else>
+                            <text class='ml20'>{{animalData.price}}</text>
+                        </block>
+                    </view>
+                    <view class='chooseTime'>
+                        <text class='ml20'>库存:{{animalData.count - count}}</text>
+                        <text class='ml20'>销量:{{animalData.sale_count}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='chooseNum'>
+                <view class='flex plt30' style='margin-top:20rpx;'>
+                    <view class='f32' style='width:63%;'>认购数量</view>
+                    <view catchtap='reduceNum' class='clickNumLift ml50'>-</view>
+                    <input bindinput='chooseNum' class='chooseN' type='number' value='{{count}}'></input>
+                    <view catchtap='addNum' class='clickNumRight'>+</view>
+                </view>
+            </view>
+            <view bindtap='sureAnimal' class='confrim' style='background:#0fc8ab'>
+                确定
+            </view>
+        </view>
+    </block>
+</view>

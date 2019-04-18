@@ -1,0 +1,108 @@
+<view>
+    <view class='banner'>
+        <swiper autoplay='{{autoplay}}' class='swiper' duration='{{duration}}' indicatorActiveColor='#000' indicatorColor='#7f7f7f' indicatorDots='true' interval='{{interval}}'>
+            <block wx:for='{{adoptData.animal_slide}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <swiper-item>
+                    <image class='slide-image' src='{{item}}'></image>
+                </swiper-item>
+            </block>
+        </swiper>
+        <image bindtap='showVideo' class='monitor' src='../../../images/icon/monitor.png'></image>
+        <video autoplay='{{true}}' bindplay='play' class='video' src='{{adoptData.live_src}}' style='display:{{(isShow?"block":"none")}}'>
+            <cover-image bindtap='hideVideo' class='monitor' src='../../../images/icon/monitor.png'></cover-image>
+            <block wx:if='{{is_loading}}'>
+                <cover-view class='is_loading'>
+                    <cover-view class='loadCover'>
+                        <cover-image class='loadingimg' src='../../../images/icon/player_loading.png'></cover-image>
+                    </cover-view>
+                </cover-view>
+            </block>
+        </video>
+    </view>
+    <view class='block20'></view>
+    <view class='adopt-title' style='border-left:5rpx solid {{farmSetData.background_color}};color:{{farmSetData.background_color}}'>
+        基本信息
+    </view>
+    <view class='adopt-info'>
+        <view class='info-li flex'>
+            <view class='li-title'>认养名称</view>
+            <view class='li-value'>{{adoptData["animal_name"]}}</view>
+        </view>
+        <view class='info-li flex'>
+            <view class='li-title'>认养编号</view>
+            <block wx:if='{{adoptData["adopt_number"]}}'>
+                <view class='li-value'>{{adoptData["adopt_number"]}}</view>
+            </block>
+            <block wx:else>
+                <view class='li-value'>待分配</view>
+            </block>
+        </view>
+        <view class='info-li flex'>
+            <view class='li-title'>认养时间</view>
+            <view class='li-value'>{{adoptData["create_time"]}}</view>
+        </view>
+        <view class='info-li flex'>
+            <view class='li-title'>已认养天数</view>
+            <view class='li-value'>{{adoptData["adopt_day"]}} 天</view>
+        </view>
+        <view class='info-li flex'>
+            <view class='li-title'>当前认养状态</view>
+            <view class='li-value'>{{adoptData["status_txt"]}}</view>
+        </view>
+        <view class='info-li flex'>
+            <view class='li-title'>预计成熟期</view>
+            <view class='li-value'>{{adoptData["predict_ripe"]}}</view>
+        </view>
+        <view class='info-li flex {{(adoptData["order_number"]?"":"border-none")}}'>
+            <view class='li-title'>认养订单编号</view>
+            <view class='li-value'>{{adoptData["orderData"]["order_number"]}}</view>
+        </view>
+        <block wx:if='{{adoptData["order_number"]}}'>
+            <view bindtap='lookOrder' class='info-li flex border-none' data-orderid='{{adoptData["order_number_id"]}}'>
+                <view class='li-title'>收获订单编号</view>
+                <view class='li-value'>{{adoptData["order_number"]}}</view>
+                <view class='iconfont icon-right f28' style='position:relative;left:22%;color:gray'></view>
+            </view>
+        </block>
+    </view>
+    <view class='adopt-title' style='border-left:5rpx solid {{farmSetData.background_color}};color:{{farmSetData.background_color}}'>
+        状态跟踪
+    </view>
+    <view class='adopt-status'>
+        <block wx:for='{{statusData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <view class='status-ul flex'>
+                <view class='li-left'>
+                    <view class='cycyle-time' style='border:1rpx solid {{item.back_color}};color:{{item.back_color}}'>
+                        {{item.create_time}}
+                    </view>
+                </view>
+                <view class='li-right flex'>
+                    <view class='jiao' style='border-right:10px solid {{item.back_color}}'></view>
+                    <view class='status-value' style='background:{{item.back_color}}'>
+                        <block wx:if='{{item.txt}}'>
+                            <text>{{item.txt}}</text>
+                        </block>
+                        <block wx:if='{{item.src}}'>
+                            <view>
+                                <block wx:for='{{item.src}}' wx:for-item='val' wx:for-index='index' wx:key='src_index'>
+                                    <image bindtap='preImg' data-index='{{k}}' data-sid='{{item.id}}' src='{{val}}'></image>
+                                </block>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class='margin-btn'></view>
+    <block wx:if='{{adoptData.status == 4}}'>
+        <button bindtap='kellSend' class='Slaughter' style='background:{{farmSetData.background_color}}'>
+            立即收获
+        </button>
+    </block>
+    <block wx:if='{{adoptData.status == 6}}'>
+        <button bindtap='kellSend' class='Slaughter' style='background:{{farmSetData.background_color}}'>
+            立即配送
+        </button>
+    </block>
+</view>

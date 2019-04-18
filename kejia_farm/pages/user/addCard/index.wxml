@@ -1,0 +1,48 @@
+<!-- <view>
+    <view class='head_container' style='background:{{farmSetData.background_color}}'></view>
+    <view class='addInfo_container'>
+        <view class='addTitle'>填写信息</view>
+        <view class='mt30'>
+            <form bindsubmit='submitInfo'>
+                <view class='input_container'>
+                    <input name='card_num' placeholder='请输入卡号' type='text' value='{{card_num}}'></input>
+                </view>
+                <view class='input_container'>
+                    <input name='card_pwd' password='true' placeholder='请输入密码' type='text' value='{{card_pwd}}'></input>
+                </view>
+                <button class='confrim' formType='submit' style='background:{{farmSetData.background_color}}'>
+                    立即兑换
+                </button>
+            </form>
+        </view>
+    </view>
+    <view class='record_title'>兑换记录</view>
+    <block wx:for='{{records}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+        <view class='list_container'>
+            <image class='recordIcon' src='{{icon.recordIcon}}'></image>
+            <view class='items'>
+                <view class='list_title'>卡号{{item.card_num}}兑换成功</view>
+                <view class='list_time'>{{item.use_time}}-{{item.expire_time}}</view>
+            </view>
+        </view>
+    </block>
+</view> -->
+<view>
+    <view class='head_container' style='background:#0fc8ab'></view>
+    <view class='addInfo_container'>
+        <view class='addTitle'>填写信息</view>
+        <view class='mt30'>
+            <form bindsubmit='submitInfo'>
+                <view class='input_container'>
+                    <input name='card_num' placeholder='投资人' type='text' value='{{card_num}}'></input>
+                </view>
+                <view class='input_container'>
+                    <input name='card_pwd'  placeholder='手机号' type='text' value='{{card_pwd}}'></input>
+                </view>
+                <button class='confrim' formType='submit' style='background:#0fc8ab'>
+                    提交申请
+                </button>
+            </form>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "articleItem": "/components/articleItem/articleItem",
+        "videoItem": "/components/videoItem/videoItem"
+    },
+    "navigationBarTitleText": "资讯",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor":"#0fc8ab"
+}

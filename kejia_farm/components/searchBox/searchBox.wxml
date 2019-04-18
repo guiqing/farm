@@ -1,0 +1,1 @@
+<view class='container' style='background:{{bgColor}}'><view bindtap='selectGoods' class='search' style='background:{{searchColor}};color:{{fontColor}}; margin: {{mtb}}px {{mlr}}px; border-radius: {{radius}}px'><text class='iconfont icon-sousuo'></text>    {{hotSearch}}  </view></view>

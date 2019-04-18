@@ -1,0 +1,87 @@
+<view class='con'>
+    <view class='adopt-list'>
+        <view class='li-left'>
+            <image src='{{animalData.animal_src}}'></image>
+        </view>
+        <view class='li-right'>
+            <text class='adopt-name'>{{animalData.animal_name}}</text>
+            <text class='spec'>描述：{{animalData.animal_desc}}</text>
+            <view class='li-right-desc'>
+                <block wx:if='{{specVal != ""}}'>
+                    <text class='price'>￥{{specVal.price}}</text>
+                </block>
+                <block wx:else>
+                    <text class='price'>￥{{animalData.price}}</text>
+                </block>
+                <text class='count'>×{{count}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- <view class='desc line-h'>
+        <text class='iconfont icon-youhuiquan1 f44' style='color:{{farmSetData.background_color}}'></text>
+        <text class='coupon-title'>优惠券</text>
+        <text class='iconfont icon-right right-icon iconSmall'></text>
+        <block wx:if='{{userCoupon != ""}}'>
+            <text bindtap='useCoupon' class='keyong'>-￥{{userCoupon.coupon.coupon_price}}</text>
+        </block>
+        <block wx:elif='{{couponCount > 0}}'>
+            <text bindtap='useCoupon' class='keyong'>{{couponCount}}张优惠券可用</text>
+        </block>
+        <block wx:else>
+            <text class='keyong'>暂无优惠券可用</text>
+        </block>
+    </view> -->
+</view>
+<view class='user_container cf474747 f30'>
+    <view class='flex p20 borderbottom'>
+        <view class='title'>
+            <text class='iconfont icon-yonghu f34' style='color:{{farmSetData.background_color}};margin-left:4rpx;margin-right:20rpx;'></text>
+            用户姓名
+        </view>
+        <view class='ml50'>
+            <input bindinput='inputUserName' placeholder='请输入用户姓名' type='text' value='{{userName}}'></input>
+        </view>
+    </view>
+    <view class='flex p20 borderbottom'>
+        <view class='title'>
+            <text class='iconfont icon-phone f40' style='color:{{farmSetData.background_color}};margin-right:20rpx;'></text>
+            用户电话
+        </view>
+        <view class='ml50'>
+            <input bindinput='inputUserTel' placeholder='请输入用户电话' type='number' value='{{userTel}}'></input>
+        </view>
+    </view>
+    <view class='flex p20 borderbottom'>
+        <label>
+            <checkbox catchtap='changeRules' checked='{{rules}}' class='radioBtn' color='#000'></checkbox>
+            我已阅读并同意
+        </label>
+        <text bindtap='showModal' class='rule-book'>《农场协议》</text>
+    </view>
+</view>
+<view class='footer'>
+    <view class='left'>订单金额：￥{{totalPrice}}</view>
+    <view bindtap='surePay' class='right' style='background:{{farmSetData.background_color}}'>
+        确认支付
+    </view>
+</view>
+<block wx:if='{{state}}'>
+    <view catchtouchmove='preventTouchMove' class='modal-mask'>
+        <view class='modal-dialog'>
+            <scroll-view class='dialog_container' scrollY='true'>
+                <view class='modal-title'>用户须知</view>
+                <view>
+                    <view class='content'>
+                        <view class='wxParse'>
+                            <template is='wxParse' data='{{wxParseData:article.nodes}}'></template>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view bindtap='hideModal' class='closeModel'>
+                <text class='iconfont icon-close f44'></text>
+            </view>
+        </view>
+    </view>
+</block>
+<import src='../../../../wxParse/wxParse.wxml'></import>

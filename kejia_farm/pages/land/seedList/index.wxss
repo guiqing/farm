@@ -1,0 +1,324 @@
+@import '/import/css0_1.wxss';
+
+page {
+    background: #f4f4f4;
+}
+
+.list {
+    width: 100%;
+    height: auto;
+}
+
+.list-ul {
+    height:266rpx;
+    font-size:26rpx;
+    line-height:55rpx;
+    background:white;
+    margin:30rpx 34rpx 0;
+    padding:20rpx;
+    border-radius:30rpx;
+    -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+}
+
+.list-ul .li-left {
+
+    height: 100%;
+  
+}
+
+.list-ul .li-right {
+    height:100%;
+    margin-left:20rpx;
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
+    font-size:28rpx;
+    color:#202020;
+}
+
+.li-left wx-image {
+    width:180rpx;
+    height:226rpx;
+    border-radius:30rpx;
+}
+
+.caluate {
+    width: 140rpx;
+    height: 60rpx;
+    position: relative;
+    top: -55rpx;
+    left: 63%;
+    text-align: right;
+}
+
+.caluate .count {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    font-size: 34rpx;
+}
+
+.caluate .icon-jianhao {
+    position: relative;
+    top: 0rpx;
+    font-size: 56rpx;
+    color: gray;
+}
+
+.caluate .icon-jia {
+    position: relative;
+    top: 6rpx;
+    font-size: 56rpx;
+}
+
+.cart {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    position: fixed;
+    top: 90%;
+    left: 86%;
+    background: #09BB07;
+    text-align: center;
+}
+
+.cart .icon-shopcar {
+    color: white;
+    font-size: 56rpx;
+}
+
+.cart-mask {
+    background: black;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    bottom:100rpx;
+    width: 100%;
+  
+}
+
+.cart-list {
+    width: 100%;
+    /* height: 75%; */
+    font-size: 28rpx;
+    position: fixed;
+    bottom: 100rpx;
+    z-index: 899;
+    background: white;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.cart-title {
+    line-height:76rpx;
+    color:gray;
+    border-bottom:1rpx solid #f0f0f0;
+    padding:0 32rpx;
+    background:#eee;
+    font-size:34rpx;
+    color:#999;
+
+}
+
+.icon-delete1 {
+    float: right;
+    font-size: 38rpx
+}
+
+.cart-content {
+    overflow: hidden;
+    padding-left:32rpx;
+}
+
+.cart-ul {
+    width: 100%;
+    /* height: 80rpx; */
+    line-height: 120rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.cart-name {
+    width: 50%;
+    font-size:34rpx;
+    color:#444;
+
+}
+
+.cart-count {
+    width: 25%;
+    font-size:42rpx;
+    color:#ff0101;
+}
+
+.cart-caluate {
+    width: 25%;
+    height: 60rpx;
+    position: relative;
+    top: -15rpx;
+    text-align: right;
+}
+
+.cart-caluate .icon-jianhao {
+    font-size: 56rpx;
+    color: gray;
+}
+
+.cart-caluate .icon-jia {
+    font-size: 56rpx;
+    position: relative;
+    top: 6rpx;
+    color: #09BB07;
+}
+
+.cart-caluate .count {
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    font-size: 34rpx;
+}
+
+.footer {
+    width: 100%;
+    height: 94rpx;
+    position: fixed;
+    bottom: 0;
+    border-top: 1rpx solid #f4f4f4;
+}
+
+.cart-btn {
+    width: 25%;
+    float: right;
+    height: 100%;
+    background: #09BB07;
+    color: white;
+    line-height: 94rpx;
+    text-align: center;
+}
+
+.cart-btn wx-button {
+    background: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 28rpx;
+    color: white;
+    height: 100%;
+    line-height: 94rpx;
+}
+
+.cart-left {
+    width: 70%;
+    margin-left: 5%
+}
+
+wx-button::after {
+    border: none;
+}
+
+.margin-btn {
+    height: 120rpx;
+    width: 100%;
+}
+
+.footer-b {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: #646464;
+}
+
+.circels {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background-color: #313131;
+    margin-left: 30rpx;
+    margin-top: -40rpx;
+    position: relative;
+}
+
+.shopCar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.shopCar wx-image {
+    width: 65rpx;
+    height: 61rpx;
+}
+
+.buyNum {
+    position: absolute;
+    width: 40rpx;
+    height: 40rpx;
+    /* background-color: #fc8535; */
+    /* border-radius: 50%; */
+    color: #fff;
+    font-size: 20rpx;
+    text-align: center;
+    line-height: 34rpx;
+    top: 0;
+    right: 28rpx;
+}
+
+.sumPrice {
+    color: #fff;
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
+}
+
+.Settlement {
+    width: 250rpx;
+    height: 100%;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 34rpx;
+    color: #fff;
+    letter-spacing: 5rpx;
+}
+
+.bgdadada {
+    background-color: #dadada;
+}
+
+.foot-flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.foot-flex-l{
+    font-size:34rpx;color:#ff0000;font-weight:600;-webkit-box-flex:1;-ms-flex:1;flex:1;
+}
+
+.foot-flex-r{
+    width: 160rpx;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+}
+
+.flex-icon{
+    width:50rpx;
+    height:50rpx;
+}

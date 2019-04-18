@@ -1,0 +1,61 @@
+<view>
+    <title wx:if="{{lists.length}}" router='xxx' title='推荐商品'></title>
+    <view class='goods-content' style="padding:0">
+        <block wx:if='{{listType === 1}}'>
+            <view class='content1'>
+                <scroll-view class='scrollView' scrollX='true'>
+                    <block wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <view bindtap='intoGoodsDetail' class='scroll-item' data-goodsid='{{item.id}}'>
+                            <image src='{{item.cover}}'></image>
+                            <view class='item-name' style='color:{{fontColor}}'>
+                                {{item.goods_name}}
+                            </view>
+                        </view>
+                    </block>
+                </scroll-view>
+            </view>
+        </block>
+        <block wx:if='{{listType === 3}}'>
+            <view class='content2'>
+                <block wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view class='goods-item'>
+                        <image src='{{item.cover}}'></image>
+                        <view class='item-mian'>
+                            <view class='item-mian-title' style='color:{{fontColor}}'>
+                                {{item.goods_name}}
+                            </view>
+                            <view class='item-main-desc'>{{item.goods_remark}}</view>
+                            <view class='item-price-wrapper'>
+                                <view style='color:{{priceColor}}'>￥{{item.price}}</view>
+                                <button bindtap='intoGoodsDetail' data-goodsid='{{item.id}}' style='background:{{btnColor}}'>
+                                    马上抢
+                                </button>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+        <block wx:if='{{listType === 2}}'>
+            <view class='content3'>
+                <block wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view bindtap='intoGoodsDetail' class='goods-item' data-goodsid='{{item.id}}'>
+                        <image src='{{item.cover}}'></image>
+                        <view style="border-radius:0 0 20rpx 20rpx;background:#fff;padding-top:10rpx">
+                            <view class='text-1' style="font-size:30rpx;color:#000">
+                                {{item.goods_name}}
+                            </view>
+                            <view class="text-1" style="font-size:26rpx;color:#999">
+                                {{item.goods_remark}}
+                            </view>
+                            <view class='item-price'>
+                                <view style='color:{{priceColor}}'>￥{{item.price}}/份</view>
+                                <view bindtap='intoGoodsDetail' class='iconfont icon-groupCar' data-goodsid='{{item.id}}' style='color:{{btnColor}}'></view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+</view>

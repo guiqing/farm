@@ -1,0 +1,130 @@
+<block wx:if='{{listType == 1}}'>
+    <view class='shopList'>
+        <scroll-view class='scrollView' scrollX='true'>
+            <block wx:if='{{selectType == 1}}'>
+                <block wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view bindtap='intoGoodsDetail' class='list_item' data-goodsid='{{item.id}}'>
+                        <image src='{{item.cover}}'></image>
+                        <view class='list_item_wraper'>
+                            <view class='list_item_title' style='color: {{fontColor}}'>
+                                {{item.goods_name}}
+                            </view>
+                            <view class='list_item_price'>
+                                <view style='color: {{priceColor}}'>￥{{item.price}}</view>
+                                <view class='iconfont icon-shopcar' style='color: {{btnColor}}'></view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </block>
+            <block wx:if='{{selectType == 2}}'>
+                <block wx:for='{{newList}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view bindtap='intoGoodsDetail' class='list_item' data-goodsid='{{item.id}}'>
+                        <image src='{{item.cover}}'></image>
+                        <view class='list_item_wraper'>
+                            <view class='list_item_title' style='color: {{fontColor}}'>
+                                {{item.goods_name}}
+                            </view>
+                            <view class='list_item_price'>
+                                <view style='color: {{priceColor}}'>￥{{item.price}}</view>
+                                <view class='iconfont icon-shopcar' style='color: {{btnColor}}'></view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </block>
+        </scroll-view>
+    </view>
+</block>
+<block wx:if='{{listType == 2}}'>
+    <view class='shopList_wrapper'>
+        <block wx:if='{{selectType == 1}}'>
+            <block wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view bindtap='intoGoodsDetail' class='shopList_wrapper_item' data-goodsid='{{item.id}}'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='list_item_wraper'>
+                        <view class='item_name' style='color: {{fontColor}}'>
+                            {{item.goods_name}}
+                        </view>
+                        <view class='list_item_price'>
+                            <view style='color: {{priceColor}}'>￥{{item.price}}</view>
+                            <view class='iconfont icon-shopcar' style='color: {{btnColor}}'></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </block>
+        <block wx:if='{{selectType == 2}}'>
+            <block wx:for='{{newList}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view bindtap='intoGoodsDetail' class='shopList_wrapper_item' data-goodsid='{{item.id}}'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='list_item_wraper'>
+                        <view class='item_name' style='color: {{fontColor}}'>
+                            {{item.goods_name}}
+                        </view>
+                        <view class='list_item_price'>
+                            <view style='color: {{priceColor}}'>￥{{item.price}}</view>
+                            <view class='iconfont icon-shopcar' style='color: {{btnColor}}'></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </block>
+    </view>
+</block>
+<block wx:if='{{listType == 3}}'>
+    <view class='shopList_wrapper' style='margin-top: 8rpx'>
+        <block wx:if='{{selectType == 1}}'>
+            <block wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view bindtap='intoGoodsDetail' class='shopList_wrapper_items' data-goodsid='{{item.id}}'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='list_item_wraper'>
+                        <view class='item_name' style='color: {{fontColor}}'>
+                            {{item.goods_name}}
+                        </view>
+                        <view class='list_item_price'>
+                            <view style='color: {{priceColor}}'>￥{{item.price}}</view>
+                            <view class='iconfont icon-shopcar' style='color: {{btnColor}}'></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </block>
+        <block wx:if='{{selectType == 2}}'>
+            <block wx:for='{{newList}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view bindtap='intoGoodsDetail' class='shopList_wrapper_items' data-goodsid='{{item.id}}'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='list_item_wraper'>
+                        <view class='item_name' style='color: {{fontColor}}'>
+                            {{item.goods_name}}
+                        </view>
+                        <view class='list_item_price'>
+                            <view style='color: {{priceColor}}'>￥{{item.price}}</view>
+                            <view class='iconfont icon-shopcar' style='color: {{btnColor}}'></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </block>
+    </view>
+</block>
+<block wx:if='{{listType == 4}}'>
+    <view class='list_style_wrapper'>
+        <block wx:if='{{selectType == 1}}'>
+            <block wx:for='{{lists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view bindtap='intoGoodsDetail' class='list_style_item' data-goodsid='{{item.id}}'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='item_info_wrapper'>
+                        <view class='item_name' style='color: {{fontColor}}'>
+                            {{item.goods_name}}
+                        </view>
+                        <view class='list_item_price padd20'>
+                            <view style='color: {{priceColor}}'>￥{{item.price}}</view>
+                            <view class='iconfont icon-shopcar' style='color: {{btnColor}}'></view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </block>
+    </view>
+</block>

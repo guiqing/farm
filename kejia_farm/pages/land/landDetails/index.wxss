@@ -1,0 +1,633 @@
+@import '/import/css0_1.wxss';
+
+.banner {
+    width: 100%;
+    height: 396rpx;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper wx-image {
+    width: 100%;
+    height: 100%;
+}
+
+page .wx-swiper-dots {
+    bottom: 60rpx;
+}
+
+.monitor {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 10rpx;
+    right: 20rpx;
+    z-index: 9999999;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.land_info {
+    width: 90%;
+    margin: 30rpx auto 0;
+    border-bottom: 1rpx solid #c9c9c9;
+}
+
+.land_name {
+    font-size: 32rpx;
+    color: #313131;
+    font-weight: 500;
+}
+
+.land_ares {
+    width: 100%;
+    padding: 15rpx 0;
+    font-size: 30rpx;
+    color: #535353;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.land_ares wx-view {
+    position: relative;
+}
+
+.land_ares wx-view:not(:last-child) {
+    margin-right: 30rpx;
+}
+
+.sup {
+    position: absolute;
+    font-size: 20rpx;
+    right: -10rpx;
+    top: 5rpx;
+}
+
+.select_lands {
+    width: 90%;
+    margin: 20rpx auto 0;
+}
+
+.land_status {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    font-size: 24rpx;
+}
+
+.land_status_view {
+    width: 25rpx;
+    height: 25rpx;
+    background: #d0d0d0;
+    border-radius: 3rpx;
+    margin-right: 10rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.land_status_view wx-image {
+    width: 28rpx;
+    height: 74rpx;
+}
+
+.land_status_view wx-view {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    opacity: 0.4;
+    background: #fff;
+}
+
+.land_list {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.list_item {
+    display: inline-block;
+    width: 80rpx;
+    height: 320rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #fff;
+    margin-bottom: 10rpx;
+}
+
+.list_item wx-radio {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+.list_item:not(:last-child) {
+    margin-right: 20rpx;
+}
+
+.title_wrapper {
+    width: 100%;
+    height: 280rpx;
+    line-height: 45rpx;
+    position: relative;
+}
+
+.title_wrapper wx-image {
+    width: 100%;
+    height: 100%;
+}
+
+.land_model {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background: #fff;
+    opacity: 0.4;
+}
+
+.title_model {
+    box-sizing: border-box;
+    padding: 40rpx 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.radioStyle {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    margin: 0 auto;
+}
+
+.select_title {
+    font-size: 32rpx;
+    color: #888789;
+    letter-spacing: 2rpx;
+}
+
+.select_area {
+    margin-top: 20rpx;
+    padding-bottom: 20rpx;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.item_area {
+    width: 33.3%;
+    text-align: center;
+    height: 70rpx;
+    margin-bottom: 20rpx;
+}
+
+.selectLand {
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    z-index: 80;
+    border-radius: 15rpx;
+    transition: left 0.3s ease-out;
+}
+
+.show {
+    top: 0;
+    left: 0;
+}
+
+.hide {
+    top: 0;
+    left: -200rpx;
+}
+
+.item {
+    display: inline-block;
+    font-size: 34rpx;
+    font-weight: 500;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    height: 66rpx;
+    border-radius: 20rpx;
+    line-height: 70rpx;
+    border: 1rpx solid #b28850;
+    position: relative;
+    overflow: hidden;
+}
+
+.land_are {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.noSelect {
+    color: #875825;
+}
+
+.isSelect {
+    color: #fff;
+}
+
+.block {
+    height: 30rpx;
+    background: #efefef;
+}
+
+.fun_info {
+    width: 90%;
+    margin: 30rpx auto 0;
+}
+
+.fun_title {
+    border-left: 10rpx solid #16ba63;
+    color: #464646;
+    font-size: 32rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    line-height: 40rpx;
+    font-weight: 500;
+}
+
+.fun_info_wrapper {
+    margin-top: 20rpx;
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.fun_info_item {
+    width: 50%;
+    text-align: center;
+    font-size: 28rpx;
+    color: #888789;
+    padding: 40rpx 0rpx;
+    box-sizing: border-box;
+}
+
+.fun_info_desc {
+    color: #464646;
+    margin-top: 5rpx;
+}
+
+.border-bottom {
+    border-bottom: 1rpx solid #f9b987;
+}
+
+.bottom-left {
+    border-left: 1rpx solid #f9b987;
+}
+
+.avator_wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.avator_content {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    background: #fff;
+    text-align: center;
+    line-height: 120rpx;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.avator_wrapper wx-image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.situation {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    margin-top: 30rpx;
+    font-size: 28rpx;
+    text-align: center;
+    color: #464646;
+}
+
+.cf888789 {
+    color: #888789;
+}
+
+.humidity {
+    height: 80rpx;
+    width: 56rpx;
+}
+
+.temperature {
+    height: 80rpx;
+    width: 76rpx;
+}
+
+.co2 {
+    height: 80rpx;
+    width: 48rpx;
+}
+
+.Illumination {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.pro_wrapper {
+    width: 100%;
+    margin-top: 30rpx;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.pro_item {
+    width: 25%;
+    text-align: center;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+}
+
+.pro_item wx-image {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 15rpx;
+}
+
+.proName {
+    font-size: 30rpx;
+    color: #464646;
+    width: 160rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.yuji {
+    color: #888789;
+    motion: 10rpx 0;
+    font-weight: 500;
+}
+
+.footer_block {
+    height: 100rpx;
+}
+
+.footer_wrapper {
+    width: 100%;
+    height: 110rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+}
+
+.footer {
+    z-index: 200;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    height: 110rpx;
+}
+
+.shopCar {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100rpx;
+}
+
+.shop_circle {
+    width: 110rpx;
+    height: 110rpx;
+    background: #313131;
+    border-radius: 50%;
+    margin-top: -40rpx;
+    margin-left: 30rpx;
+    box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.num {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: #16ba63;
+    color: #fff;
+    font-size: 24rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 30rpx;
+}
+
+.circle {
+    width: 80rpx;
+    height: 80rpx;
+    background: #16ba63;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.circle wx-image {
+    width: 45rpx;
+    height: 45rpx;
+    margin-top: 15rpx;
+}
+
+.price {
+    font-size: 36rpx;
+    color: black;
+    margin-left: 32rpx;
+    font-weight: 600;
+}
+
+.confrim {
+    width: 250rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    color: #fff;
+    background: #16ba63;
+    text-align: center;
+    letter-spacing: 2rpx;
+    border-radius: 80rpx;
+    margin-right: 10rpx;
+}
+
+.position {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    box-shadow: 0 0 15rpx rgba(0, 0, 0, 0.4);
+    background: #fff;
+    position: fixed;
+    right: 10rpx;
+    bottom: 120rpx;
+    color: #16ba63;
+    text-align: center;
+    font-size: 28rpx;
+    transition: all 0.3s;
+}
+
+.index {
+    width: 50rpx;
+    height: 50rpx;
+    margin-top: 10rpx;
+}
+
+.service {
+    margin-top: 10rpx;
+    height: 50rpx;
+    width: 54rpx;
+}
+
+.mtText {
+    margin-top: -8rpx;
+}
+
+.bottom1 {
+    right: 10rpx;
+    bottom: 120rpx;
+}
+
+.bottom2 {
+    right: 10rpx;
+    bottom: 240rpx;
+}
+
+.bottom3 {
+    right: 10rpx;
+    bottom: 360rpx;
+}
+
+.bottom4 {
+    right: -120rpx;
+    bottom: 360rpx;
+}
+
+.player-img {
+    width: 120rpx;
+    height: 120rpx;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.is_loading {
+    width: 100%;
+    height: 38%;
+    margin-top: 15%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.is_loading .loadCover {
+    width: 60rpx;
+    height: 60rpx;
+    -webkit-animation: cycle 3s infinite;
+    animation: cycle 3s infinite;
+}
+
+.is_loading .loadCover .loadingimg {
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes cycle {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cycle {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

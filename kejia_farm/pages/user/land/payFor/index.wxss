@@ -1,0 +1,31 @@
+@import '/import/css0_1.wxss';page{ background-color: #f4f4f4; }
+.fishStyle{ width: 480rpx; height: 480rpx; margin-top: 150rpx; }
+.Vegetables{ font-size: 30rpx; color: #939393; }
+.user_container wx-view{ height: 100rpx; line-height: 100rpx; }
+.user_container wx-input{ height:100rpx; line-height: 100rpx; }
+.block160{ height: 160rpx; }
+.rules{ height: 60rpx; width: 100%; position: fixed; left: 0; bottom: 100rpx; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; background-color: #fff; }
+.radioBtn{ margin-left: 20rpx; -webkit-transform:scale(0.8); transform:scale(0.8); }
+.footer{ border-top: 1rpx solid #f4f4f4; height: 100rpx; width: 100%; position: fixed; bottom: 0; left: 0; background-color: #fff; }
+.payFor{ width: 250rpx; font-size: 32rpx; letter-spacing: 3rpx; height: 100rpx; line-height: 100rpx; background-color: #fc8535; color: #fff; text-align: center }
+.modal-mask { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.4); overflow: hidden; z-index: 999; color: #fff; }
+.modal-title{ font-size: 34rpx; font-weight: bold; text-align: center; height: 60rpx; line-height: 60rpx; }
+.modal-dialog { width:80%; top: 120rpx; position: relative; left: 10%; z-index: 2000; }
+.dialog_container{ width: 100%; max-height: 800rpx; background: #fff; border-radius: 15rpx; color: #000; font-size: 30rpx; padding: 20rpx; box-sizing: border-box; overflow-y: auto; }
+.closeModel{ width: 60rpx; height: 60rpx; margin: 30rpx auto 0rpx; border-radius: 50%; z-index: 2000; display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; }
+.closeModel wx-image{ width: 40rpx; height: 40rpx; }
+.modal-dialog::-webkit-scrollbar { width: 0; height: 0; color: transparent; }
+.block100{ height: 100rpx; }
+.borderbottom{ box-sizing: border-box; }
+.borderbottom:not(:last-child){ border-bottom: 1rpx solid #EEEEEE; }
+.cfD6{ color: #D6D6D6; }
+.xieyi{ color: #000; position: relative; }
+.xieyi::before{ content: ''; position: absolute; bottom: -10rpx; left: 13%; width: 74%; height: 2rpx; background-color: #000; }
+.user_container{ width: 100%; margin-top: 20rpx; background-color: #fff; }
+.pick-w{width: 95%;z-index: 600;margin-left: 5%}
+.sel-pick{position: relative;left: -40rpx;}
+.title{width: 25%;margin-left: 27rpx;}
+.user_container .user-div{height: 100rpx;}
+.rule-title{color: gray;}
+.rule-book{color: #3f88bf;text-decoration: underline;}
+.new-tag{position: relative;top: -6rpx;margin-left: 30rpx;}

@@ -1,0 +1,155 @@
+<block>
+    <view>
+        <tarbar list='{{tarbar}}'></tarbar>
+    </view>
+</block>
+<!-- <view>
+    <view class='scroll_container'>
+        <scroll-view class='scrollView bgff' scrollIntoView='{{"view" + currentIndex}}' scrollWithAnimation='true' scrollX='true'>
+            <block wx:for='{{landType}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                <view bindtap='changeArea' class='item {{(currentIndex == item.id?"actives":"")}}' data-id='{{item.id}}' id='{{"view" + item.id}}' style='color:{{(currentIndex == item.id?farmSetData.background_color:"black")}}'>
+                    <view>{{item.name}}</view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+    <view style="height:100rpx"></view>
+    <view class='currentLand_wrapper' style="padding-bottom:10rpx">
+        <block wx:if='{{currentLand.length}}' wx:for='{{currentLand}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <view bindtap='intoLandDetail' class='landItem' data-lid='{{item.id}}'>
+                <view class='img_wrapper'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='area_wrappers'></view>
+                </view>
+                <view class='landName'>{{item.land_name}}</view>
+                <block wx:if='{{item.land_intro}}'>
+                    <view class='landDesc'>简介:{{item.land_intro}}</view>
+                </block>
+                <view class='selectInfo'>
+                    <view>
+                        价格:
+                        <text>{{item.spec_price}}元起</text>
+                    </view>
+                    <button class='selectLand' hoverClass='hover' style='background:{{farmSetData.background_color}}'>
+                        选择土地
+                    </button>
+                </view>
+            </view>
+        </block>
+        <block wx:if='{{!currentLand.length}}'>
+            <view style="font-size:28rpx;padding:20rpx">暂无数据</view>
+        </block>
+    </view>
+</view> -->
+<view>
+    <!-- <view class="menu_1">
+        <view class="menu_1-item" wx:for="{{landType}}" wx:key="this" wx:for-item="menu" wx:for-index="pid">
+            <view class="menu_1-name" data-index="{{pid}}" catch:tap="select_menu1" style="color:{{curren_pid==pid?'#48cab3':'#444'}}">
+                <view style="padding:0 20rpx">{{menu.name}}</view>
+                <view><image src="down.png" class='down'/></view>                
+            </view>
+            <view class="menu_2" style="display:{{curren_pid==pid && show?'inherit':'none'}}">
+                <view class="imgs">
+                    <image class="img" src="d1.png"/>
+                </view>
+                <view class="menu_2-item">
+                    <view wx:for="{{menu.items}}" catch:tap="select_menu2" 
+                    data-index="{{item.id}}" 
+                    wx:for-index="id" 
+                    wx:key="this"
+                    style="line-height:80rpx;color:{{curren_id==item.id && curren_pid==pid ? '#3ec7a9':'#999'}}">{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+    <view class="menu_1">
+        <view class="menu_1-item">
+            <view class="menu_1-name" catch:tap="onShowArea">
+                <view style="color:{{area=='区域' ? '#000' : '#0fc8a8'}}">{{area}}</view>
+                <view><image src="down.png" class='down'/></view>                
+            </view>
+        </view>
+        <view class="menu_1-item">
+            <view class="menu_1-name">
+                <view >价格</view>
+                <view><image src="down.png" class='down'/></view>                
+            </view>
+        </view>
+        <view class="menu_1-item">
+            <view class="menu_1-name">
+                <view >面积</view>
+                <view><image src="down.png" class='down'/></view>                
+            </view>
+        </view>
+        <view class="menu_1-item">
+            <view class="menu_1-name">
+                <view >更多</view>
+                <view><image src="down.png" class='down'/></view>                
+            </view>
+        </view>
+    </view>
+    <view style="height:86rpx;background:#fff;position:fixed;top:0;left:0;right:0"></view>
+    <view style="padding:30rpx 20rpx;margin-top:86rpx">
+        <block wx:if='{{currentLand.length}}' wx:for='{{currentLand}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <view bindtap='intoLandDetail' class='card-list' data-lid='{{item.id}}'>
+               <view><image src='{{item.cover}}' style="width:100%;height:360rpx;border-radius:40rpx 40rpx 0 0"></image></view>
+               <view class="card-list-text">
+                   <view class='landName'>{{item.land_name}}</view>
+                    <block wx:if='{{item.land_intro}}'>
+                        <view class='landDesc'>简介:{{item.land_intro}}</view>
+                    </block>
+                    <view class='selectInfo'>
+                        <view>
+                            价格:
+                            <text>{{item.spec_price}}元起</text>
+                        </view>
+                        <button class='selectLand' hoverClass='hover' style='background:{{farmSetData.background_color}}'>
+                            选择土地
+                        </button>
+                    </view> 
+               </view> 
+            </view>
+        </block>
+        <block wx:if='{{!currentLand.length}}'>
+            <view style="font-size:28rpx;padding:20rpx">暂无数据</view>
+        </block>
+        <van-popup show="{{ showArea }}" position="top" overlay="{{ false }}"  bind:close="onClose">
+            <view style="height:86rpx"></view>
+            <van-tree-select
+            items="{{ areaList }}"
+            main-active-index="{{ mainActiveIndex }}"
+            active-id="{{ activeId }}"
+            bind:click-nav="onClickNav"
+            bind:click-item="onClickItem"
+            />
+        </van-popup>
+    </view>
+
+    <!-- <view class='currentLand_wrapper' style="padding:30rpx">
+        <block wx:if='{{currentLand.length}}' wx:for='{{currentLand}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <view bindtap='intoLandDetail' class='landItem' data-lid='{{item.id}}'>
+                <view class='img_wrapper'>
+                    <image src='{{item.cover}}'></image>
+                    <view class='area_wrappers'></view>
+                </view>
+                <view class='landName'>{{item.land_name}}</view>
+                <block wx:if='{{item.land_intro}}'>
+                    <view class='landDesc'>简介:{{item.land_intro}}</view>
+                </block>
+                <view class='selectInfo'>
+                    <view>
+                        价格:
+                        <text>{{item.spec_price}}元起</text>
+                    </view>
+                    <button class='selectLand' hoverClass='hover' style='background:{{farmSetData.background_color}}'>
+                        选择土地
+                    </button>
+                </view>
+            </view>
+        </block>
+        <block wx:if='{{!currentLand.length}}'>
+            <view style="font-size:28rpx;padding:20rpx">暂无数据</view>
+        </block>
+    </view> -->
+</view>
+<view style="height:50px"></view>

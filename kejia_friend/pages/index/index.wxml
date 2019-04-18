@@ -1,0 +1,52 @@
+<view style="margin-top:25rpx">
+    <block wx:for="{{list}}" wx:for-item="data" wx:key="id">
+        <view class="card-list">
+            <view class="card-list-header flex">
+                <image class="card-list-header-img" src="{{data.head}}" />
+                <view class="card-list-header-text">
+                    <view class="name">{{data.name}}</view>
+                    <view class="time">{{data.time}}</view>
+                </view>
+                <block wx:if="{{data.isLike==false}}">
+                    <view class="card-list-header-btn1">+关注</view>
+                </block>
+                <block wx:if="{{data.isLike==true}}">
+                    <view class="card-list-header-btn2">取消关注</view>
+                </block>             
+            </view>
+            <view class="card-list-content">{{data.content}}</view>
+            <view class="card-list-image" style="display:flex">
+                <block wx:if="{{data.imgsType==1 && data.imgs.length}}">
+                    <image catch:tap="previewImg" class="img1" src="{{data.imgs[0]}}"
+                    data-url="{{data.imgs[0]}}" data-urls="[{{data.imgs[0]}}]"/>
+                </block>
+                <block wx:if="{{data.imgsType==2 && data.imgs.length}}" wx:for="{{data.imgs}}" wx:key="this" wx:for-item="child" wx:for-index="count">
+                    <view style="flex:1">
+                        <image catch:tap="previewImg" class="img2" src="{{child}}"
+                        data-url="{{child}}" data-urls="{{data.imgs}}" />
+                    </view>
+                </block>
+                <block wx:if="{{data.imgsType==3 && data.imgs.length}}" wx:for="{{data.imgs}}" wx:key="this" wx:for-item="child" wx:for-index="count">
+                    <view style="flex:1">
+                        <image catch:tap="previewImg" class="img3" src="{{child}}"
+                         data-url="{{child}}" data-urls="{{data.imgs}}" />
+                    </view>
+                </block>                           
+            </view>
+            <view class="card-list-footer flex">
+                <view class="item1 flex">
+                    <image src="../../images/icon1.png" style="height:27rpx;width:43rpx" />
+                    <view class="item-text">{{data.footer.btn1}}</view>
+                </view>
+                <view class="item2 flex">
+                    <image src="../../images/icon2.png" style="height:29rpx;width:29rpx" />
+                    <view class="item-text">{{data.footer.btn2}}</view>
+                </view>
+                <view class="item3 flex">
+                <image src="../../images/icon3.png" style="height:29rpx;width:29rpx" />
+                    <view class="item-text" >{{data.footer.btn3}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

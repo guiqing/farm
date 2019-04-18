@@ -1,0 +1,18 @@
+<!-- <view class='title-wrapper' style='color:{{fontColor}}; font-size:{{fontSize * 2}}rpx; background:{{bgColor}}; padding:{{padTb}}px {{padLr}}px; text-align: {{align}}'>
+    <view class='title' style='color:{{fontColor}}'>
+        <text class='iconfont {{icon}}'></text>
+        {{text}}
+    </view>
+    <view bindtap='navToPage' class='route-wrapper' data-linkparam='{{linkparam}}' data-linktype='{{linktype}}'>
+        <view class='more'>更多</view>
+        <view class='iconfont icon-right'></view>
+    </view>
+</view> -->
+
+<view class="header-list">
+    <view class="title">{{text}}</view>
+    <block wx:if='{{right!="none"}}'>
+        <view bindtap='navToPage2' data-linkparam='{{linkparam}}' data-linktype='{{linktype}}' class="more">更多</view>
+    <image bindtap='navToPage2' data-linkparam='{{linkparam}}' data-linktype='{{linktype}}' mode="aspectFit" src="image/more.png" style="width:30rpx;height:30rpx"/>
+    </block>   
+</view>

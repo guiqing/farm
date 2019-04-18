@@ -1,0 +1,9 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "个人中心",
+    "navigationBarBackgroundColor": "#0fc8ab",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "tarbar": "/components/tarbar/tarbar"
+    }
+}

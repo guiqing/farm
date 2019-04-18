@@ -1,0 +1,2 @@
+@import '/import/css0_0.wxss';.container{ width: 100%; padding: 20rpx 0; }
+.search{ font-size: 30rpx; height: 60rpx; line-height: 60rpx; margin: 0rpx auto; border: 1rpx solid #DBDADA; text-align: center; }

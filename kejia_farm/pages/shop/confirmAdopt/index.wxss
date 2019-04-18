@@ -1,0 +1,36 @@
+@import '/import/css0_1.wxss';page { background: #f4f4f4; font-size: 30rpx; }
+.adopt-list { width: 100%; height: 200rpx; background: white; padding-top: 20rpx; border-bottom: 1rpx solid #f4f4f4; border-top: 1rpx solid #f4f4f4; }
+.adopt-list .li-left { width: 24%; height: 180rpx; float: left; margin-left: 5%; }
+.adopt-list .li-left wx-image { width: 100%; height: 100%; }
+.adopt-list .li-right { width: 61%; height: 100%; margin-left: 5%; float: left; }
+.adopt-list .li-right .adopt-name { display: block; margin-bottom: 20rpx; }
+.adopt-list .li-right .spec { color: gray; font-size: 26rpx; margin-bottom: 10rpx; }
+.adopt-list .li-right .li-right-desc { width: 100%; height: 50rpx; margin-top: 20rpx; }
+.adopt-list .li-right .price { color: red; }
+.adopt-list .li-right .count { color: gray; float: right; }
+.desc { width: 90%; padding: 10rpx 5% 10rpx 5%; background: white; border-bottom: 1rpx solid #f4f4f4; color: gray; font-size: 28rpx; min-height: 80rpx; }
+.line-h { line-height: 80rpx; }
+.desc .coupon-icon { width: 50rpx; height: 50rpx; position: relative; top: 15rpx; margin-right: 20rpx; }
+.desc .iconSmall { float: right; }
+.desc .keyong { color: red; float: right; margin-right: 20rpx; }
+.coupon-title { position: relative; top: -5rpx; margin-left: 10rpx; }
+.footer { width: 100%; height: 100rpx; position: fixed; bottom: 0; background: white; line-height: 100rpx; }
+.footer .left { width: 62%; height: 100%; padding-left: 5%; float: left; }
+.footer .right { width: 30%; text-align: center; background: #fc8535; float: left; color: white; border-radius: 100rpx; height: 80rpx; margin-top: 5px; line-height: 80rpx; }
+.user_container { width: 100%; margin-top: 20rpx; background-color: #fff; }
+.borderbottom { box-sizing: border-box; }
+.borderbottom:not(:last-child) { border-bottom: 1rpx solid #eee; }
+.pick-w { width: 95%; z-index: 600; margin-left: 5%; }
+.sel-pick { position: relative; left: -40rpx; }
+.title { width: 200rpx; }
+.user_container .user-div { height: 100rpx; }
+.rule-title { color: gray; }
+.rule-book { color: #3f88bf; text-decoration: underline; }
+.modal-mask { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.4); overflow: hidden; z-index: 999; color: #fff; }
+.modal-title { font-size: 34rpx; font-weight: bold; text-align: center; height: 60rpx; line-height: 60rpx; }
+.modal-dialog { width: 80%; top: 120rpx; position: relative; left: 10%; z-index: 2000; }
+.dialog_container { width: 100%; max-height: 800rpx; background: #fff; border-radius: 15rpx; color: #000; font-size: 30rpx; padding: 20rpx; box-sizing: border-box; overflow-y: auto; }
+.closeModel { width: 60rpx; height: 60rpx; margin: 30rpx auto 0rpx; border-radius: 50%; z-index: 2000; display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; -webkit-align-items: center; align-items: center; }
+.closeModel wx-image { width: 40rpx; height: 40rpx; }
+.modal-dialog::-webkit-scrollbar { width: 0; height: 0; color: transparent; }
+.title { width: 200rpx; margin-left: 14rpx; }

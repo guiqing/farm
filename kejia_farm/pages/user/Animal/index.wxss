@@ -1,0 +1,14 @@
+page{ background-color: #f4f4f4; }
+.titles{ display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; background-color: #fff; font-size: 30rpx; width: 100%; position: fixed; top: 0; left: 0; }
+.block{ height: 80rpx; }
+.nav{ width: 33.3%; padding: 20rpx 0rpx; text-align: center; position: relative; }
+.nav::before{ content:''; display: block; width:100%; height:1px; position: absolute; bottom: 0; left: 0; background: currentColor; opacity: 0; transition: all 0.3s ease; }
+.active{ color: #16ba63; }
+.active::before{ width: 100%; left: 0%; opacity: 1; transition: all 0.3s ease; }
+.livestock{ width: 90%; background-color: #fff; border-radius: 15rpx; margin: 20rpx auto 0rpx; box-shadow: 2rpx 2rpx 10rpx rgba(10, 10, 10, 0.2); padding: 20rpx; box-sizing: border-box; font-size: 30rpx; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: space-between; justify-content: space-between; color: #565656; }
+.livestockImg{ width: 250rpx; height: 250rpx;border-radius: 15rpx; }
+.none{width: 100%;height: 300rpx;text-align: center;}
+.none wx-image{width: 400rpx;height: 260rpx;margin-top:140rpx;}
+.none .tags{color: gray;font-size: 24rpx;display: block}
+.none .go-buy{ width:34%; height:65rpx; line-height:65rpx; border-radius:65rpx; color:#2aa515; font-size:26rpx; margin-left:33%; margin-top:20rpx; }
+.look-detail{color: #2aa515;}

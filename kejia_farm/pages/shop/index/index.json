@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "商城",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "tarbar": "/components/tarbar/tarbar"
+    }
+}

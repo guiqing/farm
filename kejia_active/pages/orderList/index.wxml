@@ -1,0 +1,74 @@
+<view>
+    <view class='flexSa plr20 f30 orderTitle'>
+        <view bindtap='changeIndex' class='cd515151 plr20 ' data-index='1' style='border-bottom:1rpx solid {{(currentIndex == 1?farmSetData.background_color:"white")}};color:{{(currentIndex == 1?farmSetData.background_color:"")}}'>
+            全部
+        </view>
+        <view bindtap='changeIndex' class='cd515151 plr20' data-index='2' style='border-bottom:1rpx solid {{(currentIndex == 2?farmSetData.background_color:"white")}};color:{{(currentIndex == 2?farmSetData.background_color:"")}}'>
+            待参加
+        </view>
+        <view bindtap='changeIndex' class='cd515151 plr20' data-index='3' style='border-bottom:1rpx solid {{(currentIndex == 3?farmSetData.background_color:"white")}};color:{{(currentIndex == 3?farmSetData.background_color:"")}}'>
+            待审核
+        </view>
+        <view bindtap='changeIndex' class='cd515151 plr20' data-index='4' style='border-bottom:1rpx solid {{(currentIndex == 4?farmSetData.background_color:"white")}};color:{{(currentIndex == 4?farmSetData.background_color:"")}}'>
+            待支付
+        </view>
+    </view>
+    <block wx:if='{{orderList.length > 0}}'>
+        <view>
+            <block wx:for='{{orderList}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='mainBody'>
+                    <view class='ptl30 brb'>
+                        <view class='flex mt20'>
+                            <image class='HeadImg' src='{{item.active.cover}}'></image>
+                            <view class='item_info_wrapper'>
+                                <view class='itemName'>{{item.active.title}}</view>
+                                <view class='flex mt10 f28 cf93'>{{item.active.address}}</view>
+                                <view class='item_time_wrapper'>
+                                    <view>{{item.active.start_time}}　{{item.active.week}}</view>
+                                    <view style='color: #16BA63;'>￥{{item.total_price}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='btnArr'>
+                        <block wx:if='{{ (item.is_check == 0 && item.is_pay == 1) }}'>
+                            <view class='examine' style='color: #16BA63'>等待主办方审核</view>
+                        </block>
+                        <block wx:if='{{item.apply_delete == 2}}'>
+                            <view class='examine' style='color: #16BA63'>订单已取消</view>
+                        </block>
+                        <block wx:if='{{item.is_check == 3}}'>
+                            <view class='examine' style='color: #16BA63'>订单完成</view>
+                        </block>
+                        <block wx:if='{{ (item.is_pay == 0 && item.apply_delete == 0) }}'>
+                            <button bindtap='cancelOrder' class='cancelOrder' data-orderid='{{item.id}}'>
+                                取消订单
+                            </button>
+                        </block>
+                        <block wx:if='{{ (item.is_pay == 0 && item.apply_delete == 0) }}'>
+                            <button bindtap='nowPay' class='PayOrder' data-orderid='{{item.id}}' style='background:{{farmSetData.background_color}}'>
+                                立即支付
+                            </button>
+                        </block>
+                        <block wx:if='{{ (item.is_check == 0 && item.is_pay == 1) }}'>
+                            <button class='cancelOrder'>审核中</button>
+                        </block>
+                        <block wx:if='{{ (item.is_check == 1 && item.is_pay == 1) }}'>
+                            <button bindtap='seeTicket' class='PayOrder' data-orderid='{{item.id}}' style='background:{{farmSetData.background_color}}'>
+                                我的电子票
+                            </button>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view>
+            <view class='noOrder'>
+                <image src='/kejia_farm/images/icon/none.png'></image>
+                <view>暂时还没有相关的订单</view>
+            </view>
+        </view>
+    </block>
+</view>

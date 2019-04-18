@@ -1,0 +1,106 @@
+<view>
+    <view class="bgff p30 bb">
+        <view class="flex ptb20 buyList_item" wx:for="{{buyList}}" wx:key="id">
+            <image class="headImg" src="{{item.cover}}"></image>
+            <view class="ml20">
+                <view class="itemName">{{item.name}}</view>
+                <view class="f26 mt10 cf93 flex">
+                    <text>状态:</text>
+                    <text class="ml10">{{item.state}}</text>
+                    <text class="ml10">周期:</text>
+                    <text class="ml10">{{item.cycle}}天</text>
+                    <text class="ml10">x {{item.num}}</text>
+                </view>
+                <view>
+                    <text class="f26">￥{{item.price}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{types==1}}">
+        <view class="p30 flexSb bgff bb">
+            <view>
+                <text class="f30">快递运费：</text>
+                <text class="f28 cf93">全国包邮</text>
+            </view>
+            <view class="f32 cfred" wx:if="{{farmSetData.seed_send_price>0}}">￥{{farmSetData.seed_send_price}}</view>
+            <view class="f32 cfred" wx:else>免运费</view>
+        </view>
+        <view bindtap="selectAddress" class="bgff p30 bb flexSb">
+            <view class="iconfont icon-position positionImg"></view>
+            <view class="address" wx:if="{{addressInfo.userName}}">
+                <view>
+                    <text>收货人：</text>
+                    <text>{{addressInfo.userName}}</text>
+                    <text>{{addressInfo.telNumber}}</text>
+                </view>
+                <view class="cf93 mt10">{{addressInfo.address}}</view>
+            </view>
+            <view class="address" wx:else>请填写收货地址</view>
+            <view class="iconfont icon-right positionImg"></view>
+        </view>
+    </block>
+    <block wx:if="{{types==2}}">
+        <view class="p30 flexSb bgff bb">
+            <view class="f30">回收方式：</view>
+            <view>
+                <radio-group bindchange="radioChange" class="flex">
+                    <label class="radio" wx:if="{{animalSet['recovery_method'][0]==1}}">
+                        <radio checked="{{method==1}}" class="radioStyle" value="1"></radio>邮寄
+                    </label>
+                    <label class="radio ml10" wx:if="{{animalSet['recovery_method'][1]==2}}">
+                        <radio checked="{{method==0}}" class="radioStyle" value="0"></radio>自提
+                    </label>
+                </radio-group>
+            </view>
+        </view>
+        <block wx:if="{{method==1}}">
+            <view class="p30 flexSb bgff bb">
+                <view>
+                    <text class="f30">快递运费：</text>
+                    <text class="f28 cf93">全国包邮</text>
+                </view>
+                <view class="f32 cfred">￥{{farmSetData.animal_send_price}}</view>
+            </view>
+            <view class="p30 flexSb bgff bb">
+                <view class="f30">邮寄选项：</view>
+                <view>
+                    <radio-group bindchange="selectType" class="flex">
+                        <label class="radio" wx:for="{{animalSet['packing_method']}}" wx:key="index">
+                            <radio checked="{{enums==item}}" class="radioStyle" value="{{item}}"></radio>{{item}}
+                        </label>
+                    </radio-group>
+                </view>
+            </view>
+            <view bindtap="selectAddress" class="bgff p30 bb flexSb">
+                <view class="iconfont icon-position positionImg"></view>
+                <view class="address" wx:if="{{addressInfo.userName}}">
+                    <view>
+                        <text>收货人：</text>
+                        <text>{{addressInfo.userName}}</text>
+                        <text>{{addressInfo.telNumber}}</text>
+                    </view>
+                    <view class="cf93 mt10">{{addressInfo.address}}</view>
+                </view>
+                <view class="address" wx:else>请填写收货地址</view>
+                <view class="iconfont icon-right positionImg"></view>
+            </view>
+        </block>
+        <view class="p30 saleAddress_wrapper bgff bb" wx:if="{{method==0}}">
+            <view class="f30">自提地址:</view>
+            <view class="f30 saleAddress">{{animalSet['self_lifting_address']}}</view>
+        </view>
+    </block>
+    <view class="block"></view>
+    <view class="footer" style="color:{{farmSetData.background_color}}" wx:if="{{types==1}}">
+        <view class="f24 ml30">￥</view>
+        <view class="f36 ml10">{{farmSetData.seed_send_price}}</view>
+        <view bindtap="surePay" class="payfor" style="background:{{farmSetData.background_color}};color:white;">确定</view>
+    </view>
+    <view class="footer" style="color:{{farmSetData.background_color}}" wx:if="{{types==2}}">
+        <view class="f24 ml30" wx:if="{{method!=0}}">￥</view>
+        <view class="f36 ml10" wx:if="{{method!=0}}">{{farmSetData.animal_send_price}}</view>
+        <view class="f24 ml10" wx:else>自提直接下单</view>
+        <view bindtap="sureAnimalPay" class="payfor" style="background:{{farmSetData.background_color}};color:white;">确定</view>
+    </view>
+</view>

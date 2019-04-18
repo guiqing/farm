@@ -1,0 +1,30 @@
+page{ background-color: #efefef; }
+.land_cpntainer{ background-color: #fff; position: fixed; top: 0; left: 0; width: 100%; z-index: 999; }
+.block{ height: 80rpx; }
+.orderTitle{ background-color: #fff; }
+.orderTitle wx-view{ padding: 20rpx; box-sizing: border-box; }
+.notcurrentIndex{ border-bottom: 3rpx solid #fff; }
+.currentIndex{ border-bottom: 3rpx solid #fc8535; color: #fc8535; }
+.search_container{ width: 94%; height: 75rpx; margin: 20rpx auto; background-color: #fff; border-radius: 20rpx; overflow: hidden; position: relative; }
+.search{ width: 35rpx; height: 35rpx; position: absolute; transition: all 0.3s; }
+.position1{ top: 20rpx; left: 20rpx; }
+.position2{ top: 20rpx; left: 230rpx; }
+.input{ width: 100%; height: 100%; text-align: center; font-size: 30rpx; }
+.place{ font-size: 30rpx; text-align: center; color: #515151; }
+.land_item{ width: 94%; margin: 20rpx auto; border-radius: 20rpx; background-color: #fff; overflow: hidden; position: relative; }
+.userInfo{ width: 100%; padding: 20rpx 30rpx; box-sizing: border-box; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; }
+.userAvator{ width: 60rpx; height: 60rpx; border-radius: 50%; }
+.userName{ font-size: 30rpx; margin-left: 20rpx; font-weight: 400; letter-spacing: 3rpx; }
+.landInfo{ padding:30rpx; box-sizing: border-box; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; border-top: 1rpx solid #eaeaea; border-bottom: 1rpx solid #eaeaea; font-size: 34rpx; }
+.itemName{ width: 400rpx; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: space-between; justify-content: space-between; }
+.landAvator{ width: 200rpx; height: 200rpx; }
+.area{ position: relative; }
+.sup{ font-size: 20rpx; position: absolute; right: -10; top: -3rpx; }
+.state_container{ padding: 30rpx; box-sizing: border-box; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; font-size: 28rpx; text-align: center; -webkit-justify-content: space-between; justify-content: space-between; }
+.item_container{ width: 33.3%; letter-spacing: 3rpx; }
+.title{ color: #898989; }
+.expire{ background-color: #fc8535; font-size: 28rpx; width: 150rpx; text-align: center; color: #fff; position: absolute; -webkit-transform: rotate(45deg); transform: rotate(45deg); right: -35rpx; top: 20rpx; }
+.block20{ height: 20rpx; }
+.device_info{ width:100rpx; height:100%; position:relative; left:20%; }
+.device_info wx-image{ width: 80rpx;height: 80rpx; }
+.device_info .other-img{ width: 60rpx;height: 60rpx;position:relative;top:-6rpx; }

@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "选择块地",
+    "usingComponents": {
+        "tarbar": "/components/tarbar/tarbar",
+        "van-tree-select": "/lib/vant/tree-select/index",
+        "van-popup": "/lib/vant/popup/index"
+    },
+    "enablePullDownRefresh":true
+}

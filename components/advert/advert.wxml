@@ -1,0 +1,59 @@
+<block wx:if='{{types === 3}}'>
+    <view>
+        <view class='content'>
+            <view class='mian'>
+                <image bindtap='navToPage' mode="aspectFit" class='mian-img' data-linkparam='{{adLists[0].link_param}}' data-linktype='{{adLists[0].link_type}}' src='{{adLists[0].img}}'></image>
+            </view>
+            <view class='sub-content'>
+                <view class='subItem'>
+                    <image bindtap='navToPage' mode="aspectFit" class='sub-img' data-linkparam='{{adLists[1].link_param}}' data-linktype='{{adLists[1].link_type}}' src='{{adLists[1].img}}'></image>
+                </view>
+                <view class='subItem'>
+                    <image bindtap='navToPage' mode="aspectFit" class='sub-img' data-linkparam='{{adLists[2].link_param}}' data-linktype='{{adLists[2].link_type}}' src='{{adLists[2].img}}'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:if='{{types === 4}}'>
+    <view>
+        <view class='ad-content'>
+            <view class='single'>
+                <image bindtap='navToPage' data-linkparam='{{adLists[0].link_param}}' data-linktype='{{adLists[0].link_type}}' src='{{adLists[0].img}}'></image>
+            </view>
+            <view class='wrapper'>
+                <block wx:for='{{adLists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <block wx:if='{{ (index > 0 && index <= 3) }}'>
+                        <view class='wrapper-item'>
+                            <image bindtap='navToPage' data-linkparam='{{item.link_param}}' data-linktype='{{item.link_type}}' src='{{item.img}}'></image>
+                        </view>
+                    </block>
+                </block>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:if='{{types === 1}}'>
+    <view>
+        <view class='ad-content'>
+            <block wx:for='{{adLists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                <view class='single'>
+                    <image bindtap='navToPage' data-linkparam='{{item.link_param}}' data-linktype='{{item.link_type}}' src='{{item.img}}'></image>
+                </view>
+            </block>
+        </view>
+    </view>
+</block>
+<block wx:if='{{types === 2}}'>
+    <view>
+        <view class='ad-content'>
+            <view class='other-wrapper'>
+                <block wx:for='{{adLists}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                    <view class='wrapper-items'>
+                        <image bindtap='navToPage' data-linkparam='{{item.link_param}}' data-linktype='{{item.link_type}}' src='{{item.img}}'></image>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+</block>

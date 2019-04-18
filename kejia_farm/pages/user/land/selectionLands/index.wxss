@@ -1,0 +1,34 @@
+@import '/import/css0_1.wxss';page{ background-color: #f4f4f4; }
+.scroll-view{ height: 120rpx; overflow: hidden; position: fixed; top: 0; left: 0; width: 100%; background-color: #fff; }
+.block{ height: 120rpx; }
+.scrollView{ white-space: nowrap; display: -webkit-flex; display: flex; font-size: 30rpx; height: 150rpx; }
+.item{ width: 150rpx; text-align: center; padding:35rpx 0rpx; display: inline-block; color: #3a3a3a; position: relative; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.item::before{ content:''; display: block; width:30%; height:2px; position: absolute; bottom: 0; left: 0; background: #fc8535; opacity: 0; transition: all 0.3s ease; }
+.actives{ color: #fc8535; }
+.actives::before{ width:100%; left: 0%; opacity: 1; transition: all 0.3s ease; }
+.item:not(:last-child) wx-view { border-right: 1rpx solid #dfdfdf; }
+.swiper{ width: 100%; height:350rpx; }
+.slide-image{ width: 100%; height: 100%; }
+.selectArea{ width: 150rpx; height: 40rpx; position: relative; }
+.reduceArea{ width: 40rpx; height: 40rpx; position: absolute; top: 0; left: 0; }
+.AreaNum{ width: 60rpx; text-align: center; height:40rpx; line-height: 40rpx; position: absolute; left: 40rpx; top: 0; }
+.addArea{ width: 40rpx; height: 40rpx; position: absolute; top: 0; right: 0; }
+.block100{ height: 100rpx; }
+.footer{ position: fixed; bottom: 0; left: 0; width: 100%; height: 100rpx; background-color: #777777; z-index: 9999; }
+.circels{ width: 120rpx; height: 120rpx; border-radius: 50%; background-color: #313131; margin-left: 30rpx; margin-top: -40rpx; position: relative; }
+.shopCar{ width: 100rpx; height: 100rpx; border-radius: 50%; }
+.shopCar wx-image{ width: 65rpx; height: 61rpx; }
+.buyNum{ position: absolute; width: 40rpx; height: 40rpx; background-color: #fc8535; border-radius: 50%; color: #fff; font-size: 26rpx; text-align: center; line-height: 40rpx; top: 0; right: 0; }
+.sumPrice{ color: #fff; position: absolute; left: 180rpx; top: 30rpx; }
+.Settlement{ width: 250rpx; height: 100%; line-height: 100rpx; text-align: center; position: absolute; right: 0; top: 0; font-size: 34rpx; color: #fff; letter-spacing: 5rpx; }
+.bgdadada{ background-color: #dadada; }
+.modal-mask { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.3); overflow: hidden; z-index: 9000; color: #fff; }
+.modal-dialog { width: 100%; height: 520rpx; position: fixed; bottom: 100rpx; left: 0; z-index: 9998; background: #f9f9f9; padding-bottom: 20rpx; }
+.titles{ padding: 20rpx; background-color: #f4f4f4; }
+.selectLands{ padding-left:20rpx; border-left: 10rpx solid #fc8535; }
+.content{ width: 100%; box-sizing: border-box; height: 420rpx; overflow-y: auto; }
+.landName{ width: 350rpx; }
+.landPrice{ width: 150rpx; }
+::-webkit-scrollbar { width: 0; height: 0; color: transparent; }
+.cover{width: 100%;height: 300rpx;}
+.cover wx-image{width: 100%;height: 100%;}

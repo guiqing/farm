@@ -1,0 +1,28 @@
+@import '/import/css0_1.wxss';page { background-color: #f4f4f4; }
+.orderTitle { height: 100rpx; line-height: 90rpx; background-color: #fff; position: fixed; top: 0; left: 0; width: 100%; z-index: 999; }
+.clear { clear: both; }
+.order-content { margin-top: 60rpx; }
+.block { height: 60rpx; }
+.currentIndex { color: #fc8535; }
+.mainBody { width: 95%; margin: 20rpx auto 0rpx; background-color: #fff; border-radius: 20rpx; }
+.mainBody .order-number, .mainBody .order-time { font-size: 24rpx; color: gray; display: block; }
+.mainBody .order-status { font-size: 26rpx; position: relative; top: -75rpx; left: 69%; display: block; width: 200rpx; text-align: right; }
+.mainBody .order-detail { width: 94%; height: 74rpx; text-align: right; font-size: 26rpx; border-bottom: 1rpx solid #f4f4f4; margin-bottom: 25rpx; margin-left: 3%; color: #4d4d4d; }
+.itemType { margin-bottom: 10rpx; height: 70rpx; line-height: 40rpx; }
+.HeadImg { width: 160rpx; height: 160rpx; border-radius: 10rpx; }
+.itemName { font-size: 28rpx; width: 500rpx; color: #4d4d4d; line-height: 40rpx; }
+.btnArr { width: 100%; display: -webkit-flex; display: flex; -webkit-justify-content: flex-end; justify-content: flex-end; padding-bottom: 25rpx; }
+.cancelOrder { border: 1rpx solid gray; color: gray; width: 170rpx; font-size: 24rpx; height: 60rpx; line-height: 60rpx; margin: 0rpx 20rpx; border-radius: 60rpx; background: white; }
+.cancelOrder::after { border: none; }
+.PayOrder { width: 170rpx; font-size: 24rpx; border-radius: 70rpx; margin: 0rpx 20rpx; height: 60rpx; line-height: 60rpx; background: white; color: #2aa515; border: 1rpx solid #2aa515; }
+.PayOrder::after { border: none; }
+.none { width: 100%; height: 300rpx; text-align: center; }
+.none wx-image { width: 400rpx; height: 230rpx; margin-top: 260rpx; }
+.none .tags { color: gray; font-size: 24rpx; display: block; }
+.none .go-buy { width: 26%; height: 60rpx; line-height: 60rpx; border-radius: 20rpx; background: #fc8535; color: white; font-size: 26rpx; margin-left: 37%; margin-top: 20rpx; }
+.del-order { width: 30rpx; height: 30rpx; float: right; margin-left: 30rpx; margin-top: 7rpx; }
+.brb { padding: 10rpx 0 10rpx 0; border-bottom: 1rpx solid #f4f4f4; }
+.verify-mask{width: 100%;height: 100%;position: fixed;top: 0;background: black;opacity: 0.5;z-index: 999}
+.verify-code{ width: 70%;margin-left: 15%;height: 500rpx;position: fixed;top: 30%;background: white;text-align: center; padding-top: 20rpx;font-size: 28rpx;border-radius: 10rpx;z-index: 9999 }
+.verify-code wx-view{ width: 100%;height: 50rpx;line-height: 50rpx;text-align: center; }
+.verify-code wx-image{ width: 380rpx;height: 380rpx;margin-top: 30rpx; }

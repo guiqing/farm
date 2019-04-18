@@ -1,0 +1,20 @@
+.video { width: 100%; height: 430rpx; }
+.monitor { width: 120rpx; height: 120rpx; position: absolute; top: 10rpx; right: 20rpx; }
+.control { width: 120rpx; height: 120rpx; position: absolute; top: 120rpx; right: 20rpx; }
+.control_container { display: -webkit-flex; display: flex; -webkit-align-items: flex-start; align-items: flex-start; -webkit-justify-content: space-around; justify-content: space-around; width: 70%; margin: 50rpx auto; }
+.direction_container { width: 300rpx; height: 300rpx; border-radius: 50%; background-color: #fff; box-shadow: 0rpx 2rpx 15rpx rgba(252, 189, 149, 0.5); margin: 30rpx auto; overflow: hidden; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; -webkit-justify-content: center; justify-content: center; }
+.direction{ width: 280rpx; height: 280rpx; border-radius: 50%; position: relative; }
+.w150 { width: 170rpx; }
+.direction_views { position: absolute; height: 50rpx; width: 280rpx; z-index: 98; }
+.directionImg { width: 40rpx; height: 40rpx; }
+.transform1 { position: absolute; left: -10rpx; top: 10rpx; -webkit-transform: rotate(-180deg); transform: rotate(-180deg); }
+.transform2 { position: absolute; top: 10rpx; right: -10rpx; }
+.state1 { top: 115rpx; }
+.state2 { top: 115rpx; left: 0rpx; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); z-index: 99; }
+.state3 { top: 115rpx; left: 0rpx; -webkit-transform: rotate(-135deg); transform: rotate(-135deg); z-index: 100; }
+.state4 { top: 115rpx; left: 0rpx; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); z-index: 101; }
+.center { position: absolute; left: 125rpx; top: 125rpx; width: 30rpx; height: 30rpx; border-radius: 50%; background-color: #ec8535; }
+.flex1 { display: -webkit-flex; display: flex; -webkit-align-items: flex-start; align-items: flex-start; }
+.flex2 { display: -webkit-flex; display: flex; -webkit-align-items: flex-end; align-items: flex-end; }
+.zIndex { z-index: 9; }
+.icons { width: 60rpx; height: 60rpx; }

@@ -1,0 +1,422 @@
+<import src='../../../../wxParse/wxParse.wxml'></import>
+<view>
+    <swiper bindchange='setCurrent' circular='true' class='swiper'>
+        <block wx:if='{{goodsData.goods_video_src}}'>
+            <swiper-item class='swiperItem'>
+                <view class='play'>
+                    <image bindtap='proDetailVideo' data-videosrc='{{goodsData.goods_video_src}}' src='../../../images/icon/players1.png'></image>
+                </view>
+                <image class='slide-image' src='{{goodsData.goods_slide[0]}}'></image>
+            </swiper-item>
+        </block>
+        <block wx:for='{{goodsData.goods_slide}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+            <swiper-item>
+                <image bindtap='previewSlideImg' class='slide-image' data-index='{{index}}' src='{{item}}'></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <block wx:if='{{goodsData.goods_video_src}}'>
+        <view class='swiper-src-count'>
+            <text>{{slideCurrentIndex}}/{{goodsData.goods_slide.length + 1}}</text>
+        </view>
+    </block>
+    <block wx:else>
+        <view class='swiper-src-count'>
+            <text>{{slideCurrentIndex}}/{{goodsData.goods_slide.length}}</text>
+        </view>
+    </block>
+    <view class='plt30'>
+        <view class='porName'>{{goodsData.goods_name}}</view>
+        <view class='flexSb'>
+            <view class='relative'>
+                <view class='proPrice cffc8535' style='color:{{farmSetData.background_color}}'>
+                    ￥{{goodsData.price}}
+                </view>
+                <view class='proOprice'>￥{{goodsData.old_price}}</view>
+            </view>
+            <view bindtap='showGoodsShareModel' class='share'>
+                <text class='iconfont icon-share f30'></text>
+                <text class='share-txt'>分享</text>
+            </view>
+        </view>
+        <view class='flex f28 cf93'>
+            <view>销量 :</view>
+            <view class='ml10'>{{goodsData.sale_count}}人购买</view>
+        </view>
+    </view>
+    <block wx:if='{{goodsData.send_goods_desc[0] != ""}}'>
+        <view class='flexSb plt30 send-goods-desc'>
+            <block wx:for='{{goodsData.send_goods_desc}}' wx:for-item='val' wx:for-index='index' wx:key='index'>
+                <view class='flex f26 cf4e4e4e '>
+                    <text class='iconfont icon-gou f34' style='color:{{farmSetData.background_color}}'></text>
+                    <view class='ml10'>{{val}}</view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:if='{{goodsData["is_open_sku"] == 1}}'>
+        <view class='block20'></view>
+    </block>
+    <block wx:if='{{goodsData["is_open_sku"] == 1}}'>
+        <view bindtap='buySelectSpec' class='f30 p30 flexSb'>
+            <view class='cf7e7e7e'>规格</view>
+            <view class='chooseColor'>选择规格</view>
+            <text class='iconfont icon-right right-icon'></text>
+        </view>
+    </block>
+    <view class='block20'></view>
+    <block wx:if='{{ (commentList && commentList.length > 0) }}'>
+        <view bindtap='intoCommentList' class='goods-comment'>
+            <view class='c-title flex'>
+                <view class='c-title-left'>买家评价({{commentCount}})</view>
+                <view class='c-title-right'>
+                    <text>查看全部</text>
+                    <text class='iconfont icon-right'></text>
+                </view>
+            </view>
+            <view class='c-content'>
+                <view class='c-head'>
+                    <image src='{{commentList[0].avatarurl}}'></image>
+                    <text>{{commentList[0].wx_nickname}}</text>
+                </view>
+                <view class='c-c-center'>
+                    <text class='c-time'>{{commentList[0].create_time}}</text>
+                    <text class='c-spec'>{{commentList[0].specStr}}</text>
+                </view>
+                <view class='c-text'>{{commentList[0].content}}</view>
+                <view class='c-imgs'>
+                    <block wx:for='{{commentList[0].src}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <image src='{{item}}'></image>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class='block20'></view>
+    <view>
+        <view class='proTitle'>
+            <view bindtap='chengeIndex' class='nav' data-index='1' style='color:{{(currentIndex == 1?farmSetData.background_color:"")}};border-bottom:1rpx solid {{(currentIndex == 1?farmSetData.background_color:"#dbdbdb")}}'>
+                商品详情
+            </view>
+            <block wx:if='{{goodsData["trace_id"] != 0}}'>
+                <view bindtap='chengeIndex' class='nav' data-index='2' style='color:{{(currentIndex == 2?farmSetData.background_color:"")}};border-bottom:1rpx solid {{(currentIndex == 2?farmSetData.background_color:"#dbdbdb")}}'>
+                    产品溯源
+                </view>
+            </block>
+        </view>
+        <view>
+            <block wx:if='{{ (goodsData["fumierData"] && goodsData["insecData"]) }}'>
+                <view>
+                    <view bindtap='isShow' class='fertilizer {{(scrollShow?"position7":"position8")}}' data-index='1'>
+                        <view>
+                            <image class='menuImg mt10' src='../../../images/icon/fertilizer.png'></image>
+                            <view>肥料表</view>
+                        </view>
+                    </view>
+                    <view bindtap='isShow' class='fertilizer {{(scrollShow?"position1":"position4")}}' data-index='2'>
+                        <view>
+                            <text class='iconfont icon-nongyaohuafeijiance f44 mt10' style='color:#16ba63'></text>
+                            <view>农药表</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif='{{ (goodsData["fumierData"] && goodsData["insecData"] == "") }}'>
+                <view>
+                    <view bindtap='isShow' class='fertilizer {{(scrollShow?"position7":"position8")}}' data-index='1'>
+                        <view>
+                            <image class='menuImg mt10' src='../../../images/icon/fertilizer.png'></image>
+                            <view>肥料表</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <block wx:elif='{{ (goodsData["fumierData"] == "" && goodsData["insecData"]) }}'>
+                <view>
+                    <view bindtap='isShow' class='fertilizer {{(scrollShow?"position1":"position4")}}' data-index='2'>
+                        <view>
+                            <text class='iconfont icon-nongyaohuafeijiance f44 mt10' style='color:#16ba63'></text>
+                            <view>农药表</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view bindtap='returnTop' class='fertilizer {{(scrollShow?"position2":"position5")}}' style='color:{{farmSetData.background_color}};'>
+                <view>
+                    <text class='iconfont icon-iconfonthuidingbu f44'></text>
+                    <view>顶部</view>
+                </view>
+            </view>
+        </view>
+        <view class='proImgs'>
+            <block wx:if='{{currentIndex == 1}}'>
+                <view class='proImgs'>
+                    <view class='wxParse'>
+                        <template is='wxParse' data='{{wxParseData:article.nodes}}'></template>
+                    </view>
+                </view>
+            </block>
+            <block wx:if='{{currentIndex == 2}}'>
+                <view class='proImgs'>
+                    <view class='process_container'>
+                        <view class='container_left'>
+                            <block wx:for='{{traceData}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                                <view class='time_container'>
+                                    <view class='process_title'>{{item.trace_name}}</view>
+                                    <view class='process_time'>
+                                        <view class='circle'></view>
+                                        <view class='timeStyle'>{{item.trace_time}}</view>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                        <view class='container_right'>
+                            <block wx:for='{{traceData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                                <view>
+                                    <view class='info_container'>
+                                        <view class='item_container'>
+                                            <block wx:for='{{item.trace_desc}}' wx:for-item='desc' wx:for-index='index' wx:key='id'>
+                                                <view class='mb10'>
+                                                    <view>{{desc}}</view>
+                                                </view>
+                                            </block>
+                                            <view class='flexWrap'>
+                                                <block wx:for='{{item.img}}' wx:for-item='val' wx:for-index='index' wx:key='id'>
+                                                    <image bindtap='previewImg' class='process_img' data-id='{{item.id}}' data-index='{{index}}' src='{{val}}'></image>
+                                                </block>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view style='height:{{120 + bottom}}rpx'></view>
+    <view class='footer' style='padding-bottom:{{bottom}}rpx'>
+        <view class='footer_container'>
+            <view bindtap='goHome' class='index'>
+                <button>
+                    <text class='iconfont icon-index f44'></text>
+                    <view class='con-kefu'>首页</view>
+                </button>
+            </view>
+            <view class='index'>
+                <view class='f24'>
+                    <button openType='contact'>
+                        <text class='iconfont icon-server f44'></text>
+                        <text class='con-kefu'>客服</text>
+                    </button>
+                </view>
+            </view>
+            <view class='index'>
+                <view class='f24'>
+                    <button bindtap='intoCart' style='width:100rpx;'>
+                        <text class='iconfont icon-groupCar f44'></text>
+                        <text class='con-kefu' style='display:block'>购物车</text>
+                    </button>
+                </view>
+            </view>
+            <view bindtap='showMode' class='joinCar' style='background: {{farmSetData.background_color}}'>
+                加入购物车
+            </view>
+            <view bindtap='buyNow' class='buyNow' style='background:{{farmSetData.background_color}}'>
+                立即购买
+            </view>
+        </view>
+    </view>
+    <block wx:if='{{is_show == 2}}'>
+        <view bindtap='hideModal' catchtouchmove='preventTouchMove' class='modal-mask'></view>
+    </block>
+    <view catchtouchmove='preventTouchMove' class='modal-dialog {{(is_show == 2?"showServer":"hideServer")}}'>
+        <view>
+            <text bindtap='hideModal' class='iconfont icon-close f34 closeModel'></text>
+        </view>
+        <view class='flex proImgs'>
+            <view class='adoptImg'>
+                <block wx:if='{{spec_src}}'>
+                    <image src='{{spec_src}}'></image>
+                </block>
+                <block wx:else>
+                    <image src='{{goodsData.cover}}'></image>
+                </block>
+            </view>
+            <view class='adoptPrice'>
+                <view style='color:{{farmSetData.background_color}}'>
+                    <text class='line20'>￥</text>
+                    <block wx:if='{{price}}'>
+                        <text>{{price}}</text>
+                    </block>
+                    <block wx:else>
+                        <text>{{goodsData.price}}</text>
+                    </block>
+                </view>
+                <block wx:if='{{specVal.count}}'>
+                    <view class='goods-stock' data-ceshi='1'>库存：{{specVal.count}}</view>
+                </block>
+                <block wx:else>
+                    <view class='goods-stock'>库存：{{goodsData.count}}</view>
+                </block>
+                <block wx:if='{{goodsData["is_open_sku"] == 1}}'>
+                    <view class='chooseTime'>
+                        <block wx:if='{{specVal.sku_name_str}}'>
+                            <text>已选择:</text>
+                        </block>
+                        <block wx:else>
+                            <text>请选择 :</text>
+                        </block>
+                        <block wx:if='{{specVal.sku_name_str}}'>
+                            <text class='ml20'>{{specVal.sku_name_str}}</text>
+                        </block>
+                        <block wx:else>
+                            <text class='ml20'>规格</text>
+                        </block>
+                        <text class='ml20'>数量{{count}}</text>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class='chooseNum'>
+            <scroll-view scrollY='true'>
+                <block wx:for='{{specItem}}' wx:for-item='val' wx:for-index='index' wx:key='index'>
+                    <view class='plt30 f32'>{{val.name}}</view>
+                    <view class='clearfix'>
+                        <block wx:for='{{val.specVal}}' wx:for-item='value' wx:for-index='index' wx:key='valid'>
+                            <block wx:if='{{value.is_count == 1}}'>
+                                <view bindtap='selectSpec' class='adoptTime {{(value.select_val == 1?"active":"")}}' data-specid='{{val.id}}' data-valid='{{value.id}}' style='background:{{(value.select_val == 1?farmSetData.background_color:"")}}'>
+                                    {{value.spec_value}}
+                                </view>
+                            </block>
+                            <block wx:else>
+                                <view class='adoptTime bgGray' data-specid='{{val.id}}' data-valid='{{value.id}}'>
+                                    {{value.spec_value}}
+                                </view>
+                            </block>
+                        </block>
+                    </view>
+                </block>
+                <view class='flex plt30'>
+                    <view class='f32' style='width:63%;'>数量</view>
+                    <view catchtap='reduceNum' class='clickNumLift ml50'>-</view>
+                    <input bindinput='chooseNum' class='chooseN' type='number' value='{{count}}'></input>
+                    <view catchtap='addNum' class='clickNumRight'>+</view>
+                </view>
+            </scroll-view>
+        </view>
+        <block wx:if='{{buy_type == 2}}'>
+            <view bindtap='addCart' class='confrim' style='background:{{farmSetData.background_color}}'>
+                确定
+            </view>
+        </block>
+        <block wx:if='{{buy_type == 1}}'>
+            <view bindtap='sureGoods' class='confrim' style='background:{{farmSetData.background_color}}'>
+                确定
+            </view>
+        </block>
+    </view>
+</view>
+<view catchtouchmove='preventD' class='model {{(isShow?"opacity0":"")}}'>
+    <view class='modelList {{(isShow?"scale1":"scale0")}}'>
+        <view class='position_container'>
+            <block wx:if='{{is_fumier == 1}}'>
+                <view class='nmodel-title'>肥料使用表</view>
+            </block>
+            <block wx:if='{{is_fumier == 2}}'>
+                <view class='nmodel-title'>农药使用表</view>
+            </block>
+            <view class='classify'>
+                <view>使用时间</view>
+                <block wx:if='{{is_fumier == 1}}'>
+                    <view>肥料名称</view>
+                </block>
+                <block wx:if='{{is_fumier == 2}}'>
+                    <view>药品名称</view>
+                </block>
+                <view>使用用量</view>
+                <view>使用面积</view>
+            </view>
+            <view class='list_containers'>
+                <scroll-view bindscroll='scroll' class='list_container' scrollY='true'>
+                    <block wx:for='{{currentLsit}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+                        <view class='list_item'>
+                            <view>{{item.use_time}}</view>
+                            <view>{{item.name}}</view>
+                            <view>{{item.consommation}}</view>
+                            <view>{{item.area}}㎡</view>
+                        </view>
+                    </block>
+                </scroll-view>
+            </view>
+        </view>
+        <view class='mt30 txCenter'>
+            <text bindtap='noShow' class='iconfont icon-close f44' style='color:white;'></text>
+        </view>
+    </view>
+</view>
+<block wx:if='{{isServer}}'>
+    <view bindtap='hideServer' catchtouchmove='preventTouchMove' class='modal-mask'></view>
+</block>
+<view class='server_wrapper {{(isServer?"showServer":"hideServer")}}'>
+    <scroll-view scrollY='true'>
+        <view class='server_header'>基础服务</view>
+        <view>
+            <view class='server_wrappers'>
+                <view class='server_content'>
+                    <view>7天无理由退货</view>
+                    <view class='server_desc'>
+                        满足7天无理由退换货申请的前提下，包邮商品需要买家承担退货邮费,非包邮商品需要买家承担发货和退货邮费。
+                    </view>
+                </view>
+            </view>
+            <view class='server_wrappers'>
+                <view class='server_content'>
+                    <view>7天无理由退货</view>
+                    <view class='server_desc'>
+                        满足7天无理由退换货申请的前提下，包邮商品需要买家承担退货邮费,非包邮商品需要买家承担发货和退货邮费。
+                    </view>
+                </view>
+            </view>
+            <view class='server_wrappers'>
+                <view class='server_content'>
+                    <view>7天无理由退货</view>
+                    <view class='server_desc'>
+                        满足7天无理由退换货申请的前提下，包邮商品需要买家承担退货邮费,非包邮商品需要买家承担发货和退货邮费。
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view bindtap='hideServer' class='finished'>完成</view>
+</view>
+<block wx:if='{{show_goods_shop_model_mask}}'>
+    <view class='goods-shop-model-mask'></view>
+</block>
+<block wx:if='{{show_shop_model}}'>
+    <view class='goods-shop-model'>
+        <view class='share-li'>
+            <view class='share-wx'>
+                <button class='share-btn' openType='share'>
+                    <text class='iconfont icon-liaoyiliao f44' style='color:#16ba63'></text>
+                    <view>分享给朋友</view>
+                </button>
+            </view>
+            <view bindtap='createGoodsPost' class='share-wx'>
+                <button class='share-btn'>
+                    <text class='iconfont icon-erweima f44'></text>
+                    <view>生成商品海报</view>
+                </button>
+            </view>
+        </view>
+        <view bindtap='closeGoodsShareModel' class='colse'>关闭</view>
+    </view>
+</block>
+<view catchtouchmove='true' class='goods-haibao' hidden='{{!(show_haibao)}}'>
+    <view class='poset-mask'></view>
+    <text bindtap='closeGoodsHaihao' class='iconfont icon-close f44 close' style='top:{{(isIphoneX?78:84)}}px'></text>
+    <canvas canvasId='canvas_poster' class='wx-poster' style='width:265px;height:465px;margin-left:14%;'></canvas>
+    <button bindtap='savePoster' class='btn'>保存图片</button>
+    <view class='txt'>保存图片到手机相册</view>
+</view>

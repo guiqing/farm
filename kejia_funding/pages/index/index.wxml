@@ -1,0 +1,69 @@
+<view style='padding-bottom:{{(isIphoneX?178:110)}}rpx'>
+    <view class='flexSa plr20 f30 orderTitle'>
+        <view bindtap='changeIndex' class='cd515151 plr20 {{(currentIndex == 1?"currentIndex":"")}}' data-index='1'>
+            全部
+        </view>
+        <view bindtap='changeIndex' class='cd515151 plr20 {{(currentIndex == 2?"currentIndex":"")}}' data-index='2'>
+            进行中
+        </view>
+        <view bindtap='changeIndex' class='cd515151 plr20 {{(currentIndex == 3?"currentIndex":"")}}' data-index='3'>
+            已结束
+        </view>
+    </view>
+    <view class='block'></view>
+    <block wx:if='{{isContent}}'>
+        <view class='mian'>
+            <block wx:for='{{project}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                <view bindtap='intoProjectDetail' class='list_wrapper' data-id='{{item.id}}'>
+                    <view class='pic_wrapper'>
+                        <image class='item_pic' src='{{item.cover}}'></image>
+                        <block wx:if='{{item.hot}}'>
+                            <view class='iconfont icon-hot sign' style='color: {{farmSetData.background_color}}'></view>
+                        </block>
+                    </view>
+                    <view class='desc_wrapper'>
+                        <view class='item_name_wrapper'>
+                            <view class='item_name'>{{item.project_name}}</view>
+                            <block wx:if='{{item.project_status == 0}}'>
+                                <view class='item_state item_states'>未开始</view>
+                            </block>
+                            <block wx:if='{{item.project_status == 1}}'>
+                                <view class='item_state item_states'>已结束</view>
+                            </block>
+                            <block wx:if='{{item.project_status == 2}}'>
+                                <view class='item_state'>预售中</view>
+                            </block>
+                            <block wx:if='{{item.project_status == 3}}'>
+                                <view class='item_state item_states'>成功</view>
+                            </block>
+                        </view>
+                        <view class='crowd_info_wrapper'>
+                            <view>
+                                <view class='raise_wrapper'>周期:{{item.cycle}}天</view>
+                                <view class='raise_wrapper'>目标金额:￥{{item.target_money}}</view>
+                                <view class='raise_wrapper'>认筹档位:￥{{item.low_price}}起</view>
+                            </view>
+                            <block wx:if='{{item.return_percent > 0}}'>
+                                <view class='crowd_item_rate'>
+                                    <view>{{item.return_percent}}%</view>
+                                    <view>年化收益率</view>
+                                </view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:else>
+        <view>
+            <view class='noOrder'>
+                <image src='../../../kejia_farm/images/icon/none.png'></image>
+                <view>您还没有相关的项目</view>
+            </view>
+        </view>
+    </block>
+</view>
+<block wx:if='{{is_tarbar}}'>
+    <tarbar SystemInfo='{{SystemInfo}}' list='{{tarbar}}' path='kejia_farm/pages/funding/index/index'></tarbar>
+</block>

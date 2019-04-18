@@ -1,0 +1,46 @@
+<view>
+    <view class='line' style='background:url({{borderImg}})'></view>
+    <view bindtap='selAddress' class='flexSb ptl30 bgff'>
+        <text class='iconfont icon-position1 f44' style='color:gray'></text>
+        <block wx:if='{{address}}'>
+            <view class='address'>
+                <view>
+                    <text>收货人：</text>
+                    <text>{{name}}</text>
+                    <text>{{phone}}</text>
+                </view>
+                <view class='cf93 mt10'>{{address}}</view>
+            </view>
+        </block>
+        <block wx:else>
+            <view class='address'>请填写收货地址</view>
+        </block>
+        <text class='iconfont icon-right right-icon'></text>
+    </view>
+    <view class='block20'></view>
+    <view class='bgff p20'>
+        <view class='flex ptb20'>
+            <image class='headImg' src='{{seedData.cover}}'></image>
+            <view class='ml20'>
+                <view class='itemName'>{{seedData.send_name}}</view>
+                <view></view>
+            </view>
+        </view>
+        <view class='flexSb f30 mt30 cf2b'>
+            <view class='flex'>
+                <view>快递运费：</view>
+            </view>
+            <view>￥{{farmSetData.animal_send_price}}</view>
+        </view>
+    </view>
+    <view class='block100'></view>
+    <view class='footer'>
+        <view class='f24 ml30 mt10' style='color:{{farmSetData.background_color}}'>￥</view>
+        <view class='f36 ml10' style='color:{{farmSetData.background_color}}'>
+            {{farmSetData.animal_send_price}}
+        </view>
+        <view bindtap='nowPay' class='payfor' style='background:{{farmSetData.background_color}}'>
+            去支付
+        </view>
+    </view>
+</view>

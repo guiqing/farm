@@ -1,0 +1,30 @@
+@import '/import/css0_1.wxss';page{ background-color: #efefef; }
+.orderTitle{ background-color: #fff; position: fixed; top: 0; left: 0; width: 100%; box-sizing: border-box; z-index: 999; }
+.block{ height: 82rpx; }
+.orderTitle wx-view{ padding: 20rpx; box-sizing: border-box; }
+.notcurrentIndex{ border-bottom: 3rpx solid #fff; }
+.currentIndex{ border-bottom: 3rpx solid #fc8535; color: #fc8535; }
+.mainBody{ width: 95%; margin: 10rpx auto 0rpx; background-color: #fff; border-radius: 20rpx; }
+.itemType{ font-size: 30rpx; }
+.HeadImg{ width: 160rpx; height: 160rpx; }
+.itemName{ font-size: 28rpx; width: 500rpx; color: #4d4d4d; line-height: 40rpx; }
+.btnArr{ width: 100%; display: -webkit-flex; display: flex; -webkit-justify-content:flex-end; justify-content:flex-end; padding: 25rpx 0rpx; }
+.cancelOrder{ border: 1rpx solid #cdcdcd; color: #cdcdcd; width: 160rpx; font-size: 24rpx; border-radius:60rpx; height: 60rpx; line-height: 60rpx; margin: 0rpx 20rpx; background: white; }
+.cancelOrder::after{ border: none; }
+.PayOrder{ color: #fff; width: 150rpx; font-size: 30rpx; background-color: #fc8535; margin: 0rpx 20rpx; height: 60rpx; line-height: 60rpx; border-radius: 60rpx; }
+.PayOrder::after{ border: none }
+.mb40{ margin-bottom: 40rpx; }
+.avator{ width: 45rpx; height: 45rpx; border-radius: 50%; }
+.send-mask{ width: 100%;height:100%;position: fixed;top:0;opacity: 0.5;background: black; }
+.send-info{ width: 80%;height: 400rpx;background: white;position: fixed;top: 25%;margin-left: 10%; border-radius: 10rpx;font-size: 30rpx; }
+.send-info .send-li{ width: 90%;margin-left: 5%;height: 90rpx;line-height: 90rpx; border-bottom: 1rpx solid #f4f4f4; }
+.send-info .send-li .li-left{ float: left;width: 30%;height: 100%; }
+.send-info .send-li .li-right{ float: left;width: 70%;height: 100%; }
+.send-info .send-li wx-input{height: 100%;}
+.send-info .btn{ width: 80%;margin-left: 10%;height: 80rpx;background: #fc8535;color: white;margin-top: 40rpx;line-height: 80rpx; }
+.send-info .close{ width: 40rpx;height: 40rpx;position:relative;margin-left:92%;top:10rpx;color: rgb(151, 149, 149); }
+.send-li .scan{width: 45rpx;height: 45rpx;position: relative;top: -84rpx;left: 94%;z-index: 999}
+.brb{border-bottom: 1rpx solid #f4f4f4;padding-bottom: 10rpx;}
+.brb{ border-top: 1rpx solid #f4f4f4;padding: 10rpx 0 10rpx 0;border-bottom: 1rpx solid #f4f4f4; }
+.del-order{width:30rpx; height:30rpx; float:right; margin-left:30rpx; margin-top:7rpx; }
+.ptl30{padding: 30rpx 20rpx 0}

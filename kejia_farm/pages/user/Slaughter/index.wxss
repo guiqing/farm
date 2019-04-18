@@ -1,0 +1,20 @@
+.swiper{ width: 100%; height: 560rpx; text-align: center; }
+.slide-image{ width:70%; height: 500rpx; }
+.block20{ height: 20rpx; background-color: #f4f4f4; }
+.title{ width: 100%; text-align: center; font-size: 32rpx; padding: 30rpx 0rpx; color: #3d3d3d; }
+.adoptState{ font-size: 30rpx; text-align: center; padding: 20rpx 30rpx; box-sizing: border-box; color: #8b8b8b; }
+.lineState{ width: 700rpx; opacity: 1; transition: all 0.3s ease; }
+.lineImg{ width: 130rpx; height: 15rpx; margin-right: 5rpx; }
+.timeAxis{ width: 100%; height: 500rpx; display: -webkit-flex; display: flex; }
+.recodeTime{ width: 35%; height: 100%; border-right:5rpx solid #1795b7; position: relative; }
+.recodeContent{ width: 65%; height: 100%; position: relative; }
+.reTime{ position: relative; width: 100%; height: 100%; }
+.tiems{ font-size: 24rpx; background-color: #1795b7; color: #fff; width: 220rpx; height: 45rpx; text-align: center; line-height: 45rpx; position: relative; border-radius: 5rpx; top: 0rpx; right: -10rpx; }
+.tiems:after{ content: ""; width:0; height:0; right:-28rpx; bottom: 6rpx; position: absolute; border-width:7px; border-style:solid; border-color:transparent transparent transparent #1795b7; }
+.circle{ width: 30rpx; height: 30rpx; background-color: #1795b7; border-radius: 50%; position: absolute; right: -15rpx; top: -10rpx; }
+.reContent{ width: 420rpx; border-radius: 10rpx; background-color: #2dacb9; font-size: 30rpx; color: #fff; position: absolute; padding: 10rpx; box-sizing: border-box; top: 0rpx; left: 40rpx; }
+.reContent:after{ content: ""; width:0; height:0; left:-40rpx; top: 20rpx; position: absolute; border-width:10px; border-style:solid; border-color:transparent #2dacb9 transparent transparent ; }
+.recodeImg{ width: 180rpx; height: 180rpx; }
+.recodeBImg{ width: 300rpx; height: 300rpx; }
+.Slaughter{ width: 100%; border: none; background-color: #fc8535; color: #fff; border-radius: 0rpx; margin-top: 10rpx; }
+.Slaughter::after{ border: none; }

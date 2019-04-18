@@ -1,0 +1,30 @@
+page{ background-color: #efefef; }
+.orderTitle{ height: 90rpx; line-height: 89rpx; background-color: #fff; margin-bottom: 20rpx; }
+.currentIndex{ border-bottom: 3rpx solid #16BA63; color: #16BA63; }
+.mainBody{ width:95%; margin:21rpx auto 0rpx; background-color:#fff; border-radius:20rpx; }
+.brb{ border-bottom: 1rpx solid #f4f4f4; }
+.itemType{ font-size: 32rpx; margin-bottom: 40rpx; }
+.HeadImg{ width: 160rpx; height: 160rpx; }
+.itemName{ font-size: 28rpx; width: 500rpx; color: #4d4d4d; line-height: 40rpx; }
+.btnArr{ width: 100%; display: -webkit-flex; display: flex; -webkit-justify-content:flex-end; justify-content:flex-end; padding: 25rpx 0rpx; }
+.cancelOrder{ border:1rpx solid gray; color:gray; width:170rpx; font-size:26rpx; border-radius:60rpx; height:60rpx; line-height:60rpx; margin:0rpx 20rpx; background:white; }
+.cancelOrder::after{ border: none; }
+.PayOrder{ color:#2aa515; width:170rpx; font-size:26rpx; border-radius:60rpx; margin:0rpx 20rpx; height:60rpx; line-height:60rpx; border: 1rpx solid #2aa515; background:white; }
+.PayOrder::after{ border: none }
+.item_level{ font-size: 30rpx; line-height: 45rpx; margin-top: 10rpx; color: #727272; }
+.item_level wx-text:not(:first-child) { margin-left: 10rpx; }
+.item_total{ margin-top: 10rpx; font-size: 32rpx; color: #383838; }
+.noOrder{ width: 100%; margin-top: 300rpx; text-align: center; font-size: 30rpx; color: #8B8B8B; letter-spacing: 3rpx; }
+.noOrder wx-image{ width: 400rpx; height: 230rpx; }
+.model{ position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0, 0, 0, 0.4); z-index: 100; }
+.model_content{ width: 80%; position: fixed; top: 200rpx; left: 10%; background: #fff; border-radius: 15rpx; z-index: 120; text-align: center; transition: all .3s; }
+.scale1{ -webkit-transform: scale(1); transform: scale(1) }
+.scale0{ -webkit-transform: scale(0); transform: scale(0) }
+.image_wrapper{ width: 100%; margin-top: 80rpx; }
+.image_wrapper wx-image{ width: 230rpx; height: 230rpx; }
+.comfirm{ font-size: 34rpx; color: #272727; margin-top: 30rpx; }
+.notice{ width: 80%; margin: 20rpx auto 30rpx; font-size: 28rpx; color: #9C9C9C; line-height: 45rpx; }
+.model_footer{ width: 100%; height: 100rpx; line-height: 100rpx; font-size: 30rpx; display: -webkit-flex; display: flex; -webkit-align-items: center; align-items: center; border-top: 1rpx solid #E4E4E4; }
+.model_footer wx-view{ width: 50%; }
+.model_footer wx-view:first-child{ border-right: 1rpx solid #E4E4E4; color: #6D6D6D; }
+.order-status{font-size: 28rpx;margin-right: 20rpx;}

@@ -1,0 +1,345 @@
+<view style="padding:24rpx">
+    <view class='banner card-list' style="height:518rpx;border-radius:40rpx">
+        <image class='bannerImg' style="border-radius:40rpx" src='{{mineLand.cover}}'></image>
+        <block wx:if='{{mineLand.live_src != ""}}'>
+            <image bindtap='showVideo' class='monitor' src='../../../images/icon/monitor.png'></image>
+            <block wx:if='{{isShow}}'>
+                <video style="border-radius:40rpx" bindplay='play' class='video' id='myVideo' src='{{mineLand.live_src}}'>
+                    <cover-image bindtap='hiddenVideo' class='monitor' src='../../../images/icon/monitor.png'></cover-image>
+                    <block wx:if='{{is_loading}}'>
+                        <cover-view class='is_loading'>
+                            <cover-view class='loadCover'>
+                                <cover-image class='loadingimg' src='../../../images/icon/player_loading.png'></cover-image>
+                            </cover-view>
+                        </cover-view>
+                    </block>
+                    <block wx:if='{{ (farmSetData.is_open_webthing == 1 && mineLand.deviceData) }}'>
+                        <cover-view class='landInfo_wrapper'>
+                            <cover-view class='ml10'>温度:</cover-view>
+                            <cover-view class='ml10'>{{deviceData.temp}}℃</cover-view>
+                            <cover-view class='ml10'>湿度:</cover-view>
+                            <cover-view class='ml10 mt5'>{{deviceData.watering}}%</cover-view>
+                            <cover-view class='ml10'>光照:</cover-view>
+                            <cover-view class='ml10'>{{deviceData.illumination}}</cover-view>
+                            <cover-view class='ml10'>二氧化碳:</cover-view>
+                            <cover-view class='ml10'>{{deviceData.co2}}</cover-view>
+                        </cover-view>
+                    </block>
+                    <block wx:if='{{ (farmSetData.is_open_webthing == 2 && mineLand.device) }}'>
+                        <cover-view class='landInfo_wrapper'>
+                            <block wx:if='{{mineLand.device.temp}}'>
+                                <cover-view class='ml10'>温度:</cover-view>
+                            </block>
+                            <block wx:if='{{mineLand.device.temp}}'>
+                                <cover-view class='ml10'>
+                                    {{mineLand.device.temp.DevTempValue}}℃
+                                </cover-view>
+                            </block>
+                            <block wx:if='{{mineLand.device.temp}}'>
+                                <cover-view class='ml10'>湿度:</cover-view>
+                            </block>
+                            <block wx:if='{{mineLand.device.temp}}'>
+                                <cover-view class='ml10 mt5'>
+                                    {{mineLand.device.temp.DevHumiValue}}%
+                                </cover-view>
+                            </block>
+                            <block wx:if='{{mineLand.device.light}}'>
+                                <cover-view class='ml10'>光照:</cover-view>
+                            </block>
+                            <block wx:if='{{mineLand.device.light}}'>
+                                <cover-view class='ml10'>
+                                    {{mineLand.device.light.DevHumiValue}}
+                                </cover-view>
+                            </block>
+                            <block wx:if='{{mineLand.device.co2}}'>
+                                <cover-view class='ml10'>二氧化碳:</cover-view>
+                            </block>
+                            <block wx:if='{{mineLand.device.co2}}'>
+                                <cover-view class='ml10'>
+                                    {{mineLand.device.co2.DevHumiValue}}
+                                </cover-view>
+                            </block>
+                        </cover-view>
+                    </block>
+                </video>
+            </block>
+        </block>
+        <block wx:if='{{ (farmSetData.is_open_webthing == 1 && mineLand.deviceData) }}'>
+            <view >
+                <block wx:if='{{!(isShow)}}'>
+                    <view class='landInfo_wrapper' style="border-radius:0 0 40rpx 40rpx">
+                        <view class='ml10'>温度:</view>
+                        <view class='ml10'>{{mineLand.deviceData.temp}}℃</view>
+                        <view class='ml10'>湿度:</view>
+                        <view class='ml10 mt5'>{{mineLand.deviceData.watering}}%</view>
+                        <view class='ml10'>光照:</view>
+                        <view class='ml10'>{{mineLand.deviceData.illumination}}</view>
+                        <view class='ml10'>二氧化碳:</view>
+                        <view class='ml10'>{{mineLand.deviceData.co2}}</view>
+                    </view>
+                </block>
+            </view>
+        </block>
+        <block wx:if='{{ (farmSetData.is_open_webthing == 2 && mineLand.device) }}'>
+            <view>
+                <block wx:if='{{!(isShow)}}'>
+                    <view class='landInfo_wrapper' style="border-radius:0 0 40rpx 40rpx">
+                        <block wx:if='{{mineLand.device.temp}}'>
+                            <view class='ml10'>温度:</view>
+                        </block>
+                        <block wx:if='{{mineLand.device.temp}}'>
+                            <view class='ml10'>{{mineLand.device.temp.DevTempValue}}℃</view>
+                        </block>
+                        <block wx:if='{{mineLand.device.temp}}'>
+                            <view class='ml10'>湿度:</view>
+                        </block>
+                        <block wx:if='{{mineLand.device.temp}}'>
+                            <view class='ml10 mt5'>{{mineLand.device.temp.DevHumiValue}}%</view>
+                        </block>
+                        <block wx:if='{{mineLand.device.light}}'>
+                            <view class='ml10'>光照:</view>
+                        </block>
+                        <block wx:if='{{mineLand.device.light}}'>
+                            <view class='ml10'>{{mineLand.device.light.DevHumiValue}}</view>
+                        </block>
+                        <block wx:if='{{mineLand.device.co2}}'>
+                            <view class='ml10'>二氧化碳:</view>
+                        </block>
+                        <block wx:if='{{mineLand.device.co2}}'>
+                            <view class='ml10'>{{mineLand.device.co2.DevHumiValue}}</view>
+                        </block>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+    <!-- <view class="card-list">
+        <view class="card-list-content gride">
+            <block wx:for="{{menu}}" wx:key="id">
+                <view class="gride-item">
+                    <form bindsubmit='{{item.method}}' reportSubmit='true'>
+                        <button formType='submit' style='line-height:1.5;'>
+                            <image class="gride-icon" class="gride-item-img" src="{{item.img}}"/>                     
+                            <view class="gride-item-text">{{item.name}}</view>
+                        </button>  
+                    </form>               
+                </view>
+            </block>
+        </view>
+    </view> -->
+    <view class="card-list-header">土地信息</view>
+    <view class="card-list">
+        <view class="card-list-in">
+            <view class="card-list-icon">
+                <image src="{{img[0]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >土地名称</view>
+                <view class="text2" >{{mineLand.land_name}}</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[1]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >土地编号</view>
+                <view class="text2" >{{mineLand.land_num}}</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[2]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >总面积</view>
+                <view class="text2"  >{{mineLand.count}} ㎡</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[3]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >已种植面积</view>
+                <view class="text2" >{{mineLand.use_area}} ㎡</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[4]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >待播种面积</view>
+                <view class="text2" >{{mineLand.wait_area}} ㎡</view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[5]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" >剩余面积</view>
+                <view catch:tap="toSeed" class="text2" style="display:flex;align-items:center;">
+                    <view >{{mineLand.residue_area}} ㎡</view>
+                    <text style="padding-left:28rpx;font-size:28rpx;color:#0fc8a8">去播种</text>
+                    <image src="/kejia_farm/images/right.png" style="width:20rpx;height:30rpx;margin-left:10rpx" />      
+                </view>
+            </view>
+            <view class="card-list-icon">
+                <image src="{{img[6]}}" style="width:40rpx;height:40rpx;margin-right:28rpx"/>
+                <view class="text1" style="border-bottom:0">到期时间</view>
+                <view class="text2" style="border-bottom:0">{{mineLand.exprie_time}}</view>
+            </view>          
+        </view>
+    </view>
+    <block wx:if='{{sendMine.length}}'>
+        <view class="card-list-header">种植详情</view>
+    </block>
+    <block wx:for='{{sendMine.length}}' wx:for-item='item' wx:for-index='index' wx:key='id'>
+        <view class='seed-info' style='background:{{item.backColor}}'>
+            <view class='seed-ul-li flex'>
+                <view class='seed-ul-li-title'>种子名称</view>
+                <view class='seed-ul-li-value'>{{item.send_name}}</view>
+            </view>
+            <view class='seed-ul-li flex'>
+                <view class='seed-ul-li-title'>种植天数</view>
+                <view class='seed-ul-li-value'>{{item.seedDay}}天</view>
+            </view>
+            <view class='seed-ul-li flex'>
+                <view class='seed-ul-li-title'>播种时间</view>
+                <view class='seed-ul-li-value'>{{item.seed_time}}</view>
+            </view>
+            <view class='seed-ul-li flex'>
+                <view class='seed-ul-li-title'>种植面积</view>
+                <view class='seed-ul-li-value'>{{item.count}} ㎡</view>
+            </view>
+            <view class='seed-ul-li flex'>
+                <view class='seed-ul-li-title'>当前状态</view>
+                <view class='seed-ul-li-value'>{{item.status_txt}}</view>
+                <block wx:if='{{item.status == 2}}'>
+                    <view class='pick-seed'>
+                        <form bindsubmit='pickSeed' data-seedid='{{item.id}}'>
+                            <button formType='submit'>立即摘取</button>
+                        </form>
+                    </view>
+                </block>
+                <block wx:if='{{item.status == 3}}'>
+                    <view class='pick-seed'>
+                        <form bindsubmit='intoBag'>
+                            <button formType='submit'>查看详情</button>
+                        </form>
+                    </view>
+                </block>
+            </view>
+            <view class='seed-ul-li flex'>
+                <form bindsubmit='lookStatusInfo' data-lid='{{item.lid}}' data-seedid='{{item.id}}' reportSubmit='true'>
+                    <button formType='submit' hoverClass='none'>
+                        <text style='color:{{farmSetData.background_color}}'>点击查看状态跟踪信息~</text>
+                    </button>
+                </form>
+            </view>
+        </view>
+    </block>
+    <block wx:if='{{is_show_status}}'>
+        <view bindtap='lookStatusInfo' class='seed-mask'></view>
+    </block>
+    <view class='seed-status {{(is_show_status?"show":"hide")}}'>
+        <view class='status-title'>
+            状态跟踪
+            <text bindtap='lookStatusInfo' class='iconfont icon-delete1 f34' style='float:right'></text>
+        </view>
+        <view class='status-content'>
+            <block wx:for='{{landStatus}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+                <view class='status-ul flex'>
+                    <view class='li-left'>
+                        <view class='cycyle-time' style='border:1rpx solid {{item.back_color}};color:{{item.back_color}}'>
+                            {{item.create_time}}
+                        </view>
+                    </view>
+                    <view class='li-right flex'>
+                        <view class='jiao' style='border-right:10px solid {{item.back_color}}'></view>
+                        <view class='status-value' style='background:{{item.back_color}}'>
+                            <text>{{item.txt}}</text>
+                            <view>
+                                <block wx:for='{{item.src}}' wx:for-item='img' wx:for-index='index' wx:key='img_index'>
+                                    <image src='{{img}}'></image>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <block wx:if='{{is_show_gain_dialog}}'>
+        <view class='seed-gain-mask'></view>
+    </block>
+    <block wx:if='{{is_show_gain_dialog}}'>
+        <view class='seed-gain'>
+            <view class='gian-title'>
+                收获
+                <text bindtap='pickSeed' class='iconfont icon-delete1 f28' style='float:right'></text>
+            </view>
+            <view class='gain-ul flex'>
+                <view class='gain-tit'>种子名称</view>
+                <view class='gain-val'>{{gainSeed.send_name}}</view>
+            </view>
+            <view class='gain-ul flex'>
+                <view class='gain-tit'>当前状态</view>
+                <view class='gain-val'>{{gainSeed.status_txt}}</view>
+            </view>
+            <view class='gain-ul flex'>
+                <view class='gain-tit'>种植天数</view>
+                <view class='gain-val'>{{gainSeed.seedDay}}</view>
+            </view>
+            <view class='gain-ul flex'>
+                <view class='gain-tit'>种植面积</view>
+                <view class='gain-val'>{{gainSeed.count}} ㎡</view>
+            </view>
+            <view class='gain-ul flex'>
+                <view class='gain-tit'>预计产量</view>
+                <view class='gain-val'>{{gainSeed.weight}}kg</view>
+            </view>
+            <view class='gain-ul flex'>
+                <view class='gain-tit'>预计卖出单价</view>
+                <view class='gain-val'>{{gainSeed.sale_price}}元/kg</view>
+            </view>
+            <form bindsubmit='gainSeed' data-seedid='{{gainSeed.id}}' reportSubmit='true'>
+                <view class='gain-btn'>
+                    <button formType='submit'>立即收获</button>
+                </view>
+            </form>
+        </view>
+    </block>
+    <!-- <view class='margin-btn'></view> -->
+    <!-- <block wx:if='{{ (farmSetData.is_open_webthing == 1 && mineLand.device_id) }}'>
+        <view>
+            <form bindsubmit='weeding' reportSubmit='true'>
+                <button formType='submit' style='line-height:1.5;'>
+                    <view class='fixedIcon position1'>
+                        <image class='weed' src='{{icon.Weed}}'></image>
+                        <view class='mt_5'>除草</view>
+                    </view>
+                </button>
+            </form>
+            <form bindsubmit='killVer' reportSubmit='true'>
+                <button formType='submit' style='line-height:1.5;'>
+                    <view class='fixedIcon position2'>
+                        <image class='Insecticide' src='{{icon.Insecticide}}'></image>
+                        <view class='mt_5'>杀虫</view>
+                    </view>
+                </button>
+            </form>
+            <form bindsubmit='fertilization' reportSubmit='true'>
+                <button formType='submit' style='line-height:1.5;'>
+                    <view class='fixedIcon position3'>
+                        <image class='fertilizer' src='{{icon.fertilizer}}'></image>
+                        <view class='mt_5'>施肥</view>
+                    </view>
+                </button>
+            </form>
+            <form bindsubmit='watering' reportSubmit='true'>
+                <button formType='submit' style='line-height:1.5;'>
+                    <view class='fixedIcon position4'>
+                        <image class='watering' src='{{icon.watering}}'></image>
+                        <view class='mt_5'>浇水</view>
+                    </view>
+                </button>
+            </form>
+        </view>
+    </block>
+    <form bindsubmit='intoBag' reportSubmit='true'>
+        <button formType='submit' style='line-height:1.5;'>
+            <view class='fixedIcon {{( (farmSetData.is_open_webthing == 1 && mineLand.device_id) ?"position6":"position3")}}'>
+                <text class='iconfont icon-shubao f44'></text>
+                <view class='mt_5'>背包</view>
+            </view>
+        </button>
+    </form>
+    <view bindtap='toSeed' class='fixedIcon {{( (farmSetData.is_open_webthing == 1 && mineLand.device_id) ?"position5":"position4")}}'>
+        <text class='iconfont icon-shumiao f44'></text>
+        <view class='mt_5'>播种</view>
+    </view> -->
+</view>
+<block wx:if='{{isLoading}}'>
+    <loading>{{countDownNum}}s后完成,请勿关闭页面！</loading>
+</block>
